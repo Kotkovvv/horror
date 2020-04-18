@@ -13,12 +13,13 @@ int height = 800; // ширина окна
 int W = width;
 int H = height;
 float angle = 0; // угол поворота
-int cube_size = 2;
-
-float lx = 0.0f;//координаты вектора, определяющее, куда смотрит камера
-float lz = 1.0f;//координаты вектора, определяющее, куда смотрит камера
-float speedX = 0;//скорость по Х
-float speedZ = 0;//скорость по Z
+int cube_size = 1;
+const int quantity_cubes_x = 5;
+const int quantity_cubes_z = 5;
+float lx = 0.0f;
+float lz = 1.0f;
+float speedX = 0;
+float speedZ = 0;
 float speedX_side = 0;
 float speedZ_side = 0;
 float speedX_front = 0;
@@ -36,8 +37,11 @@ GLuint wall[1];
 GLuint screamer[1];
 GLuint pol[1];
 
-int cubes[2][2] = {1, 0,
-				   0, 1 }; //дает невидимые стены
+int cubes[quantity_cubes_x][quantity_cubes_z] = { {1, 0, 0, 0, 0 },
+												  {0, 1, 0, 0, 0 },
+												  {0, 0, 0, 0, 0 },
+												  {0, 0, 0, 0, 0 },
+												  {0, 0, 0, 0, 0 }, }; //дает невидимые стены
 
 
 #include "src\textures.hpp"
@@ -63,8 +67,8 @@ public:
 		View = 90; // угол обзора
 	}
 	bool check(int x,  int z) {
-		if ((x < 0) or (x > 2) or
-			(z < 0) or (z > 2)) return false;
+		if ((x < 0) or (x > quantity_cubes_x) or
+			(z < 0) or (z > quantity_cubes_z)) return false;
 		return cubes[x][z];
 
 	}
