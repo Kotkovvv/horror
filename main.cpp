@@ -13,7 +13,7 @@ int height = 800; // ширина окна
 int W = width;
 int H = height;
 float angle = 0; // угол поворота
-int cube_size = 1;
+int cube_size = 2;
 
 float lx = 0.0f;//координаты вектора, определяющее, куда смотрит камера
 float lz = 1.0f;//координаты вектора, определяющее, куда смотрит камера
