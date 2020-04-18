@@ -12,8 +12,8 @@ int width = 1600; // высота окна
 int height = 800; // ширина окна
 int W = width;
 int H = height;
-float angle = 0; // угол поворота по xz
-int cube_size = 2;
+float angle = 0; // угол поворота
+int cube_size = 1;
 
 float lx = 0.0f;//координаты вектора, определяющее, куда смотрит камера
 float lz = 1.0f;//координаты вектора, определяющее, куда смотрит камера
@@ -36,7 +36,8 @@ GLuint wall[1];
 GLuint screamer[1];
 GLuint pol[1];
 
-int cubes[5][1][5]; //дает невидимые стены
+int cubes[2][2] = {1, 0,
+				   0, 1 }; //дает невидимые стены
 
 
 #include "src\textures.hpp"
@@ -57,15 +58,14 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.5f; h = 1.9f; d = 0.5f; speed = 0.5;
+		w = 0.5f; h = 1.9f; d = 0.5f; speed = 0.1;
 		onGround = false;
 		View = 90; // угол обзора
 	}
-	bool check(int x, int y, int z) {
-		if ((x < 0) or (x > 5) or
-			(y < 0) or (y > 1) or
-			(z < 0) or (z > 5)) return false;
-		return cubes[x][y][z];
+	bool check(int x,  int z) {
+		if ((x < 0) or (x > 2) or
+			(z < 0) or (z > 2)) return false;
+		return cubes[x][z];
 
 	}
 	void update(float time) {
@@ -86,26 +86,22 @@ public:
 
 		dx = dSideX + dFrontX;
 		PlayerX += dx;
-		collision(dx, 0, 0);
+		collision(dx, 0);
 		dz = dSideZ + dFrontZ;
 		PlayerZ += dz;
-		collision(0, 0, dz);
+		collision(0, dz);
 
 
 		dx = dz = dSideX = dSideZ = dFrontX = dFrontZ = 0;
 	}
 
-	void collision(float Dx, float Dy, float Dz) {
+	void collision(float Dx, float Dz) {
 		for (int X = (PlayerX - w) / cube_size; X < (PlayerX + w) / cube_size; X++)
-			for (int Y = (PlayerY - h) / cube_size; Y < (PlayerY + h) / cube_size; Y++)
 				for (int Z = (PlayerZ - d) / cube_size; Z < (PlayerZ + d) / cube_size; Z++)
-					if (check(X, Y, Z))
+					if (check(X, Z))
 					{
 						if (Dx > 0) PlayerX = X * cube_size - w;
 						if (Dx < 0) PlayerX = X * cube_size + cube_size + w;
-
-						if (Dy > 0) { PlayerY = Y * cube_size - h; }
-						if (Dy < 0) { PlayerY = Y * cube_size + cube_size + h; onGround = true; }
 
 						if (Dz > 0) PlayerZ = Z * cube_size - d;
 						if (Dz < 0) PlayerZ = Z * cube_size + cube_size + d;
@@ -469,10 +465,10 @@ int main() {
 	polTextures();
 
 
-	for (int x = 0; x < 5; x++)
-		for (int y = 0; y < 1; y++)
-			for (int z = 0; z < 5; z++) {
-				cubes[x][y][z] = rand() % 3;
-			}
+	/*for (int x = 0; x < 7; x++)
+			for (int z = 0; z < 7; z++) {
+				if (x == 0 or x == 6 or z == 0 or z == 6)
+					cubes[x][z] = 1;
+			}*/
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 }//*/
