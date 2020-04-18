@@ -12,13 +12,13 @@ int width = 1600; // высота окна
 int height = 800; // ширина окна
 int W = width;
 int H = height;
-float angle = 0; // угол поворота
+float angle = 0; // угол поворота по xz
 int cube_size = 2;
 
-float lx = 0.0f;
-float lz = 1.0f;
-float speedX = 0;
-float speedZ = 0;
+float lx = 0.0f;//координаты вектора, определяющее, куда смотрит камера
+float lz = 1.0f;//координаты вектора, определяющее, куда смотрит камера
+float speedX = 0;//скорость по Х
+float speedZ = 0;//скорость по Z
 float speedX_side = 0;
 float speedZ_side = 0;
 float speedX_front = 0;
@@ -26,9 +26,9 @@ float speedZ_front = 0;
 float move_front = 0;
 float move_side = 0;
 float angleY = 0;
-float mouseXOld = 0;
-float mouseYOld = 0;
-float ly = 0;
+float mouseXOld = 0;// вспомогательные фукнции, которые ппозволяют двигать камеру, фиксирует старое положение камеры
+float mouseYOld = 0;// вспомогательные фукнции, которые ппозволяют двигать камеру, фиксирует старое положение камеры
+float ly = 0;//координаты вектора, определяющее, куда смотрит камера
 
 float PlayerX = 0;
 float PlayerZ = 0;
@@ -36,7 +36,7 @@ GLuint wall[1];
 GLuint screamer[1];
 GLuint pol[1];
 
-char cubes[5][1][5]; //дает невидимые стены
+int cubes[5][1][5]; //дает невидимые стены
 
 
 #include "src\textures.hpp"
