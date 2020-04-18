@@ -36,7 +36,7 @@ GLuint wall[1];
 GLuint screamer[1];
 GLuint pol[1];
 
-int cubes[2][2] = { 1, 0,
+int cubes[2][2] = {1, 0,
 				   0, 1 }; //дает невидимые стены
 
 
