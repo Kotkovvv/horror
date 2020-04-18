@@ -87,12 +87,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\1233\Desktop\инфа\Horror\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\MyProjects\horror\lib;C:\Users\1233\Desktop\инфа\Horror\lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\1233\Desktop\инфа\Horror\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\MyProjects\horror\lib;C:\Users\1233\Desktop\инфа\Horror\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
