@@ -1,0 +1,478 @@
+#include <glut.h>
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+#include <ctime>
+#include <SOIL.h> // библиотека для тектур. пока не нужна
+#pragma comment (lib,"SOIL.lib")
+
+
+
+int width = 1600; // высота окна
+int height = 800; // ширина окна
+int W = width;
+int H = height;
+float angle = 0; // угол поворота
+int cube_size = 2;
+
+float lx = 0.0f;
+float lz = 1.0f;
+float speedX = 0;
+float speedZ = 0;
+float speedX_side = 0;
+float speedZ_side = 0;
+float speedX_front = 0;
+float speedZ_front = 0;
+float move_front = 0;
+float move_side = 0;
+float angleY = 0;
+float mouseXOld = 0;
+float mouseYOld = 0;
+float ly = 0;
+
+float PlayerX = 0;
+float PlayerZ = 0;
+GLuint wall[1];
+GLuint screamer[1];
+GLuint pol[1];
+
+char cubes[5][1][5]; //дает невидимые стены
+
+
+#include "src\textures.hpp"
+
+class Player {
+public:
+	float PlayerX, PlayerY, PlayerZ;
+	float dx, dz;
+	float dSideX, dSideZ;
+	float dFrontX, dFrontZ;
+	float w, h, d;
+	bool onGround;
+	float speed;
+	float View; // угол обзора
+
+	Player(float x0, float y0, float z0) {
+		PlayerX = x0; PlayerY = y0; PlayerZ = z0;
+		dx = 0;  dz = 0;
+		dSideX = 0; dSideZ = 0;
+		dFrontX = 0; dFrontZ = 0;
+		w = 0.5f; h = 1.9f; d = 0.5f; speed = 0.5;
+		onGround = false;
+		View = 90; // угол обзора
+	}
+	bool check(int x, int y, int z) {
+		if ((x < 0) or (x > 5) or
+			(y < 0) or (y > 1) or
+			(z < 0) or (z > 5)) return false;
+		return cubes[x][y][z];
+
+	}
+	void update(float time) {
+
+
+
+
+		if (move_front) {
+			dFrontX = lx * speed * move_front * time / 50;
+			dFrontZ = lz * speed * move_front * time / 50;
+		}
+		if (move_side) {
+			dSideX = -lz * speed * move_side * time / 50;
+			dSideZ = lx * speed * move_side * time / 50;
+		}
+
+
+
+		dx = dSideX + dFrontX;
+		PlayerX += dx;
+		collision(dx, 0, 0);
+		dz = dSideZ + dFrontZ;
+		PlayerZ += dz;
+		collision(0, 0, dz);
+
+
+		dx = dz = dSideX = dSideZ = dFrontX = dFrontZ = 0;
+	}
+
+	void collision(float Dx, float Dy, float Dz) {
+		for (int X = (PlayerX - w) / cube_size; X < (PlayerX + w) / cube_size; X++)
+			for (int Y = (PlayerY - h) / cube_size; Y < (PlayerY + h) / cube_size; Y++)
+				for (int Z = (PlayerZ - d) / cube_size; Z < (PlayerZ + d) / cube_size; Z++)
+					if (check(X, Y, Z))
+					{
+						if (Dx > 0) PlayerX = X * cube_size - w;
+						if (Dx < 0) PlayerX = X * cube_size + cube_size + w;
+
+						if (Dy > 0) { PlayerY = Y * cube_size - h; }
+						if (Dy < 0) { PlayerY = Y * cube_size + cube_size + h; onGround = true; }
+
+						if (Dz > 0) PlayerZ = Z * cube_size - d;
+						if (Dz < 0) PlayerZ = Z * cube_size + cube_size + d;
+
+					}
+	}
+};
+Player man(0, 0, 0);
+
+void keyboard_special(int key, int x, int y) {
+	if (key == GLUT_KEY_LEFT)
+		angle += 0.1;
+	if (key == GLUT_KEY_RIGHT)
+		angle -= 0.1;
+
+}
+
+void Reshape(int w, int h)
+{
+	float ratio = w * 1.0 / h;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glViewport(0, 0, w, h);
+	gluPerspective(60, ratio, 0.1f, 180.0f); //задаем перспективную проекцию
+	//(60 -угол обзора) (ratio- соотношщение сторон) (0.1f- минимальное видимое расстояние в float) ( 360.0f- максимальная дальность видимости)
+	glMatrixMode(GL_MODELVIEW);
+}
+
+//void move()
+//{
+//	if (move_front)
+//	{
+//		speedX_front = lx * move_front * 0.01;
+//		speedZ_front = lz * move_front * 0.01;
+//	}
+//	else {
+//		speedX_front = 0;
+//		speedZ_front = 0;
+//	}
+//	if (move_side)
+//	{
+//		speedX_side = -lz * move_side * 0.01;
+//		speedZ_side = lx * move_side * 0.01;
+//	}
+//	else {
+//		speedX_side = 0;
+//		speedZ_side = 0;
+//	}
+//	speedX = speedX_side + speedX_front;
+//	speedZ = speedZ_side + speedZ_front;
+//
+//	PlayerX += speedX;
+//	PlayerZ += speedZ;
+//}
+void mouseMove(int x, int y) {
+	if (mouseXOld != 0 or mouseYOld != 0) {
+		angle -= mouseXOld * 0.001f;
+		angleY -= mouseYOld * 0.001f;
+
+		if (angleY > 3.14 / 2) angleY = 3.14 / 2;
+		if (angleY < -3.14 / 2) angleY = -3.14 / 2;
+
+		mouseXOld = 0; mouseYOld = 0;
+
+		// update camera's direction
+		lx = float(-sin(angle));
+		lz = float(cos(angle));
+		ly = float(-tan(angleY));
+
+	}
+	else {
+
+		mouseXOld = (width / 2) - x;
+		mouseYOld = (height / 2) - y;
+		glutWarpPointer((width / 2), (height / 2));
+	}
+
+	//glutPostRedisplay();
+
+}
+
+
+void keyboard(unsigned char key, int x, int y) {
+	switch (key) {
+	case 27: // если key = 27(escape), то выходим из программы
+		exit(0);
+		break;
+	case 'w':
+	case 'W':
+		move_front = 1;
+
+		break;
+	case 's':
+	case 'S':
+		move_front = -1;
+		break;
+	case 'a':
+	case 'A':
+		move_side = -1;
+		break;
+	case 'd':
+	case 'D':
+		move_side = 1;
+		break;
+	}
+}
+
+void keyboard_up(unsigned char key, int x, int y)
+{
+
+	switch (key) {
+	case 'w':
+	case 'W':
+	case 's':
+	case 'S':
+		move_front = 0;
+		//speedX = 0;
+
+		break;
+	case 'a':
+	case 'A':
+	case 'd':
+	case 'D':
+		move_side = 0;
+		//speedZ = 0;
+
+		break;
+	}
+}
+
+void cube() { //может не понадобиться
+	glColor3f(0.5, 1.0, 1.0); // задаем цвет грани
+	///задняя
+	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
+	glVertex3f(1, -1, 1); // его координаты
+	glVertex3f(-1, -1, 1);// его координаты
+	glVertex3f(-1, 1, 1);// его координаты
+	glVertex3f(1, 1, 1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+
+	//передняя
+	glColor3f(1.0, 0.5, 1.0);// задаем цвет грани
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
+	glVertex3f(-1, -1, -1);// его координаты
+	glVertex3f(1, -1, -1);// его координаты
+	glVertex3f(1, 1, -1);// его координаты
+	glVertex3f(-1, 1, -1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+
+	//ПРАВАЯ
+	glColor3f(1.0, 1.0, 0.5);
+	glBegin(GL_QUADS);
+	glVertex3f(1, -1, -1);
+	glVertex3f(1, -1, 1);
+	glVertex3f(1, 1, 1);
+	glVertex3f(1, 1, -1);
+	glEnd();
+
+
+	//ЛЕВАЯ
+	glColor3f(0.5, 0.5, 1.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -1, 1);
+	glVertex3f(-1, -1, -1);
+	glVertex3f(-1, 1, -1);
+	glVertex3f(-1, 1, 1);
+	glEnd();
+
+
+	//НИЖНЯЯ
+	glColor3f(1.0, 0.5, 0.5);
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -1, 1);
+	glVertex3f(1, -1, 1);
+	glVertex3f(1, -1, -1);
+	glVertex3f(-1, -1, -1);
+	glEnd();
+
+
+	//ВЕРХНЯЯ
+	glColor3f(0.5, 0.5, 0.5);
+	glBegin(GL_QUADS);
+	glVertex3f(-1, 1, -1);
+	glVertex3f(1, 1, -1);
+	glVertex3f(1, 1, 1);
+	glVertex3f(-1, 1, 1);
+	glEnd();
+}
+
+void walls()
+{
+
+	//пол комнаты
+	glBindTexture(GL_TEXTURE_2D, pol[0]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(-4, -1, 7);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(4, -1, 7);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(4, -1, -1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, -1, -1);
+	glEnd();
+
+
+	//задняя стена
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, -1);// его координаты
+	glTexCoord2f(0.0f, 1.0f);  glVertex3f(4, 1, -1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, -1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, -1, -1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+	//правая стена
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-4, -1, 7);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-4, -1, -1);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, -1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, 1, 7);
+	glEnd();
+
+	//левая стенка
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, -1);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(4, -1, 7);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(4, 1, 7);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(4, 1, -1);
+	glEnd();
+
+	//передняя стена
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, 7); // его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-4, -1, 7);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, 7);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(4, 1, 7);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+
+
+	///задняя колонны
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 4); // его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-1, -1, 4);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-1, 1, 4);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 4);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+
+	//передняя колонны
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-1, 1, 2);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 2);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, -1, 2);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-1, -1, 2);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+
+
+	//левая колонны
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 2);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 4);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 4);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 2);
+	glEnd();
+
+
+	//правая колонны
+	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-1, -1, 4);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-1, -1, 2);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-1, 1, 2);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-1, 1, 4);
+	glEnd();
+
+
+
+}
+
+void boo()
+{
+	glBindTexture(GL_TEXTURE_2D, screamer[0]);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5, -0.5, -1);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5, -0.5, -1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5, 0.5, -1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.5, 0.5, -1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+}
+
+
+void Draw() {
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
+	glClearColor(0, 0, 0, 0); // задаем цвет фона в режиме RGB
+	glPushMatrix(); // сохраняем систему координат
+
+	//lx = sin(angle);
+	// lz = cos(angle);
+	if (angle > 360)
+		angle = 0;
+
+	//move();
+
+	//возможно скример(картинка перед нами, нужно привязать время?)
+	//boo();//
+
+	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 - 0.5, man.PlayerZ,
+		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,
+		0.0f, 1.0f, 0.0f);
+
+
+
+
+	//glTranslatef(0, 0, 0); // двигаем систему координат на -5 по z, чтобы куб не рисовался в нас
+
+	//=================================начало основного цикла===================================================================================
+
+
+	walls();
+	// далее 100 кубов под нами
+	//for (int x = 0; x < 10; x++)
+		//for (int z = 0; z < 10; z++) {
+		//	glTranslatef(x * 4, 0, z * 4);
+		//	cube(); // функция, котоаря рисует код
+		//	glTranslatef(-x * 4, 0, -z * 4);
+		//}
+
+
+	man.update(1);
+	//=================================конец основного цикла===================================================================================
+	glPopMatrix(); // загружаем систему кординат
+	glutPostRedisplay(); // Обновляем картинку в окне
+	glFinish(); // заканчиваем рисование
+}
+
+
+
+int main() {
+	//===========================INITIALIZATION===========================================
+	glutInitWindowSize(width, height); // инициализируем окно с заданной высотой и шириной
+	glutInitDisplayMode(GLUT_RGB); // говорим, что режим цвета в окне будет RGB
+	glutCreateWindow("horror game"); // созадем окно с названием horror game
+	glEnable(GL_DEPTH_TEST); // включаем режим глубины. это нужно для того, чтобы объекты правильно отображались друг за другом
+	glEnable(GL_TEXTURE_2D);// тестуры
+	glutDisplayFunc(Draw); // пишем название функции, в которой будем рисовать
+	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
+	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
+	glutSpecialFunc(keyboard_special);
+	glutKeyboardUpFunc(keyboard_up);
+	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
+	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
+	wallTextures();//тестура стены(пола)
+	screamerTextures();
+	polTextures();
+
+
+	for (int x = 0; x < 5; x++)
+		for (int y = 0; y < 1; y++)
+			for (int z = 0; z < 5; z++) {
+				cubes[x][y][z] = rand() % 3;
+			}
+	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
+}//*/
