@@ -14,8 +14,8 @@ int W = width;
 int H = height;
 float angle = 0; // угол поворота
 int cube_size = 1;
-const int quantity_cubes_x = 5;
-const int quantity_cubes_z = 5;
+const int quantity_cubes_x = 20;
+const int quantity_cubes_z = 20;
 float lx = 0.0f;
 float lz = 1.0f;
 float speedX = 0;
@@ -33,15 +33,30 @@ float ly = 0;//координаты вектора, определяющее, куда смотрит камера
 
 float PlayerX = 0;
 float PlayerZ = 0;
-GLuint wall[1];
-GLuint screamer[1];
-GLuint pol[1];
+GLuint wall;
+GLuint screamer;
+GLuint pol;
 
-int cubes[quantity_cubes_x][quantity_cubes_z] = { {1, 0, 0, 0, 0 },
-												  {0, 1, 0, 0, 0 },
-												  {0, 0, 0, 0, 0 },
-												  {0, 0, 0, 0, 0 },
-												  {0, 0, 0, 0, 0 }, }; //дает невидимые стены
+int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },//сюда z
+												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1 },
+												  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
+												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
+												  {1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
+												  {1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
+												  {1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
+												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},
+												  {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1},
+												  {1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1},
+												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1},
+												  {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1},
+												  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1},
+												  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1},
+												  {1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1},
+												  {1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
+												  {1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1},
+												  {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},
+												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
+									  /*сюда x*/  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, }; //дает невидимые стены
 
 
 #include "src\textures.hpp"
@@ -58,7 +73,7 @@ public:
 	float View; // угол обзора
 
 	Player(float x0, float y0, float z0) {
-		PlayerX = x0; PlayerY = y0; PlayerZ = z0;
+		PlayerX = x0+1.5; PlayerY = y0; PlayerZ = z0+1.5;
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
@@ -115,7 +130,8 @@ public:
 };
 Player man(0, 0, 0);
 
-void keyboard_special(int key, int x, int y) {
+void keyboard_special(int key, int x, int y) 
+{
 	if (key == GLUT_KEY_LEFT)
 		angle += 0.1;
 	if (key == GLUT_KEY_RIGHT)
@@ -160,7 +176,8 @@ void Reshape(int w, int h)
 //	PlayerX += speedX;
 //	PlayerZ += speedZ;
 //}
-void mouseMove(int x, int y) {
+void mouseMove(int x, int y) 
+{
 	if (mouseXOld != 0 or mouseYOld != 0) {
 		angle -= mouseXOld * 0.001f;
 		angleY -= mouseYOld * 0.001f;
@@ -176,7 +193,8 @@ void mouseMove(int x, int y) {
 		ly = float(-tan(angleY));
 
 	}
-	else {
+	else 
+	{
 
 		mouseXOld = (width / 2) - x;
 		mouseYOld = (height / 2) - y;
@@ -188,8 +206,10 @@ void mouseMove(int x, int y) {
 }
 
 
-void keyboard(unsigned char key, int x, int y) {
-	switch (key) {
+void keyboard(unsigned char key, int x, int y) 
+{
+	switch (key) 
+	{
 	case 27: // если key = 27(escape), то выходим из программы
 		exit(0);
 		break;
@@ -216,7 +236,8 @@ void keyboard(unsigned char key, int x, int y) {
 void keyboard_up(unsigned char key, int x, int y)
 {
 
-	switch (key) {
+	switch (key) 
+	{
 	case 'w':
 	case 'W':
 	case 's':
@@ -236,7 +257,8 @@ void keyboard_up(unsigned char key, int x, int y)
 	}
 }
 
-void cube() { //может не понадобиться
+void cube() 
+{ //может не понадобиться
 	glColor3f(0.5, 1.0, 1.0); // задаем цвет грани
 	///задняя
 	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
@@ -297,95 +319,58 @@ void cube() { //может не понадобиться
 	glEnd();
 }
 
-void walls()
+void labirynth1()
 {
 
 	//пол комнаты
-	glBindTexture(GL_TEXTURE_2D, pol[0]);
+	glBindTexture(GL_TEXTURE_2D, pol);
 	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f);  glVertex3f(-4, -1, 7);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(4, -1, 7);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(4, -1, -1);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, -1, -1);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
 	glEnd();
 
 
 	//задняя стена
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, -1);// его координаты
-	glTexCoord2f(0.0f, 1.0f);  glVertex3f(4, 1, -1);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, -1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, -1, -1);// его координаты
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);// его координаты
+	glTexCoord2f(0.0f, 1.0f);  glVertex3f(19, 1, 1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
 
 	//правая стена
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-4, -1, 7);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-4, -1, -1);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, -1);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-4, 1, 7);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 19);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 19);
 	glEnd();
 
 	//левая стенка
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, -1);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(4, -1, 7);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(4, 1, 7);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(4, 1, -1);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, 1, 19);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 1);
 	glEnd();
 
 	//передняя стена
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
+	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(4, -1, 7); // его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-4, -1, 7);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-4, 1, 7);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(4, 1, 7);// его координаты
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 19); // его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 19);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 19);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 19);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
 
 
 
-	///задняя колонны
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
-	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 4); // его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-1, -1, 4);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-1, 1, 4);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 4);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
-
-
-	//передняя колонны
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
-	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-1, 1, 2);// его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 2);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, -1, 2);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-1, -1, 2);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
-
-
-	//левая колонны
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
-	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 2);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 4);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 4);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 2);
-	glEnd();
-
-
-	//правая колонны
-	glBindTexture(GL_TEXTURE_2D, wall[0]);
-	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-1, -1, 4);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-1, -1, 2);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-1, 1, 2);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-1, 1, 4);
-	glEnd();
+	
 
 
 
@@ -393,7 +378,7 @@ void walls()
 
 void boo()
 {
-	glBindTexture(GL_TEXTURE_2D, screamer[0]);
+	glBindTexture(GL_TEXTURE_2D, screamer);
 	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5, -0.5, -1);// его координаты
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5, -0.5, -1);// его координаты
@@ -408,37 +393,18 @@ void Draw() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
 	glClearColor(0, 0, 0, 0); // задаем цвет фона в режиме RGB
 	glPushMatrix(); // сохраняем систему координат
-
-	//lx = sin(angle);
-	// lz = cos(angle);
 	if (angle > 360)
 		angle = 0;
-
 	//move();
+	boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
-	//возможно скример(картинка перед нами, нужно привязать время?)
-	//boo();//
-
-	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 - 0.5, man.PlayerZ,
-		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,
-		0.0f, 1.0f, 0.0f);
-
-
-
-
-	//glTranslatef(0, 0, 0); // двигаем систему координат на -5 по z, чтобы куб не рисовался в нас
-
+	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 - 1.2, man.PlayerZ,
+		      man.PlayerX + lx, man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
+		      0.0f, 1.0f, 0.0f);
 	//=================================начало основного цикла===================================================================================
 
 
-	walls();
-	// далее 100 кубов под нами
-	//for (int x = 0; x < 10; x++)
-		//for (int z = 0; z < 10; z++) {
-		//	glTranslatef(x * 4, 0, z * 4);
-		//	cube(); // функция, котоаря рисует код
-		//	glTranslatef(-x * 4, 0, -z * 4);
-		//}
+	labirynth1();
 
 
 	man.update(1);
@@ -448,9 +414,26 @@ void Draw() {
 	glFinish(); // заканчиваем рисование
 }
 
+void load_textures_blocks(const char* image, GLuint* texturesy) 
+{
+	unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
+	glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
+	glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
+	SOIL_free_image_data(top); // освобождаем текстуру из soil
+	glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
+}
 
 
-int main() {
+
+int main() 
+{
 	//===========================INITIALIZATION===========================================
 	glutInitWindowSize(width, height); // инициализируем окно с заданной высотой и шириной
 	glutInitDisplayMode(GLUT_RGB); // говорим, что режим цвета в окне будет RGB
@@ -464,9 +447,9 @@ int main() {
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
-	wallTextures();//тестура стены(пола)
-	screamerTextures();
-	polTextures();
+	load_textures_smooth("textures_game/floor.png", &pol,0);//текстура пола
+	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
+	load_textures_smooth("textures_game/stone-bricks.png", &wall,0);//текстура стен
 
 
 	/*for (int x = 0; x < 7; x++)
@@ -475,4 +458,4 @@ int main() {
 					cubes[x][z] = 1;
 			}*/
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
-}//*/
+}
