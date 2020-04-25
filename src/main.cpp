@@ -59,7 +59,7 @@ int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 									  /*сюда x*/  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, }; //дает невидимые стены
 
 
-#include "src\textures.hpp"
+#include "textures.hpp"
 
 class Player {
 public:
@@ -396,7 +396,7 @@ void Draw() {
 	if (angle > 360)
 		angle = 0;
 	//move();
-	boo();//возможно скример(картинка перед нами, нужно привязать время?)
+	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
 	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 - 1.2, man.PlayerZ,
 		      man.PlayerX + lx, man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
