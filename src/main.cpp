@@ -37,12 +37,12 @@ GLuint wall;
 GLuint screamer;
 GLuint pol;
 
-int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },//сюда z
-												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1 },
-												  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
-												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
-												  {1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
-												  {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
+int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
+												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
+												  {1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
+								/*		|	*/	  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
+								/*перед	|	*/	  {1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
+								/*		V	*/	  {1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
 												  {1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
 												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},
 												  {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1},
@@ -115,20 +115,20 @@ public:
 	}
 
 	void collision(float Dx, float Dz) {
-		for (int X = (PlayerX - w) / cube_size; X < (PlayerX + w) / cube_size; X++)
-				for (int Z = (PlayerZ - d) / cube_size; Z < (PlayerZ + d) / cube_size; Z++)
+		for (int X = (PlayerX - w); X < (PlayerX + w) ; X++)
+		for (int Z = (PlayerZ - d); Z < (PlayerZ + d) ; Z++)
 					if (check(X, Z))
 					{
-						if (Dx > 0) PlayerX = X * cube_size - w;
-						if (Dx < 0) PlayerX = X * cube_size + cube_size + w;
+						if (Dx > 0) PlayerX = X * cube_size - w - 0.001;
+						if (Dx < 0) PlayerX = X * cube_size + cube_size + w + 0.001;
 
-						if (Dz > 0) PlayerZ = Z * cube_size - d;
-						if (Dz < 0) PlayerZ = Z * cube_size + cube_size + d;
+						if (Dz > 0) PlayerZ = Z * cube_size - d - 0.001;
+						if (Dz < 0) PlayerZ = Z * cube_size + cube_size + d + 0.001;
 
 					}
 	}
 };
-Player man(1.5, -1.2, 1.5);
+Player man(1.5, -0.8, 1.5);
 
 
 
@@ -318,12 +318,12 @@ void labirynth1()
 	//пол комнаты
 	glBindTexture(GL_TEXTURE_2D, pol);
 	glBegin(GL_QUADS);
+
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
 	glEnd();
-
 
 	/*//задняя стена
 	glBindTexture(GL_TEXTURE_2D, wall);
@@ -350,40 +350,30 @@ void labirynth1()
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, 1, 19);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 1);
-	glEnd();
 
-	//передняя стена
-	glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
+	//передняя стена // говорим, что начинаем рисовать куб
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 19); // его координаты
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 19);// его координаты
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 19);// его координаты
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 19);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
 
-	glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);
-	glEnd();
 
-	glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f);  glVertex3f(3, -1, 3);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(3, 1, 3);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(2, -1, 3);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(2, 1, 3);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 3);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 3);
-	glEnd();
 
-	/*glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS);
+
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(4.7, -1, 0.9);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(4.7, 1, 0.9);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(4.7, 1, 4.5);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(4.7, -1, 4.5);
-	glEnd();*/
+
+	glEnd();
 
 
 }
@@ -399,7 +389,43 @@ void boo()
 	glEnd(); // говорим, что заканчиваем рисовать
 }
 
+void draw_wall_new(int x, int z) {
+	glBegin(GL_QUADS);
+	if (cubes[x][z] != cubes[x - 1][z] and  x != 0) {
+		// задняя стена
+		glColor3f(0.6,0.6,0.6);
+		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
+		glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);
+		glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);
+		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);
+	}
+	// правая
+	if (cubes[x][z] != cubes[x ][z+1] and z != 20) {
+		glColor3f(0.5, 0.5, 0.5);
+		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 1);
+		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);
+		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
+		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 1);
+	}
+	// передняя
+	if (cubes[x][z] != cubes[x + 1][z] and x != 20) {
+		glColor3f(0.6, 0.6, 0.6);
+		glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 0);
+		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 0);
+		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
+		glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
+	}
+	// задняя
+	if (cubes[x][z] != cubes[x][z - 1] and z != 0) {
+		glColor3f(0.5, 0.5, 0.5);
+		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
+		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 0);
+		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 0);
+		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 0);
+	}
 
+	glEnd();
+}
 void Draw() {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
@@ -410,13 +436,28 @@ void Draw() {
 	//move();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
-	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 , man.PlayerZ,
-		      man.PlayerX + lx, man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
+	gluLookAt(man.PlayerX,			man.PlayerY + man.h / 2 , man.PlayerZ,
+		      man.PlayerX + lx,		man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
 		      0.0f, 1.0f, 0.0f);
 	//=================================начало основного цикла===================================================================================
+	glBindTexture(GL_TEXTURE_2D, pol);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
+	glEnd();
 
-
-	labirynth1();
+	glBindTexture(GL_TEXTURE_2D, wall);
+	for(int x = 0; x < quantity_cubes_x; x++)
+		for (int z = 0; z < quantity_cubes_z; z++) {
+			if (!cubes[x][z]) continue;
+			glTranslatef(x, 0, z);
+			draw_wall_new(x, z);
+			glTranslatef(-x, 0, -z);
+			
+		}
+	//labirynth1();
 
 
 	man.update(1);
