@@ -73,11 +73,11 @@ public:
 	float View; // угол обзора
 
 	Player(float x0, float y0, float z0) {
-		PlayerX = x0+1.5; PlayerY = y0; PlayerZ = z0+1.5;
+		PlayerX = x0; PlayerY = y0; PlayerZ = z0;
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.5f; h = 1.9f; d = 0.5f; speed = 0.1;
+		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.2;
 		onGround = false;
 		View = 90; // угол обзора
 	}
@@ -128,16 +128,9 @@ public:
 					}
 	}
 };
-Player man(0, 0, 0);
+Player man(1.5, -1.2, 1.5);
 
-void keyboard_special(int key, int x, int y) 
-{
-	if (key == GLUT_KEY_LEFT)
-		angle += 0.1;
-	if (key == GLUT_KEY_RIGHT)
-		angle -= 0.1;
 
-}
 
 void Reshape(int w, int h)
 {
@@ -378,19 +371,19 @@ void labirynth1()
 
 	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f);  glVertex3f(3.2, -1, 2.7);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(3.2, 1, 2.7);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 2.7);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 2.7);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(3, -1, 3);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(3, 1, 3);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 3);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 3);
 	glEnd();
 
-	glBindTexture(GL_TEXTURE_2D, wall);
+	/*glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(4.7, -1, 0.9);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(4.7, 1, 0.9);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(4.7, 1, 4.5);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(4.7, -1, 4.5);
-	glEnd();
+	glEnd();*/
 
 
 }
@@ -417,7 +410,7 @@ void Draw() {
 	//move();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
-	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 - 1.2, man.PlayerZ,
+	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 , man.PlayerZ,
 		      man.PlayerX + lx, man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
 		      0.0f, 1.0f, 0.0f);
 	//=================================начало основного цикла===================================================================================
@@ -462,7 +455,7 @@ int main()
 	glutDisplayFunc(Draw); // пишем название функции, в которой будем рисовать
 	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
 	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
-	glutSpecialFunc(keyboard_special);
+	//glutSpecialFunc(keyboard_special);
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
