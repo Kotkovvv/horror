@@ -77,7 +77,7 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.1;
+		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.2;
 		onGround = false;
 		View = 90; // угол обзора
 	}
@@ -130,14 +130,7 @@ public:
 };
 Player man(1.5, -0.8, 1.5);
 
-void keyboard_special(int key, int x, int y) 
-{
-	if (key == GLUT_KEY_LEFT)
-		angle += 0.1;
-	if (key == GLUT_KEY_RIGHT)
-		angle -= 0.1;
 
-}
 
 void Reshape(int w, int h)
 {
@@ -503,7 +496,7 @@ int main()
 	glutDisplayFunc(Draw); // пишем название функции, в которой будем рисовать
 	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
 	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
-	glutSpecialFunc(keyboard_special);
+	//glutSpecialFunc(keyboard_special);
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
