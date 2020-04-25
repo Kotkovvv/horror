@@ -3,7 +3,7 @@
 #include <math.h>
 #include <iostream>
 #include <ctime>
-#include <SOIL.h> // библиотека для тектур. пока не нужна
+#include <SOIL.h> // библиотека для тектур
 #pragma comment (lib,"SOIL.lib")
 
 
@@ -41,8 +41,8 @@ int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1 },
 												  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
 												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
-												  {1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
-												  {1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
+												  {1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
+												  {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
 												  {1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
 												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},
 												  {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1},
@@ -332,23 +332,23 @@ void labirynth1()
 	glEnd();
 
 
-	//задняя стена
+	/*//задняя стена
 	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);// его координаты
 	glTexCoord2f(0.0f, 1.0f);  glVertex3f(19, 1, 1);// его координаты
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);// его координаты
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
+	glEnd(); // говорим, что заканчиваем рисовать*/
 
 	//правая стена
-	glBindTexture(GL_TEXTURE_2D, wall);
+	/*glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 19);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 19);
-	glEnd();
+	glEnd();*/
 
 	//левая стенка
 	glBindTexture(GL_TEXTURE_2D, wall);
@@ -368,10 +368,29 @@ void labirynth1()
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 19);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
 
+	glBindTexture(GL_TEXTURE_2D, wall);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);
+	glEnd();
 
+	glBindTexture(GL_TEXTURE_2D, wall);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(3.2, -1, 2.7);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(3.2, 1, 2.7);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 2.7);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 2.7);
+	glEnd();
 
-	
-
+	glBindTexture(GL_TEXTURE_2D, wall);
+	glBegin(GL_QUADS);
+	glTexCoord2f(1.0f, 1.0f);  glVertex3f(4.7, -1, 0.9);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(4.7, 1, 0.9);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(4.7, 1, 4.5);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(4.7, -1, 4.5);
+	glEnd();
 
 
 }
