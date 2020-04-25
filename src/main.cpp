@@ -1,18 +1,18 @@
-#include <glut.h>
+п»ї#include <glut.h>
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
 #include <ctime>
-#include <SOIL.h> // библиотека для тектур
+#include <SOIL.h> // Р±РёР±Р»РёРѕС‚РµРєР° РґР»СЏ С‚РµРєС‚СѓСЂ
 #pragma comment (lib,"SOIL.lib")
 
 
 
-int width = 1600; // высота окна
-int height = 800; // ширина окна
+int width = 1600; // РІС‹СЃРѕС‚Р° РѕРєРЅР°
+int height = 800; // С€РёСЂРёРЅР° РѕРєРЅР°
 int W = width;
 int H = height;
-float angle = 0; // угол поворота
+float angle = 0; // СѓРіРѕР» РїРѕРІРѕСЂРѕС‚Р°
 int cube_size = 1;
 const int quantity_cubes_x = 20;
 const int quantity_cubes_z = 20;
@@ -27,9 +27,9 @@ float speedZ_front = 0;
 float move_front = 0;
 float move_side = 0;
 float angleY = 0;
-float mouseXOld = 0;// вспомогательные фукнции, которые ппозволяют двигать камеру, фиксирует старое положение камеры
-float mouseYOld = 0;// вспомогательные фукнции, которые ппозволяют двигать камеру, фиксирует старое положение камеры
-float ly = 0;//координаты вектора, определяющее, куда смотрит камера
+float mouseXOld = 0;// РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРєРЅС†РёРё, РєРѕС‚РѕСЂС‹Рµ РїРїРѕР·РІРѕР»СЏСЋС‚ РґРІРёРіР°С‚СЊ РєР°РјРµСЂСѓ, С„РёРєСЃРёСЂСѓРµС‚ СЃС‚Р°СЂРѕРµ РїРѕР»РѕР¶РµРЅРёРµ РєР°РјРµСЂС‹
+float mouseYOld = 0;// РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРєРЅС†РёРё, РєРѕС‚РѕСЂС‹Рµ РїРїРѕР·РІРѕР»СЏСЋС‚ РґРІРёРіР°С‚СЊ РєР°РјРµСЂСѓ, С„РёРєСЃРёСЂСѓРµС‚ СЃС‚Р°СЂРѕРµ РїРѕР»РѕР¶РµРЅРёРµ РєР°РјРµСЂС‹
+float ly = 0;//РєРѕРѕСЂРґРёРЅР°С‚С‹ РІРµРєС‚РѕСЂР°, РѕРїСЂРµРґРµР»СЏСЋС‰РµРµ, РєСѓРґР° СЃРјРѕС‚СЂРёС‚ РєР°РјРµСЂР°
 
 float PlayerX = 0;
 float PlayerZ = 0;
@@ -37,7 +37,7 @@ GLuint wall;
 GLuint screamer;
 GLuint pol;
 
-int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },//сюда z
+int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },//СЃСЋРґР° z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1 },
 												  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
 												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
@@ -56,7 +56,7 @@ int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 												  {1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1},
 												  {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},
 												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
-									  /*сюда x*/  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, }; //дает невидимые стены
+									  /*СЃСЋРґР° x*/  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, }; //РґР°РµС‚ РЅРµРІРёРґРёРјС‹Рµ СЃС‚РµРЅС‹
 
 
 #include "textures.hpp"
@@ -70,7 +70,7 @@ public:
 	float w, h, d;
 	bool onGround;
 	float speed;
-	float View; // угол обзора
+	float View; // СѓРіРѕР» РѕР±Р·РѕСЂР°
 
 	Player(float x0, float y0, float z0) {
 		PlayerX = x0; PlayerY = y0; PlayerZ = z0;
@@ -79,7 +79,7 @@ public:
 		dFrontX = 0; dFrontZ = 0;
 		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.2;
 		onGround = false;
-		View = 90; // угол обзора
+		View = 90; // СѓРіРѕР» РѕР±Р·РѕСЂР°
 	}
 	bool check(int x,  int z) {
 		if ((x < 0) or (x > quantity_cubes_x) or
@@ -138,8 +138,8 @@ void Reshape(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
-	gluPerspective(60, ratio, 0.1f, 180.0f); //задаем перспективную проекцию
-	//(60 -угол обзора) (ratio- соотношщение сторон) (0.1f- минимальное видимое расстояние в float) ( 360.0f- максимальная дальность видимости)
+	gluPerspective(60, ratio, 0.1f, 180.0f); //Р·Р°РґР°РµРј РїРµСЂСЃРїРµРєС‚РёРІРЅСѓСЋ РїСЂРѕРµРєС†РёСЋ
+	//(60 -СѓРіРѕР» РѕР±Р·РѕСЂР°) (ratio- СЃРѕРѕС‚РЅРѕС€С‰РµРЅРёРµ СЃС‚РѕСЂРѕРЅ) (0.1f- РјРёРЅРёРјР°Р»СЊРЅРѕРµ РІРёРґРёРјРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РІ float) ( 360.0f- РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РґР°Р»СЊРЅРѕСЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё)
 	glMatrixMode(GL_MODELVIEW);
 }
 
@@ -203,7 +203,7 @@ void keyboard(unsigned char key, int x, int y)
 {
 	switch (key) 
 	{
-	case 27: // если key = 27(escape), то выходим из программы
+	case 27: // РµСЃР»Рё key = 27(escape), С‚Рѕ РІС‹С…РѕРґРёРј РёР· РїСЂРѕРіСЂР°РјРјС‹
 		exit(0);
 		break;
 	case 'w':
@@ -251,28 +251,28 @@ void keyboard_up(unsigned char key, int x, int y)
 }
 
 void cube() 
-{ //может не понадобиться
-	glColor3f(0.5, 1.0, 1.0); // задаем цвет грани
-	///задняя
-	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
-	glVertex3f(1, -1, 1); // его координаты
-	glVertex3f(-1, -1, 1);// его координаты
-	glVertex3f(-1, 1, 1);// его координаты
-	glVertex3f(1, 1, 1);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
+{ //РјРѕР¶РµС‚ РЅРµ РїРѕРЅР°РґРѕР±РёС‚СЊСЃСЏ
+	glColor3f(0.5, 1.0, 1.0); // Р·Р°РґР°РµРј С†РІРµС‚ РіСЂР°РЅРё
+	///Р·Р°РґРЅСЏСЏ
+	glBegin(GL_QUADS); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂРёСЃРѕРІР°С‚СЊ РєСѓР±
+	glVertex3f(1, -1, 1); // РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(-1, -1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(-1, 1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(1, 1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glEnd(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°С‚СЊ
 
 
-	//передняя
-	glColor3f(1.0, 0.5, 1.0);// задаем цвет грани
-	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
-	glVertex3f(-1, -1, -1);// его координаты
-	glVertex3f(1, -1, -1);// его координаты
-	glVertex3f(1, 1, -1);// его координаты
-	glVertex3f(-1, 1, -1);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
+	//РїРµСЂРµРґРЅСЏСЏ
+	glColor3f(1.0, 0.5, 1.0);// Р·Р°РґР°РµРј С†РІРµС‚ РіСЂР°РЅРё
+	glBegin(GL_QUADS);// РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂРёСЃРѕРІР°С‚СЊ РєСѓР±
+	glVertex3f(-1, -1, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(1, -1, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(1, 1, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glVertex3f(-1, 1, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glEnd(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°С‚СЊ
 
 
-	//ПРАВАЯ
+	//РџР РђР’РђРЇ
 	glColor3f(1.0, 1.0, 0.5);
 	glBegin(GL_QUADS);
 	glVertex3f(1, -1, -1);
@@ -282,7 +282,7 @@ void cube()
 	glEnd();
 
 
-	//ЛЕВАЯ
+	//Р›Р•Р’РђРЇ
 	glColor3f(0.5, 0.5, 1.0);
 	glBegin(GL_QUADS);
 	glVertex3f(-1, -1, 1);
@@ -292,7 +292,7 @@ void cube()
 	glEnd();
 
 
-	//НИЖНЯЯ
+	//РќРР–РќРЇРЇ
 	glColor3f(1.0, 0.5, 0.5);
 	glBegin(GL_QUADS);
 	glVertex3f(-1, -1, 1);
@@ -302,7 +302,7 @@ void cube()
 	glEnd();
 
 
-	//ВЕРХНЯЯ
+	//Р’Р•Р РҐРќРЇРЇ
 	glColor3f(0.5, 0.5, 0.5);
 	glBegin(GL_QUADS);
 	glVertex3f(-1, 1, -1);
@@ -315,7 +315,7 @@ void cube()
 void labirynth1()
 {
 
-	//пол комнаты
+	//РїРѕР» РєРѕРјРЅР°С‚С‹
 	glBindTexture(GL_TEXTURE_2D, pol);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
@@ -325,16 +325,16 @@ void labirynth1()
 	glEnd();
 
 
-	/*//задняя стена
+	/*//Р·Р°РґРЅСЏСЏ СЃС‚РµРЅР°
 	glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS);// говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);// его координаты
-	glTexCoord2f(0.0f, 1.0f);  glVertex3f(19, 1, 1);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать*/
+	glBegin(GL_QUADS);// РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂРёСЃРѕРІР°С‚СЊ РєСѓР±
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 1.0f);  glVertex3f(19, 1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glEnd(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°С‚СЊ*/
 
-	//правая стена
+	//РїСЂР°РІР°СЏ СЃС‚РµРЅР°
 	/*glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(1, -1, 19);
@@ -343,7 +343,7 @@ void labirynth1()
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, 1, 19);
 	glEnd();*/
 
-	//левая стенка
+	//Р»РµРІР°СЏ СЃС‚РµРЅРєР°
 	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 1);
@@ -352,14 +352,14 @@ void labirynth1()
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 1);
 	glEnd();
 
-	//передняя стена
+	//РїРµСЂРµРґРЅСЏСЏ СЃС‚РµРЅР°
 	glBindTexture(GL_TEXTURE_2D, wall);
-	glBegin(GL_QUADS); // говорим, что начинаем рисовать куб
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 19); // его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 19);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 19);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 19);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
+	glBegin(GL_QUADS); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂРёСЃРѕРІР°С‚СЊ РєСѓР±
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(19, -1, 19); // РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 19);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 19);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(19, 1, 19);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glEnd(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°С‚СЊ
 
 	glBindTexture(GL_TEXTURE_2D, wall);
 	glBegin(GL_QUADS);
@@ -391,45 +391,45 @@ void labirynth1()
 void boo()
 {
 	glBindTexture(GL_TEXTURE_2D, screamer);
-	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5, -0.5, -1);// его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5, -0.5, -1);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5, 0.5, -1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.5, 0.5, -1);// его координаты
-	glEnd(); // говорим, что заканчиваем рисовать
+	glBegin(GL_QUADS);// РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂРёСЃРѕРІР°С‚СЊ СЃРєСЂРёРјРµСЂ
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5, -0.5, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5, -0.5, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5, 0.5, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.5, 0.5, -1);// РµРіРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	glEnd(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°С‚СЊ
 }
 
 
 void Draw() {
 
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
-	glClearColor(0, 0, 0, 0); // задаем цвет фона в режиме RGB
-	glPushMatrix(); // сохраняем систему координат
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // С‡РёСЃС‚РёРј С†РІРµС‚ Рё РіР»СѓР±РёРЅСѓ
+	glClearColor(0, 0, 0, 0); // Р·Р°РґР°РµРј С†РІРµС‚ С„РѕРЅР° РІ СЂРµР¶РёРјРµ RGB
+	glPushMatrix(); // СЃРѕС…СЂР°РЅСЏРµРј СЃРёСЃС‚РµРјСѓ РєРѕРѕСЂРґРёРЅР°С‚
 	if (angle > 360)
 		angle = 0;
 	//move();
-	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
+	//boo();//РІРѕР·РјРѕР¶РЅРѕ СЃРєСЂРёРјРµСЂ(РєР°СЂС‚РёРЅРєР° РїРµСЂРµРґ РЅР°РјРё, РЅСѓР¶РЅРѕ РїСЂРёРІСЏР·Р°С‚СЊ РІСЂРµРјСЏ?)
 
 	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2 , man.PlayerZ,
 		      man.PlayerX + lx, man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
 		      0.0f, 1.0f, 0.0f);
-	//=================================начало основного цикла===================================================================================
+	//=================================РЅР°С‡Р°Р»Рѕ РѕСЃРЅРѕРІРЅРѕРіРѕ С†РёРєР»Р°===================================================================================
 
 
 	labirynth1();
 
 
 	man.update(1);
-	//=================================конец основного цикла===================================================================================
-	glPopMatrix(); // загружаем систему кординат
-	glutPostRedisplay(); // Обновляем картинку в окне
-	glFinish(); // заканчиваем рисование
+	//=================================РєРѕРЅРµС† РѕСЃРЅРѕРІРЅРѕРіРѕ С†РёРєР»Р°===================================================================================
+	glPopMatrix(); // Р·Р°РіСЂСѓР¶Р°РµРј СЃРёСЃС‚РµРјСѓ РєРѕСЂРґРёРЅР°С‚
+	glutPostRedisplay(); // РћР±РЅРѕРІР»СЏРµРј РєР°СЂС‚РёРЅРєСѓ РІ РѕРєРЅРµ
+	glFinish(); // Р·Р°РєР°РЅС‡РёРІР°РµРј СЂРёСЃРѕРІР°РЅРёРµ
 }
 
 void load_textures_blocks(const char* image, GLuint* texturesy) 
 {
-	unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
-	glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
+	unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ РІ soil
+	glGenTextures(1, texturesy); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂР°Р±РѕС‚Р°С‚СЊ СЃ РїРµСЂРµРјРµРЅРЅРѕР№ Dirt, С‡С‚РѕР±С‹ РґР°Р»СЊС€Рµ Р·Р°РїРёСЃР°С‚СЊ РІ РЅРµРµ С‚РµРєСЃС‚СѓСЂСѓ soil
 	glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -437,8 +437,8 @@ void load_textures_blocks(const char* image, GLuint* texturesy)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
-	SOIL_free_image_data(top); // освобождаем текстуру из soil
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ soil РІ РїРµСЂРјРµРЅРЅСѓСЋ dirt
+	SOIL_free_image_data(top); // РѕСЃРІРѕР±РѕР¶РґР°РµРј С‚РµРєСЃС‚СѓСЂСѓ РёР· soil
 	glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
 }
 
@@ -447,21 +447,21 @@ void load_textures_blocks(const char* image, GLuint* texturesy)
 int main() 
 {
 	//===========================INITIALIZATION===========================================
-	glutInitWindowSize(width, height); // инициализируем окно с заданной высотой и шириной
-	glutInitDisplayMode(GLUT_RGB); // говорим, что режим цвета в окне будет RGB
-	glutCreateWindow("horror game"); // созадем окно с названием horror game
-	glEnable(GL_DEPTH_TEST); // включаем режим глубины. это нужно для того, чтобы объекты правильно отображались друг за другом
-	glEnable(GL_TEXTURE_2D);// тестуры
-	glutDisplayFunc(Draw); // пишем название функции, в которой будем рисовать
-	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
-	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
+	glutInitWindowSize(width, height); // РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РѕРєРЅРѕ СЃ Р·Р°РґР°РЅРЅРѕР№ РІС‹СЃРѕС‚РѕР№ Рё С€РёСЂРёРЅРѕР№
+	glutInitDisplayMode(GLUT_RGB); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ СЂРµР¶РёРј С†РІРµС‚Р° РІ РѕРєРЅРµ Р±СѓРґРµС‚ RGB
+	glutCreateWindow("horror game"); // СЃРѕР·Р°РґРµРј РѕРєРЅРѕ СЃ РЅР°Р·РІР°РЅРёРµРј horror game
+	glEnable(GL_DEPTH_TEST); // РІРєР»СЋС‡Р°РµРј СЂРµР¶РёРј РіР»СѓР±РёРЅС‹. СЌС‚Рѕ РЅСѓР¶РЅРѕ РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ РѕР±СЉРµРєС‚С‹ РїСЂР°РІРёР»СЊРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°Р»РёСЃСЊ РґСЂСѓРі Р·Р° РґСЂСѓРіРѕРј
+	glEnable(GL_TEXTURE_2D);// С‚РµСЃС‚СѓСЂС‹
+	glutDisplayFunc(Draw); // РїРёС€РµРј РЅР°Р·РІР°РЅРёРµ С„СѓРЅРєС†РёРё, РІ РєРѕС‚РѕСЂРѕР№ Р±СѓРґРµРј СЂРёСЃРѕРІР°С‚СЊ
+	glutReshapeFunc(Reshape); // РїРёС€РµРј РЅР°Р·РІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ РёР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂР° РѕРєРЅР°
+	glutKeyboardFunc(keyboard); // РїРёС€РµРј РЅР°Р·РІР°РЅРёРµ С„СѓРЅРєС†РёРё, РіРґРµ РјС‹ Р±СѓРґРµРј СЃРјРѕС‚СЂРµС‚СЊ, РєР°РєРёРµ РєР»Р°РІРёС€Рё РЅР°Р¶Р°С‚С‹ РЅР° РєР»Р°РІРµ
 	//glutSpecialFunc(keyboard_special);
 	glutKeyboardUpFunc(keyboard_up);
-	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
-	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
-	load_textures_smooth("textures_game/floor.png", &pol,0);//текстура пола
-	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
-	load_textures_smooth("textures_game/stone-bricks.png", &wall,0);//текстура стен
+	glutPassiveMotionFunc(mouseMove);//РєРѕРіРґР° РјС‹С€РєР° РґС‹РёРіР°РµС‚СЃСЏ
+	glutMotionFunc(mouseMove); //РєРѕРіРґР° РґРІРёРіР°РµС€СЊ РїСЂРё РЅР°Р¶Р°С‚РёРё
+	load_textures_smooth("textures_game/floor.png", &pol,0);//С‚РµРєСЃС‚СѓСЂР° РїРѕР»Р°
+	load_textures_smooth("textures_game/screamer.png", &screamer,0);//С‚РµРєСЃС‚СѓСЂР° СЃРєСЂРёРјРµСЂР°
+	load_textures_smooth("textures_game/stone-bricks.png", &wall,0);//С‚РµРєСЃС‚СѓСЂР° СЃС‚РµРЅ
 
 
 	/*for (int x = 0; x < 7; x++)
@@ -469,5 +469,5 @@ int main()
 				if (x == 0 or x == 6 or z == 0 or z == 6)
 					cubes[x][z] = 1;
 			}*/
-	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
+	glutMainLoop(); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ Р·Р°РїСѓСЃРєР°РµРј РЅРµРїСЂРµСЂС‹РІРЅС‹Р№ С†РёРєР» СЂРёСЃРѕРІР°РЅРёСЏ. СЃ СЌС‚РѕРіРѕ РјРѕРјРµРЅС‚Р° С†РёРєР»РёС‡РЅРѕ Р±СѓРґРµС‚ РїСЂРѕРёРіСЂС‹РІР°С‚СЊСЃСЏ С„СѓРЅРєС†РёСЏ draw
 }
