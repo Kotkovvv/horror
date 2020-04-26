@@ -36,7 +36,7 @@ float PlayerZ = 0;
 GLuint wall;//переменная для текстуры стены
 GLuint screamer;//переменная для текстуры скримера
 GLuint floor1;//переменная для текстуры пола
-GLuint flashlight;//переменная для текстуры фонарика
+GLuint flash;//переменная для текстуры фонарика
 
 int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
@@ -226,6 +226,16 @@ void keyboard_up(unsigned char key, int x, int y)
 	}
 }
 
+void flashlight()
+{
+	glBindTexture(GL_TEXTURE_2D, flash);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.05, 0.05, -0.1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05, -0.1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+}
 
 
 
@@ -285,7 +295,7 @@ void Draw() {
 	glPushMatrix(); // сохраняем систему координат
 	if (angle > 360)
 		angle = 0;
-	
+	//flashlight();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
 	gluLookAt(man.PlayerX,			man.PlayerY + man.h / 2 , man.PlayerZ,
@@ -354,6 +364,6 @@ int main()
 	load_textures_smooth("textures_game/floor1.jpg", &floor1,0);//текстура пола
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
 	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
-	load_textures_smooth("textures_game/flashlight.png", &flashlight, 0);//текстура фонарика
+	load_textures_smooth("textures_game/flashlight.jpg", &flash, 0);//текстура фонарика
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 }
