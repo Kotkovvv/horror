@@ -14,8 +14,8 @@ int W = width;
 int H = height;
 float angle = 0; // угол поворота
 int cube_size = 1;
-const int quantity_cubes_x = 20;
-const int quantity_cubes_z = 20;
+const int quantity_cubes_x = 20;//количество невидимых кубов по x
+const int quantity_cubes_z = 20;// количество невидимых кубов по z
 float lx = 0.0f;
 float lz = 1.0f;
 float speedX = 0;
@@ -33,9 +33,9 @@ float ly = 0;//координаты вектора, определяющее, к
 
 float PlayerX = 0;
 float PlayerZ = 0;
-GLuint wall;
-GLuint screamer;
-GLuint pol;
+GLuint wall;//переменная для текстуры стены
+GLuint screamer;//переменная для текстуры скримера
+GLuint floor1;//переменная для текстуры пола
 
 int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
@@ -233,10 +233,10 @@ void boo()
 {
 	glBindTexture(GL_TEXTURE_2D, screamer);
 	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5, -0.5, -1);// его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5, -0.5, -1);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5, 0.5, -1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.5, 0.5, -1);// его координаты
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.05, 0.05, -0.1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05, -0.1);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
 }
 
@@ -291,7 +291,7 @@ void Draw() {
 		      man.PlayerX + lx,		man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
 		      0.0f, 1.0f, 0.0f);
 	//=================================начало основного цикла===================================================================================
-	glBindTexture(GL_TEXTURE_2D, pol);
+	glBindTexture(GL_TEXTURE_2D, floor1);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
@@ -318,7 +318,7 @@ void Draw() {
 	glFinish(); // заканчиваем рисование
 }
 
-void load_textures_blocks(const char* image, GLuint* texturesy) 
+void load_textures_blocks(const char* image, GLuint* texturesy) //функция, загружающая текстуры
 {
 	unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
 	glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
@@ -350,7 +350,7 @@ int main()
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
-	load_textures_smooth("textures_game/floor.png", &pol,0);//текстура пола
+	load_textures_smooth("textures_game/floor.png", &floor1,0);//текстура пола
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
 	load_textures_smooth("textures_game/stone-bricks.png", &wall,0);//текстура стен
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
