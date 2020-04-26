@@ -36,6 +36,7 @@ float PlayerZ = 0;
 GLuint wall;//переменная для текстуры стены
 GLuint screamer;//переменная для текстуры скримера
 GLuint floor1;//переменная для текстуры пола
+GLuint flashlight;//переменная для текстуры фонарика
 
 int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
@@ -350,8 +351,9 @@ int main()
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
-	load_textures_smooth("textures_game/floor.png", &floor1,0);//текстура пола
+	load_textures_smooth("textures_game/floor1.jpg", &floor1,0);//текстура пола
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
-	load_textures_smooth("textures_game/stone-bricks.png", &wall,0);//текстура стен
+	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
+	load_textures_smooth("textures_game/flashlight.png", &flashlight, 0);//текстура фонарика
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 }
