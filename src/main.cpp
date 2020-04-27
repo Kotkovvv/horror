@@ -8,20 +8,21 @@
 
 
 
-int width = 1600; // высота окна
+
 int height = 800; // ширина окна
-int W = width;
+int width = 1600; // высота окна
 int H = height;
-float angle = 0; // угол поворота
+int W = width;
 int cube_size = 1;
-const int quantity_cubes_x = 20;//количество невидимых кубов по x
+float angle = 0; // угол поворота
 const int quantity_cubes_z = 20;// количество невидимых кубов по z
-float lx = 0.0f;
+const int quantity_cubes_x = 20;//количество невидимых кубов по x
 float lz = 1.0f;
-float speedZ = 0;
+float lx = 0.0f;
 float speedX = 0;
-float speedZ_side = 0;
+float speedZ = 0;
 float speedX_side = 0;
+float speedZ_side = 0;
 float speedZ_front = 0;
 float speedX_front = 0;
 float move_front = 0;
