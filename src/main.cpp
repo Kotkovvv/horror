@@ -8,9 +8,8 @@
 
 
 
-
-int height = 800; // ширина окна
 int width = 1600; // высота окна
+int height = 800; // ширина окна
 int H = height;
 int W = width;
 int cube_size = 1;
