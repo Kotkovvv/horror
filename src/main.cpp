@@ -295,7 +295,8 @@ void Draw() {
 	glPushMatrix(); // сохраняем систему координат
 	if (angle > 360)
 		angle = 0;
-	//flashlight();
+	
+flashlight();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
 	gluLookAt(man.PlayerX,			man.PlayerY + man.h / 2 , man.PlayerZ,
@@ -364,6 +365,6 @@ int main()
 	load_textures_smooth("textures_game/floor1.jpg", &floor1,0);//текстура пола
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
 	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
-	load_textures_smooth("textures_game/flashlight.jpg", &flash, 0);//текстура фонарика
+	load_textures_smooth("textures_game/flashlight.png", &flash, 0 );//текстура фонарика
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 }
