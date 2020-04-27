@@ -139,7 +139,7 @@ void Reshape(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
-	gluPerspective(60, ratio, 0.1f, 20.0f); //задаем перспективную проекцию
+	gluPerspective(60, ratio, 0.1f, 10.0f); //задаем перспективную проекцию
 	//(60 -угол обзора) (ratio- соотношщение сторон) (0.1f- минимальное видимое расстояние в float) ( 360.0f- максимальная дальность видимости)
 	glMatrixMode(GL_MODELVIEW);
 }
@@ -255,7 +255,7 @@ void draw_wall_new(int x, int z) {
 	glBegin(GL_QUADS);
 	if (cubes[x][z] != cubes[x - 1][z] and  x != 0) {
 		// задняя стена
-		glColor3f(0.6,0.6,0.6);
+		glColor3f(0.5,0.5,0.5);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
 		glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);
 		glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);
