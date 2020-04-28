@@ -139,7 +139,7 @@ public:
 					}
 	}
 };
-Player man(1.5, 3, 1.5);
+Player man(1.5, -0.8, 1.5);
 
 
 
@@ -388,7 +388,7 @@ int main()
 	glutKeyboardUpFunc(keyboard_up);
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
-	load_textures_smooth("textures_game/floor1.jpg", &floor1,0);//текстура пола
+	load_textures_smooth("textures_game/floor.png", &floor1,0);//текстура пола
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
 	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
 	load_textures_smooth("textures_game/flashlight.png", &flash, 0 );//текстура фонарика
