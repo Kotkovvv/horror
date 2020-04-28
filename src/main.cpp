@@ -139,7 +139,7 @@ public:
 					}
 	}
 };
-Player man(1.5, 3, 1.5);
+Player man(1.5, -0.8 , 1.5);
 
 
 
