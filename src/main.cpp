@@ -37,6 +37,16 @@ GLuint wall;//переменная для текстуры стены
 GLuint screamer;//переменная для текстуры скримера
 GLuint floor1;//переменная для текстуры пола
 GLuint flash;//переменная для текстуры фонарика
+GLuint texture[3];
+bool   gp;                              // G Нажата? ( Новое )
+
+GLuint filter;                          // Используемый фильтр для текстур
+
+GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; // Хранит три типа тумана
+
+GLuint fogfilter = 0;                    // Тип используемого тумана
+
+GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; // Цвет тумана
 
 int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
@@ -288,6 +298,17 @@ void draw_wall_new(int x, int z) {
 
 	glEnd();
 }
+
+void fogg() {
+	glEnable(GL_FOG);                       // Включает туман (GL_FOG)
+	glFogi(GL_FOG_MODE, fogMode[fogfilter]);// Выбираем тип тумана
+	glFogfv(GL_FOG_COLOR, fogColor);        // Устанавливаем цвет тумана
+	glFogf(GL_FOG_DENSITY, 0.35f);          // Насколько густым будет туман
+	glHint(GL_FOG_HINT, GL_DONT_CARE);      // Вспомогательная установка тумана
+	glFogf(GL_FOG_START, 1.0f);             // Глубина, с которой начинается туман
+	glFogf(GL_FOG_END, 5.0f);               // Глубина, где туман заканчивается.
+}
+
 void Draw() {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
@@ -296,7 +317,7 @@ void Draw() {
 	if (angle > 360)
 		angle = 0;
 	
-flashlight();
+	//flashlight();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 
 	gluLookAt(man.PlayerX,			man.PlayerY + man.h / 2 , man.PlayerZ,
@@ -310,6 +331,11 @@ flashlight();
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
 	glEnd();
+	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);      // Будем очищать экран, заполняя его цветом тумана. ( Изменено )
+
+	fogg();
+
+
 
 	glBindTexture(GL_TEXTURE_2D, wall);
 	for(int x = 0; x < quantity_cubes_x; x++)
