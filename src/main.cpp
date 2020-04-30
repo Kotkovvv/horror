@@ -8,6 +8,7 @@
 
 
 
+
 int width = 1600; // высота окна
 int height = 800; // ширина окна
 int H = height;
@@ -88,7 +89,7 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.2;
+		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.02;
 		onGround = false;
 		View = 90; // угол обзора
 	}
@@ -349,7 +350,7 @@ void Draw() {
 	
 
 
-	man.update(1);
+	man.update(10);
 	//=================================конец основного цикла===================================================================================
 	glPopMatrix(); // загружаем систему кординат
 	glutPostRedisplay(); // Обновляем картинку в окне
@@ -376,6 +377,7 @@ void load_textures_blocks(const char* image, GLuint* texturesy) //функция
 
 int main() 
 {
+	
 	//===========================INITIALIZATION===========================================
 	glutInitWindowSize(width, height); // инициализируем окно с заданной высотой и шириной
 	glutInitDisplayMode(GLUT_RGB); // говорим, что режим цвета в окне будет RGB
@@ -392,5 +394,6 @@ int main()
 	load_textures_smooth("textures_game/screamer.png", &screamer,0);//текстура скримера
 	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
 	load_textures_smooth("textures_game/flashlight.png", &flash, 0 );//текстура фонарика
+	//PlaySound("music_game/qw", NULL, SND_SYNC);  // Играем звук смерти
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 }
