@@ -340,11 +340,8 @@ ASALocalRun/
 healthchecksdb
 
 #private
-Horror.sln
-Horror.vcxproj
-Horror.vcxproj.filters
-Horror.vcxproj.user
 horrror
+Horror
 horrror.sln
 horrror.vcxproj
 horrror.vcxproj.filters
