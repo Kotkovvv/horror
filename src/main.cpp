@@ -1,4 +1,4 @@
-﻿#include <glut.h>
+﻿#include "glut.h"
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
@@ -44,6 +44,8 @@ GLuint filter;                          // Используемый фильтр
 GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; // Хранит три типа тумана
 GLuint fogfilter = 0;                    // Тип используемого тумана
 GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; // Цвет тумана
+time_t oldtime = 1;
+time_t newtime = 1;
 
 int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
 												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
@@ -85,13 +87,13 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.02;
+		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.1;
 		onGround = false;
 		View = 90; // угол обзора
 	}
 	bool check(int x,  int z) {
-		if ((x < 0) or (x > quantity_cubes_x) or
-			(z < 0) or (z > quantity_cubes_z)) return false;
+		if ((x < 0) || (x > quantity_cubes_x) ||
+			(z < 0) || (z > quantity_cubes_z)) return false;
 		return cubes[x][z];
 
 	}
@@ -154,7 +156,7 @@ void Reshape(int w, int h)
 
 void mouseMove(int x, int y) 
 {
-	if (mouseXOld != 0 or mouseYOld != 0) {
+	if (mouseXOld != 0 || mouseYOld != 0) {
 		angle -= mouseXOld * 0.001f;
 		angleY -= mouseYOld * 0.001f;
 
@@ -260,7 +262,7 @@ void boo()
 
 void draw_wall_new(int x, int z) {
 	glBegin(GL_QUADS);
-	if (cubes[x][z] != cubes[x - 1][z] and  x != 0) {
+	if (cubes[x][z] != cubes[x - 1][z] &&  x != 0) {
 		// задняя стена
 		glColor3f(0.5,0.5,0.5);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
@@ -269,7 +271,7 @@ void draw_wall_new(int x, int z) {
 		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);
 	}
 	// правая
-	if (cubes[x][z] != cubes[x ][z+1] and z != 20) {
+	if (cubes[x][z] != cubes[x ][z+1] && z != 20) {
 		glColor3f(0.5, 0.5, 0.5);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 1);
 		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);
@@ -277,7 +279,7 @@ void draw_wall_new(int x, int z) {
 		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 1);
 	}
 	// передняя
-	if (cubes[x][z] != cubes[x + 1][z] and x != 20) {
+	if (cubes[x][z] != cubes[x + 1][z] && x != 20) {
 		glColor3f(0.6, 0.6, 0.6);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 0);
 		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 0);
@@ -285,7 +287,7 @@ void draw_wall_new(int x, int z) {
 		glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
 	}
 	// задняя
-	if (cubes[x][z] != cubes[x][z - 1] and z != 0) {
+	if (cubes[x][z] != cubes[x][z - 1] && z != 0) {
 		glColor3f(0.5, 0.5, 0.5);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
 		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 0);
@@ -307,7 +309,7 @@ void fogg() {
 }
 
 void Draw() {
-
+	double times;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
 	glClearColor(0, 0, 0, 0); // задаем цвет фона в режиме RGB
 	glPushMatrix(); // сохраняем систему координат
@@ -321,6 +323,11 @@ void Draw() {
 		      man.PlayerX + lx,		man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
 		      0.0f, 1.0f, 0.0f);
 	//=================================начало основного цикла===================================================================================
+	newtime = clock();
+	times = newtime - oldtime;
+	oldtime = clock();
+	std::cout << 1000 / times << std::endl;
+	
 	glBindTexture(GL_TEXTURE_2D, floor1);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
@@ -346,7 +353,7 @@ void Draw() {
 	
 
 
-	man.update(10);
+	man.update(times);
 	//=================================конец основного цикла===================================================================================
 	glPopMatrix(); // загружаем систему кординат
 	glutPostRedisplay(); // Обновляем картинку в окне
