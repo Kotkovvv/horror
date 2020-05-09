@@ -398,5 +398,7 @@ int main()
 	load_textures_smooth("textures_game/wall1.jpg", &wall,0);//текстура стен
 	load_textures_smooth("textures_game/flashlight.png", &flash, 0 );//текстура фонарика
 	//PlaySound("music_game/qw", NULL, SND_SYNC);  // Играем звук смерти
+	glutSetCursor(GLUT_CURSOR_NONE);//убирает курсор с экрана
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
+
 }
