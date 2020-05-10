@@ -40,37 +40,15 @@ GLuint floor1;//переменная для текстуры пола
 GLuint flash;//переменная для текстуры фонарика
 GLuint texture[3];
 bool   gp;                              // G Нажата? ( Новое )
-GLuint filter;                          // Используемый фильтр для текстур
-GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; // Хранит три типа тумана
-GLuint fogfilter = 0;                    // Тип используемого тумана
-GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; // Цвет тумана
+
 time_t oldtime = 1;
 time_t newtime = 1;
 
-int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},//сюда z
-												  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},
-												  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},
-								/*		|	*/	  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},
-								/*перед	|	*/	  {1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
-								/*		V	*/	  {1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},
-												  {1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
-												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},
-												  {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1},
-												  {1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1},
-												  {1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1},
-												  {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1},
-												  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1},
-												  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1},
-												  {1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1},
-												  {1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
-												  {1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1},
-												  {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},
-												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
-									  /*сюда x*/  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, }; //дает невидимые стены
+
 
 
 #include "textures.hpp"
-
+#include "Labyrinth.hpp"
 class Player {
 public:
 	float PlayerX, PlayerY, PlayerZ;
@@ -154,86 +132,7 @@ void Reshape(int w, int h)
 }
 
 
-void mouseMove(int x, int y) 
-{
-	if (mouseXOld != 0 || mouseYOld != 0) {
-		angle -= mouseXOld * 0.001f;
-		angleY -= mouseYOld * 0.001f;
 
-		if (angleY > 3.14 / 2) angleY = 3.14 / 2;
-		if (angleY < -3.14 / 2) angleY = -3.14 / 2;
-
-		mouseXOld = 0; mouseYOld = 0;
-
-		// update camera's direction
-		lx = float(-sin(angle));
-		lz = float(cos(angle));
-		ly = float(-tan(angleY));
-
-	}
-	else 
-	{
-
-		mouseXOld = (width / 2) - x;
-		mouseYOld = (height / 2) - y;
-		glutWarpPointer((width / 2), (height / 2));
-	}
-
-	
-
-}
-
-
-void keyboard(unsigned char key, int x, int y) 
-{
-	switch (key) 
-	{
-	case 27: // если key = 27(escape), то выходим из программы
-		exit(0);
-		break;
-	case 'w':
-	case 'W':
-		move_front = 1;
-
-		break;
-	case 's':
-	case 'S':
-		move_front = -1;
-		break;
-	case 'a':
-	case 'A':
-		move_side = -1;
-		break;
-	case 'd':
-	case 'D':
-		move_side = 1;
-		break;
-	}
-}
-
-void keyboard_up(unsigned char key, int x, int y)
-{
-
-	switch (key) 
-	{
-	case 'w':
-	case 'W':
-	case 's':
-	case 'S':
-		move_front = 0;
-		
-
-		break;
-	case 'a':
-	case 'A':
-	case 'd':
-	case 'D':
-		move_side = 0;
-		
-
-		break;
-	}
-}
 
 void flashlight()
 {
@@ -260,53 +159,10 @@ void boo()
 	glEnd(); // говорим, что заканчиваем рисовать
 }
 
-void draw_wall_new(int x, int z) {
-	glBegin(GL_QUADS);
-	if (cubes[x][z] != cubes[x - 1][z] &&  x != 0) {
-		// задняя стена
-		glColor3f(0.5,0.5,0.5);
-		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
-		glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);
-		glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);
-		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);
-	}
-	// правая
-	if (cubes[x][z] != cubes[x ][z+1] && z != 20) {
-		glColor3f(0.5, 0.5, 0.5);
-		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 1);
-		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);
-		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
-		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 1);
-	}
-	// передняя
-	if (cubes[x][z] != cubes[x + 1][z] && x != 20) {
-		glColor3f(0.6, 0.6, 0.6);
-		glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 0);
-		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 0);
-		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);
-		glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
-	}
-	// задняя
-	if (cubes[x][z] != cubes[x][z - 1] && z != 0) {
-		glColor3f(0.5, 0.5, 0.5);
-		glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);
-		glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 0);
-		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 0);
-		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 0);
-	}
 
-	glEnd();
-}
 
-void fogg() {
-	glEnable(GL_FOG);                       // Включает туман (GL_FOG)
-	glFogi(GL_FOG_MODE, fogMode[fogfilter]);// Выбираем тип тумана
-	glFogfv(GL_FOG_COLOR, fogColor);        // Устанавливаем цвет тумана
-	glFogf(GL_FOG_DENSITY, 0.35f);          // Насколько густым будет туман
-	glHint(GL_FOG_HINT, GL_DONT_CARE);      // Вспомогательная установка тумана
-	glFogf(GL_FOG_START, 1.0f);             // Глубина, с которой начинается туман
-	glFogf(GL_FOG_END, 5.0f);               // Глубина, где туман заканчивается.
-}
+
+
 
 void Draw() {
 	double times;
@@ -328,16 +184,9 @@ void Draw() {
 	oldtime = clock();
 	std::cout << 1000 / times << std::endl;
 	
-	glBindTexture(GL_TEXTURE_2D, floor1);
-	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
-	glEnd();
-	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);      // Будем очищать экран, заполняя его цветом тумана. ( Изменено )
-
+	floor();
 	fogg();
+
 
 
 
@@ -360,23 +209,9 @@ void Draw() {
 	glFinish(); // заканчиваем рисование
 }
 
-void load_textures_blocks(const char* image, GLuint* texturesy) //функция, загружающая текстуры
-{
-	unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
-	glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
-	glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
-	SOIL_free_image_data(top); // освобождаем текстуру из soil
-	glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
-}
 
 
+#include "Mouse_and_keyboard.hpp"
 
 int main() 
 {
