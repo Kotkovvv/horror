@@ -1,12 +1,12 @@
-GLuint wall;//переменная для текстуры стены
-GLuint screamer;//переменная для текстуры скримера
-GLuint floor1;//переменная для текстуры пола
-GLuint flash;//переменная для текстуры фонарика
+п»їGLuint wall;//РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С‚РµРєСЃС‚СѓСЂС‹ СЃС‚РµРЅС‹
+GLuint screamer;//РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С‚РµРєСЃС‚СѓСЂС‹ СЃРєСЂРёРјРµСЂР°
+GLuint floor1;//РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С‚РµРєСЃС‚СѓСЂС‹ РїРѕР»Р°
+GLuint flash;//РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С‚РµРєСЃС‚СѓСЂС‹ С„РѕРЅР°СЂРёРєР°
 GLuint texture[3];
-void load_textures_blocks(const char* image, GLuint* texturesy) //функция, загружающая текстуры
+void load_textures_blocks(const char* image, GLuint* texturesy) //С„СѓРЅРєС†РёСЏ, Р·Р°РіСЂСѓР¶Р°СЋС‰Р°СЏ С‚РµРєСЃС‚СѓСЂС‹
 {
-    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
-    glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
+    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ РІ soil
+    glGenTextures(1, texturesy); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂР°Р±РѕС‚Р°С‚СЊ СЃ РїРµСЂРµРјРµРЅРЅРѕР№ Dirt, С‡С‚РѕР±С‹ РґР°Р»СЊС€Рµ Р·Р°РїРёСЃР°С‚СЊ РІ РЅРµРµ С‚РµРєСЃС‚СѓСЂСѓ soil
     glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -14,14 +14,14 @@ void load_textures_blocks(const char* image, GLuint* texturesy) //функция, загру
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
-    SOIL_free_image_data(top); // освобождаем текстуру из soil
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, W, H, 0, GL_RGB, GL_UNSIGNED_BYTE, top); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ soil РІ РїРµСЂРјРµРЅРЅСѓСЋ dirt
+    SOIL_free_image_data(top); // РѕСЃРІРѕР±РѕР¶РґР°РµРј С‚РµРєСЃС‚СѓСЂСѓ РёР· soil
     glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
 }
 
 void load_textures(const char* image, GLuint* texturesy, bool type) {
-    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGBA); // загружаем текстуру в soil
-    glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
+    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGBA); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ РІ soil
+    glGenTextures(1, texturesy); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂР°Р±РѕС‚Р°С‚СЊ СЃ РїРµСЂРµРјРµРЅРЅРѕР№ Dirt, С‡С‚РѕР±С‹ РґР°Р»СЊС€Рµ Р·Р°РїРёСЃР°С‚СЊ РІ РЅРµРµ С‚РµРєСЃС‚СѓСЂСѓ soil
     glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -32,14 +32,14 @@ void load_textures(const char* image, GLuint* texturesy, bool type) {
         glEnable(GL_ALPHA_TEST);
         glAlphaFunc(GL_GREATER, 0.8f);
     }
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, W, H, 0, GL_RGBA, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
-    SOIL_free_image_data(top); // освобождаем текстуру из soil
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, W, H, 0, GL_RGBA, GL_UNSIGNED_BYTE, top); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ soil РІ РїРµСЂРјРµРЅРЅСѓСЋ dirt
+    SOIL_free_image_data(top); // РѕСЃРІРѕР±РѕР¶РґР°РµРј С‚РµРєСЃС‚СѓСЂСѓ РёР· soil
     glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
 }
 
 void load_textures_smooth(const char* image, GLuint* texturesy, bool type) {
-    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGBA); // загружаем текстуру в soil
-    glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
+    unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGBA); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ РІ soil
+    glGenTextures(1, texturesy); // РіРѕРІРѕСЂРёРј, С‡С‚Рѕ РЅР°С‡РёРЅР°РµРј СЂР°Р±РѕС‚Р°С‚СЊ СЃ РїРµСЂРµРјРµРЅРЅРѕР№ Dirt, С‡С‚РѕР±С‹ РґР°Р»СЊС€Рµ Р·Р°РїРёСЃР°С‚СЊ РІ РЅРµРµ С‚РµРєСЃС‚СѓСЂСѓ soil
     glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -49,14 +49,14 @@ void load_textures_smooth(const char* image, GLuint* texturesy, bool type) {
         glEnable(GL_ALPHA_TEST);
         glAlphaFunc(GL_GREATER, 0.8f);
     }
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, W, H, 0, GL_RGBA, GL_UNSIGNED_BYTE, top); // загружаем текстуру soil в перменную dirt
-    SOIL_free_image_data(top); // освобождаем текстуру из soil
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, W, H, 0, GL_RGBA, GL_UNSIGNED_BYTE, top); // Р·Р°РіСЂСѓР¶Р°РµРј С‚РµРєСЃС‚СѓСЂСѓ soil РІ РїРµСЂРјРµРЅРЅСѓСЋ dirt
+    SOIL_free_image_data(top); // РѕСЃРІРѕР±РѕР¶РґР°РµРј С‚РµРєСЃС‚СѓСЂСѓ РёР· soil
     glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
 }
 
 void textures_in_main() {
-    load_textures_smooth("textures_game/floor1.jpg", &floor1, 0);//текстура пола
-    load_textures_smooth("textures_game/screamer.png", &screamer, 0);//текстура скримера
-    load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//текстура стен
-    load_textures_smooth("textures_game/flashlight.png", &flash, 0);//текстура фонарика
+    load_textures_smooth("textures_game/floor1.jpg", &floor1, 0);//С‚РµРєСЃС‚СѓСЂР° РїРѕР»Р°
+    load_textures_smooth("textures_game/screamer.png", &screamer, 0);//С‚РµРєСЃС‚СѓСЂР° СЃРєСЂРёРјРµСЂР°
+    load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//С‚РµРєСЃС‚СѓСЂР° СЃС‚РµРЅ
+    load_textures_smooth("textures_game/flashlight.png", &flash, 0);//С‚РµРєСЃС‚СѓСЂР° С„РѕРЅР°СЂРёРєР°
 }

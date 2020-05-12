@@ -1,4 +1,4 @@
-class Player {
+п»їclass Player {
 public:
 	float PlayerX, PlayerY, PlayerZ, dx, dz, dSideX, dSideZ, dFrontX, dFrontZ, w, h, d, speed, View;
 
@@ -8,7 +8,7 @@ public:
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
 		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.1;
-		View = 90; // угол обзора
+		View = 90; // СѓРіРѕР» РѕР±Р·РѕСЂР°
 	}
 	bool check(int x, int z) {
 		if ((x < 0) || (x > quantity_cubes_x) ||
@@ -48,4 +48,4 @@ public:
 				}
 	}
 };
-Player man(1.5, -0.8, 1.5);//начальная позиция игрока
+Player man(1.5, -0.8, 1.5);//РЅР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёСЏ РёРіСЂРѕРєР°
