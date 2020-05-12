@@ -19,7 +19,7 @@ int cubes[quantity_cubes_x][quantity_cubes_z] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 												  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
 	/*сюда x*/									  {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, }; //дает невидимые стены
 
-void draw_wall_new(int x, int z) {
+void draw_wall_new(int x, int z) {//определ€ет, адо ли рисовать стены(если несколько накладываютс€, то не рисуетс€ ни одна)
 	glBegin(GL_QUADS);
 	if (cubes[x][z] != cubes[x - 1][z] && x != 0) {
 		// задн€€ стена
@@ -53,10 +53,7 @@ void draw_wall_new(int x, int z) {
 		glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 0);
 		glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 0);
 	}
-
 	glEnd();
-
-	
 }
 
 void floor() {
@@ -73,7 +70,7 @@ void floor() {
 }
 
 void fogg() {
-	GLuint filter;                          // »спользуемый фильтр дл€ текстур
+	//GLuint filter;                          // »спользуемый фильтр дл€ текстур
 	GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; // ’ранит три типа тумана
 	GLuint fogfilter = 0;                    // “ип используемого тумана
 	GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; // ÷вет тумана

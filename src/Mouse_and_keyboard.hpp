@@ -1,3 +1,6 @@
+float mouseXOld = 0;// вспомогательные фукнции, которые позволяют двигать камеру, фиксирует старое положение камеры
+float mouseYOld = 0;// вспомогательные фукнции, которые позволяют двигать камеру, фиксирует старое положение камеры
+using namespace std;
 void mouseMove(int x, int y)
 {
 	if (mouseXOld != 0 || mouseYOld != 0) {
@@ -22,11 +25,7 @@ void mouseMove(int x, int y)
 		mouseYOld = (height / 2) - y;
 		glutWarpPointer((width / 2), (height / 2));
 	}
-
-
-
 }
-
 
 void keyboard(unsigned char key, int x, int y)
 {
@@ -38,7 +37,6 @@ void keyboard(unsigned char key, int x, int y)
 	case 'w':
 	case 'W':
 		move_front = 1;
-
 		break;
 	case 's':
 	case 'S':
@@ -57,7 +55,6 @@ void keyboard(unsigned char key, int x, int y)
 
 void keyboard_up(unsigned char key, int x, int y)
 {
-
 	switch (key)
 	{
 	case 'w':
@@ -65,16 +62,12 @@ void keyboard_up(unsigned char key, int x, int y)
 	case 's':
 	case 'S':
 		move_front = 0;
-
-
 		break;
 	case 'a':
 	case 'A':
 	case 'd':
 	case 'D':
 		move_side = 0;
-
-
 		break;
 	}
 }

@@ -2,6 +2,7 @@ GLuint wall;//переменная для текстуры стены
 GLuint screamer;//переменная для текстуры скримера
 GLuint floor1;//переменная для текстуры пола
 GLuint flash;//переменная для текстуры фонарика
+GLuint texture[3];
 void load_textures_blocks(const char* image, GLuint* texturesy) //функция, загружающая текстуры
 {
     unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGB); // загружаем текстуру в soil
@@ -40,7 +41,6 @@ void load_textures_smooth(const char* image, GLuint* texturesy, bool type) {
     unsigned char* top = SOIL_load_image(image, &W, &H, 0, SOIL_LOAD_RGBA); // загружаем текстуру в soil
     glGenTextures(1, texturesy); // говорим, что начинаем работать с переменной Dirt, чтобы дальше записать в нее текстуру soil
     glBindTexture(GL_TEXTURE_2D, *texturesy); // All upcoming GL_TEXTURE_2D operations now have effect on this texture object
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
