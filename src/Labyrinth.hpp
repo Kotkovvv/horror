@@ -77,7 +77,7 @@ void fogg() {
 	glEnable(GL_FOG);                       // Включает туман (GL_FOG)
 	glFogi(GL_FOG_MODE, fogMode[fogfilter]);// Выбираем тип тумана
 	glFogfv(GL_FOG_COLOR, fogColor);        // Устанавливаем цвет тумана
-	glFogf(GL_FOG_DENSITY, 0.35f);          // Насколько густым будет туман
+	glFogf(GL_FOG_DENSITY, 0.7f);          // Насколько густым будет туман
 	glHint(GL_FOG_HINT, GL_DONT_CARE);      // Вспомогательная установка тумана
 	glFogf(GL_FOG_START, 1.0f);             // Глубина, с которой начинается туман
 	glFogf(GL_FOG_END, 5.0f);               // Глубина, где туман заканчивается.

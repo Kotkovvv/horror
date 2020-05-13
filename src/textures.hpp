@@ -58,5 +58,5 @@ void textures_in_main() {
     load_textures_smooth("textures_game/floor1.jpg", &floor1, 0);//текстура пола
     load_textures_smooth("textures_game/screamer.png", &screamer, 0);//текстура скримера
     load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//текстура стен
-    load_textures_smooth("textures_game/flashlight.png", &flash, 0);//текстура фонарика
+    load_textures_smooth("textures_game/flashlight.png", &flash, 1);//текстура фонарика
 }

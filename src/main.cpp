@@ -4,7 +4,12 @@
 #include <iostream>
 #include <ctime>
 #include <SOIL.h> // библиотека для тектур
+#include "alut.h"
+#include "al.h"
+#include "alc.h"
 #pragma comment (lib,"SOIL.lib")
+#pragma comment (lib,"alut.lib")
+#pragma comment (lib,"glut.lib")
 
 int width = 1600; // высота окна
 int height = 800; // ширина окна
@@ -39,13 +44,16 @@ void Reshape(int w, int h)
 
 void flashlight()
 {
+	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D, flash);
-	glBegin(GL_QUADS);// говорим, что начинаем рисовать фонарик
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.05, -0.05, -0.1);// его координаты
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.05, -0.05, -0.1);// его координаты
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.05, 0.05, -0.1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05, -0.1);// его координаты
+	glRotatef(0, 0, 0, 1);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать фонари
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(0.105, -0.125, -0.15);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.195, -0.125, -0.15);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.195, -0.035 , -0.15);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.105, -0.035, -0.15);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
+	glPopMatrix();
 }
 
 void boo()
@@ -68,7 +76,7 @@ void Draw() {
 	glPushMatrix(); // сохраняем систему координат
 	if (angle > 360)//если обзор больше 360, то обнуляется
 		angle = 0;
-	//flashlight();
+	flashlight();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
 	gluLookAt(man.PlayerX,			man.PlayerY + man.h / 2 , man.PlayerZ,
 		      man.PlayerX + lx,		man.PlayerY + ly + man.h / 2 , man.PlayerZ + lz,
@@ -113,7 +121,6 @@ int main()
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
 	textures_in_main();//сокращение для текстур, вся суть в textures.hpp
-	//PlaySound("music_game/qw", NULL, SND_SYNC);  // Играем звук смерти
 	glutSetCursor(GLUT_CURSOR_NONE);//убирает курсор с экрана
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 
