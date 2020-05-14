@@ -18,14 +18,10 @@
 \item 
 void \mbox{\hyperlink{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}{Reshape}} (int w, int h)
 \item 
-void \mbox{\hyperlink{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}{flashlight}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_adb9b9adadac0e0b57161c18552918f44}{boo}} ()
-\item 
 void \mbox{\hyperlink{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}{Draw}} ()
-\begin{DoxyCompactList}\small\item\em главная функция программы циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Главная функция программы Циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em точка входа в программу устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Точка входа в программу Устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Переменные}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,12 +58,6 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 
 
 \doxysubsection{Функции}
-\mbox{\Hypertarget{main_8cpp_adb9b9adadac0e0b57161c18552918f44}\label{main_8cpp_adb9b9adadac0e0b57161c18552918f44}} 
-\index{main.cpp@{main.cpp}!boo@{boo}}
-\index{boo@{boo}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{boo()}{boo()}}
-{\footnotesize\ttfamily void boo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}\label{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}} 
 \index{main.cpp@{main.cpp}!Draw@{Draw}}
 \index{Draw@{Draw}!main.cpp@{main.cpp}}
@@ -76,13 +66,7 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 
 
 
-главная функция программы циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его 
-
-\mbox{\Hypertarget{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}\label{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}} 
-\index{main.cpp@{main.cpp}!flashlight@{flashlight}}
-\index{flashlight@{flashlight}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{flashlight()}{flashlight()}}
-{\footnotesize\ttfamily void flashlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Главная функция программы Циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его 
 
 \mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{main.cpp@{main.cpp}!main@{main}}
@@ -92,7 +76,7 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 
 
 
-точка входа в программу устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир 
+Точка входа в программу Устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир 
 
 \mbox{\Hypertarget{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}\label{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}} 
 \index{main.cpp@{main.cpp}!Reshape@{Reshape}}
@@ -100,7 +84,9 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 \doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
 {\footnotesize\ttfamily void Reshape (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
 
+/brief Функция, отвечающая за изменения параметров при изменении размера окна
 
+Данная функция задает перспектику, вызывается при первом запуске проги и при изменении окна проги 
 
 \doxysubsection{Переменные}
 \mbox{\Hypertarget{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}\label{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}} 

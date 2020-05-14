@@ -1,8 +1,6 @@
 var main_8cpp =
 [
-    [ "boo", "main_8cpp.html#adb9b9adadac0e0b57161c18552918f44", null ],
     [ "Draw", "main_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16", null ],
-    [ "flashlight", "main_8cpp.html#aed8f2221b04a8e9a76475409172ec1fd", null ],
     [ "main", "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ],
     [ "Reshape", "main_8cpp.html#afd1d12953941d1dc2f35cd182a31448d", null ],
     [ "angle", "main_8cpp.html#ab8ef1bf8a70cc07c6d55823c390a7e76", null ],

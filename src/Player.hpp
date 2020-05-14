@@ -1,4 +1,5 @@
-﻿class Player {
+﻿
+class Player {
 public:
 	float PlayerX, PlayerY, PlayerZ, dx, dz, dSideX, dSideZ, dFrontX, dFrontZ, w, h, d, speed, View;
 
@@ -34,6 +35,10 @@ public:
 		collision(0, dz);
 		dx = dz = dSideX = dSideZ = dFrontX = dFrontZ = 0;
 	}
+	/**
+	\brief определяет поведение при столкновении с колизией
+	эта функция принимает на вход скорости по осям игрока, и при столкновении с клизией определяет, как должен вести себя игрок
+*/
 
 	void collision(float Dx, float Dz) {
 		int cube_size = 1;
