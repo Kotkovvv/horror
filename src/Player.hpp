@@ -1,5 +1,4 @@
-﻿
-class Player {
+﻿class Player {
 public:
 	float PlayerX, PlayerY, PlayerZ, dx, dz, dSideX, dSideZ, dFrontX, dFrontZ, w, h, d, speed, View;
 
@@ -11,13 +10,19 @@ public:
 		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.1;
 		View = 90; // угол обзора
 	}
+	/**
+	\brief проверяет на столкновение
+*/
 	bool check(int x, int z) {
 		if ((x < 0) || (x > quantity_cubes_x) ||
 			(z < 0) || (z > quantity_cubes_z)) return false;
 		return cubes[x][z];
 
 	}
-
+	/**
+	\brief Оснновная функцию обновления игрока
+	\param[in] time время 1 кадра
+*/
 	void update(float time) {
 		if (move_front) {
 			dFrontX = lx * speed * move_front * time / 50;
@@ -53,4 +58,8 @@ public:
 				}
 	}
 };
+/**
+	\brief Создаем объект
+
+*/
 Player man(1.5, -0.8, 1.5);//начальная позиция игрока
