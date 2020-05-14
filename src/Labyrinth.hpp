@@ -82,3 +82,28 @@ void fogg() {
 	glFogf(GL_FOG_START, 1.0f);             // Глубина, с которой начинается туман
 	glFogf(GL_FOG_END, 5.0f);               // Глубина, где туман заканчивается.
 }
+
+void flashlight()
+{
+	glPushMatrix();
+	glBindTexture(GL_TEXTURE_2D, flash);
+	glRotatef(0, 0, 0, 1);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать фонари
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(0.105, -0.125, -0.15);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.195, -0.125, -0.15);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.195, -0.035, -0.15);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.105, -0.035, -0.15);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+	glPopMatrix();
+}
+
+void boo()
+{
+	glBindTexture(GL_TEXTURE_2D, screamer);
+	glBegin(GL_QUADS);// говорим, что начинаем рисовать скример
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.05, -0.05, -0.1);// его координаты
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.05, 0.05, -0.1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05, -0.1);// его координаты
+	glEnd(); // говорим, что заканчиваем рисовать
+}

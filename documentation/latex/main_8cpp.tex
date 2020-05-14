@@ -1,0 +1,195 @@
+\hypertarget{main_8cpp}{}\doxysection{Файл C\+:/\+Users/\+Huhehuindi/\+Desktop/Учеба/horror/src/main.cpp}
+\label{main_8cpp}\index{C:/Users/Huhehuindi/Desktop/Учеба/horror/src/main.cpp@{C:/Users/Huhehuindi/Desktop/Учеба/horror/src/main.cpp}}
+{\ttfamily \#include \char`\"{}glut.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$S\+O\+I\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}alut.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}al.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}textures.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Labyrinth.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mouse\+\_\+and\+\_\+keyboard.\+hpp\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}{Reshape}} (int w, int h)
+\item 
+void \mbox{\hyperlink{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}{flashlight}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_adb9b9adadac0e0b57161c18552918f44}{boo}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em главная функция программы циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em точка входа в программу устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}} = 1600
+\item 
+int \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}} = 800
+\item 
+int \mbox{\hyperlink{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}{H}} = \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a2dd51e03005d5cb52315290d27f61870}{W}} = \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}}
+\item 
+float \mbox{\hyperlink{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}{angle}} = 0
+\item 
+const int \mbox{\hyperlink{main_8cpp_aefac3b54073269a9394f9a31a097d005}{quantity\+\_\+cubes\+\_\+z}} = 20
+\item 
+const int \mbox{\hyperlink{main_8cpp_abe8f533bc23beee8f709630d1343a5da}{quantity\+\_\+cubes\+\_\+x}} = 20
+\item 
+float \mbox{\hyperlink{main_8cpp_adeebf705e4120efa9a773e0f52b11be0}{lz}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{main_8cpp_afb7c4aa8c0b809f0f76628dbb5b6d62b}{lx}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{main_8cpp_aaf431a94974e843174300e4c0fa47fbd}{ly}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}{angleY}} = 0
+\item 
+float \mbox{\hyperlink{main_8cpp_af30065f8008fe7130e92c75deae24a26}{move\+\_\+front}} = 0
+\item 
+float \mbox{\hyperlink{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}{move\+\_\+side}} = 0
+\item 
+time\+\_\+t \mbox{\hyperlink{main_8cpp_acc957abaece2bc482fd35e2a6d9b2075}{oldtime}} = 1
+\item 
+time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtime}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{main_8cpp_adb9b9adadac0e0b57161c18552918f44}\label{main_8cpp_adb9b9adadac0e0b57161c18552918f44}} 
+\index{main.cpp@{main.cpp}!boo@{boo}}
+\index{boo@{boo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{boo()}{boo()}}
+{\footnotesize\ttfamily void boo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}\label{main_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}} 
+\index{main.cpp@{main.cpp}!Draw@{Draw}}
+\index{Draw@{Draw}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+главная функция программы циклично вызывается. 1 вызов-\/ 1 кадр. обновляет все, что находится в мире-\/ положение игрока, его угол поворота. так же обновляет каждым разом мир -\/ рисует его 
+
+\mbox{\Hypertarget{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}\label{main_8cpp_aed8f2221b04a8e9a76475409172ec1fd}} 
+\index{main.cpp@{main.cpp}!flashlight@{flashlight}}
+\index{flashlight@{flashlight}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{flashlight()}{flashlight()}}
+{\footnotesize\ttfamily void flashlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+точка входа в программу устанавливает все настройки библиотеки G\+L\+UT, а так же заполняет массив , по которому будет в дальнейшем строиться мир 
+
+\mbox{\Hypertarget{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}\label{main_8cpp_afd1d12953941d1dc2f35cd182a31448d}} 
+\index{main.cpp@{main.cpp}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily void Reshape (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}\label{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}} 
+\index{main.cpp@{main.cpp}!angle@{angle}}
+\index{angle@{angle}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily float angle = 0}
+
+\mbox{\Hypertarget{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}\label{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}} 
+\index{main.cpp@{main.cpp}!angleY@{angleY}}
+\index{angleY@{angleY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{angleY}{angleY}}
+{\footnotesize\ttfamily float angleY = 0}
+
+\mbox{\Hypertarget{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}\label{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}} 
+\index{main.cpp@{main.cpp}!H@{H}}
+\index{H@{H}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily int H = \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}}}
+
+\mbox{\Hypertarget{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}\label{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}} 
+\index{main.cpp@{main.cpp}!height@{height}}
+\index{height@{height}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int height = 800}
+
+\mbox{\Hypertarget{main_8cpp_afb7c4aa8c0b809f0f76628dbb5b6d62b}\label{main_8cpp_afb7c4aa8c0b809f0f76628dbb5b6d62b}} 
+\index{main.cpp@{main.cpp}!lx@{lx}}
+\index{lx@{lx}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lx}{lx}}
+{\footnotesize\ttfamily float lx = 0.\+0f}
+
+\mbox{\Hypertarget{main_8cpp_aaf431a94974e843174300e4c0fa47fbd}\label{main_8cpp_aaf431a94974e843174300e4c0fa47fbd}} 
+\index{main.cpp@{main.cpp}!ly@{ly}}
+\index{ly@{ly}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ly}{ly}}
+{\footnotesize\ttfamily float ly = 0.\+0f}
+
+\mbox{\Hypertarget{main_8cpp_adeebf705e4120efa9a773e0f52b11be0}\label{main_8cpp_adeebf705e4120efa9a773e0f52b11be0}} 
+\index{main.cpp@{main.cpp}!lz@{lz}}
+\index{lz@{lz}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lz}{lz}}
+{\footnotesize\ttfamily float lz = 1.\+0f}
+
+\mbox{\Hypertarget{main_8cpp_af30065f8008fe7130e92c75deae24a26}\label{main_8cpp_af30065f8008fe7130e92c75deae24a26}} 
+\index{main.cpp@{main.cpp}!move\_front@{move\_front}}
+\index{move\_front@{move\_front}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_front}{move\_front}}
+{\footnotesize\ttfamily float move\+\_\+front = 0}
+
+\mbox{\Hypertarget{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}\label{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}} 
+\index{main.cpp@{main.cpp}!move\_side@{move\_side}}
+\index{move\_side@{move\_side}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_side}{move\_side}}
+{\footnotesize\ttfamily float move\+\_\+side = 0}
+
+\mbox{\Hypertarget{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}\label{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}} 
+\index{main.cpp@{main.cpp}!newtime@{newtime}}
+\index{newtime@{newtime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{newtime}{newtime}}
+{\footnotesize\ttfamily time\+\_\+t newtime = 1}
+
+\mbox{\Hypertarget{main_8cpp_acc957abaece2bc482fd35e2a6d9b2075}\label{main_8cpp_acc957abaece2bc482fd35e2a6d9b2075}} 
+\index{main.cpp@{main.cpp}!oldtime@{oldtime}}
+\index{oldtime@{oldtime}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{oldtime}{oldtime}}
+{\footnotesize\ttfamily time\+\_\+t oldtime = 1}
+
+\mbox{\Hypertarget{main_8cpp_abe8f533bc23beee8f709630d1343a5da}\label{main_8cpp_abe8f533bc23beee8f709630d1343a5da}} 
+\index{main.cpp@{main.cpp}!quantity\_cubes\_x@{quantity\_cubes\_x}}
+\index{quantity\_cubes\_x@{quantity\_cubes\_x}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{quantity\_cubes\_x}{quantity\_cubes\_x}}
+{\footnotesize\ttfamily const int quantity\+\_\+cubes\+\_\+x = 20}
+
+\mbox{\Hypertarget{main_8cpp_aefac3b54073269a9394f9a31a097d005}\label{main_8cpp_aefac3b54073269a9394f9a31a097d005}} 
+\index{main.cpp@{main.cpp}!quantity\_cubes\_z@{quantity\_cubes\_z}}
+\index{quantity\_cubes\_z@{quantity\_cubes\_z}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{quantity\_cubes\_z}{quantity\_cubes\_z}}
+{\footnotesize\ttfamily const int quantity\+\_\+cubes\+\_\+z = 20}
+
+\mbox{\Hypertarget{main_8cpp_a2dd51e03005d5cb52315290d27f61870}\label{main_8cpp_a2dd51e03005d5cb52315290d27f61870}} 
+\index{main.cpp@{main.cpp}!W@{W}}
+\index{W@{W}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily int W = \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}}}
+
+\mbox{\Hypertarget{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}\label{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}} 
+\index{main.cpp@{main.cpp}!width@{width}}
+\index{width@{width}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int width = 1600}
+

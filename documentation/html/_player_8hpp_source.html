@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Horror: Исходный файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/Player.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Horror
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_player_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Player.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_player_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="class_player.html">    1</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_player.html">Player</a> {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">    3</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a>, <a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a>, <a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a>, <a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a>, <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a>, <a class="code" href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">dSideX</a>, <a class="code" href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">dSideZ</a>, <a class="code" href="class_player.html#aa129f82fe2034539cb7444902af35912">dFrontX</a>, <a class="code" href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">dFrontZ</a>, <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a>, <a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a>, <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a>, <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a>, <a class="code" href="class_player.html#a8cde07d9d7b3c469f977894e021a4173">View</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_player.html#ae0d3602cdd48afcb0d5efee322c6557d">    5</a></span>&#160;    <a class="code" href="class_player.html#ae0d3602cdd48afcb0d5efee322c6557d">Player</a>(<span class="keywordtype">float</span> x0, <span class="keywordtype">float</span> y0, <span class="keywordtype">float</span> z0) {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> = x0; <a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a> = y0; <a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> = z0;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a> = 0;  <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a> = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">dSideX</a> = 0; <a class="code" href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">dSideZ</a> = 0;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="class_player.html#aa129f82fe2034539cb7444902af35912">dFrontX</a> = 0; <a class="code" href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">dFrontZ</a> = 0;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a> = 0.2f; <a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a> = 1.9f; <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a> = 0.2f; <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a> = 0.1;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_player.html#a8cde07d9d7b3c469f977894e021a4173">View</a> = 90; <span class="comment">// угол обзора</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_player.html#add896a3d2256da8ce632fe54edc39cbe">   13</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_player.html#add896a3d2256da8ce632fe54edc39cbe">check</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> ((x &lt; 0) || (x &gt; <a class="code" href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a>) ||</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            (z &lt; 0) || (z &gt; <a class="code" href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z];</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_player.html#a194b7082791d882887071d8d2893c5e4">   20</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a194b7082791d882887071d8d2893c5e4">update</a>(<span class="keywordtype">float</span> time) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a>) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_player.html#aa129f82fe2034539cb7444902af35912">dFrontX</a> = <a class="code" href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a> * <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a> * <a class="code" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a> * time / 50;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">dFrontZ</a> = <a class="code" href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a> * <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a> * <a class="code" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a> * time / 50;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a>) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">dSideX</a> = -<a class="code" href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a> * <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a> * <a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> * time / 50;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">dSideZ</a> = <a class="code" href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a> * <a class="code" href="class_player.html#a770942101eff683b030edde9f730d537">speed</a> * <a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> * time / 50;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a> = <a class="code" href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">dSideX</a> + <a class="code" href="class_player.html#aa129f82fe2034539cb7444902af35912">dFrontX</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> += <a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd">collision</a>(<a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a>, 0);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a> = <a class="code" href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">dSideZ</a> + <a class="code" href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">dFrontZ</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> += <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd">collision</a>(0, <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">dx</a> = <a class="code" href="class_player.html#adc0798fa136ca3e5212260771a98c975">dz</a> = <a class="code" href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">dSideX</a> = <a class="code" href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">dSideZ</a> = <a class="code" href="class_player.html#aa129f82fe2034539cb7444902af35912">dFrontX</a> = <a class="code" href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">dFrontZ</a> = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd">collision</a>(<span class="keywordtype">float</span> Dx, <span class="keywordtype">float</span> Dz) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">int</span> cube_size = 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> X = (<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> - <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a>); X &lt; (<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> + <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a>); X++)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> Z = (<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> - <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a>); Z &lt; (<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> + <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a>); Z++)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_player.html#add896a3d2256da8ce632fe54edc39cbe">check</a>(X, Z))</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keywordflow">if</span> (Dx &gt; 0) <a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> = X * cube_size - <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a> - 0.001;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">if</span> (Dx &lt; 0) <a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> = X * cube_size + cube_size + <a class="code" href="class_player.html#a764cd401a89a45b3dec74b110d612a59">w</a> + 0.001;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">if</span> (Dz &gt; 0) <a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> = Z * cube_size - <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a> - 0.001;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keywordflow">if</span> (Dz &lt; 0) <a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> = Z * cube_size + cube_size + <a class="code" href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">d</a> + 0.001;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">   51</a></span>&#160;<a class="code" href="class_player.html">Player</a> <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>(1.5, -0.8, 1.5);<span class="comment">//начальная позиция игрока</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_player_html_adc0798fa136ca3e5212260771a98c975"><div class="ttname"><a href="class_player.html#adc0798fa136ca3e5212260771a98c975">Player::dz</a></div><div class="ttdeci">float dz</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_afa3667f91d696d17733dbf1cce688037"><div class="ttname"><a href="class_player.html#afa3667f91d696d17733dbf1cce688037">Player::h</a></div><div class="ttdeci">float h</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="amain_8cpp_html_aefac3b54073269a9394f9a31a097d005"><div class="ttname"><a href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a></div><div class="ttdeci">const int quantity_cubes_z</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
+<div class="ttc" id="a_player_8hpp_html_a14d47f976bd7c3bf3b94258cf549852b"><div class="ttname"><a href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a></div><div class="ttdeci">Player man(1.5, -0.8, 1.5)</div></div>
+<div class="ttc" id="aclass_player_html_a3f85e737e8042fe2a1c5b419448e8b22"><div class="ttname"><a href="class_player.html#a3f85e737e8042fe2a1c5b419448e8b22">Player::dSideZ</a></div><div class="ttdeci">float dSideZ</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="amain_8cpp_html_adeebf705e4120efa9a773e0f52b11be0"><div class="ttname"><a href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a></div><div class="ttdeci">float lz</div><div class="ttdef"><b>Definition:</b> main.cpp:21</div></div>
+<div class="ttc" id="aclass_player_html_afa5e305b377d914da490da1aa0d6503b"><div class="ttname"><a href="class_player.html#afa5e305b377d914da490da1aa0d6503b">Player::PlayerY</a></div><div class="ttdeci">float PlayerY</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_ae0d3602cdd48afcb0d5efee322c6557d"><div class="ttname"><a href="class_player.html#ae0d3602cdd48afcb0d5efee322c6557d">Player::Player</a></div><div class="ttdeci">Player(float x0, float y0, float z0)</div><div class="ttdef"><b>Definition:</b> Player.hpp:5</div></div>
+<div class="ttc" id="amain_8cpp_html_af30065f8008fe7130e92c75deae24a26"><div class="ttname"><a href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a></div><div class="ttdeci">float move_front</div><div class="ttdef"><b>Definition:</b> main.cpp:25</div></div>
+<div class="ttc" id="aclass_player_html_a8cde07d9d7b3c469f977894e021a4173"><div class="ttname"><a href="class_player.html#a8cde07d9d7b3c469f977894e021a4173">Player::View</a></div><div class="ttdeci">float View</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a770942101eff683b030edde9f730d537"><div class="ttname"><a href="class_player.html#a770942101eff683b030edde9f730d537">Player::speed</a></div><div class="ttdeci">float speed</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a3f62d17991f2da3417ac49ccf9e13021"><div class="ttname"><a href="class_player.html#a3f62d17991f2da3417ac49ccf9e13021">Player::d</a></div><div class="ttdeci">float d</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_adf2bc4dc794f8caf3a479450df7f1f35"><div class="ttname"><a href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a></div><div class="ttdeci">int cubes[quantity_cubes_x][quantity_cubes_z]</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:1</div></div>
+<div class="ttc" id="aclass_player_html_a764cd401a89a45b3dec74b110d612a59"><div class="ttname"><a href="class_player.html#a764cd401a89a45b3dec74b110d612a59">Player::w</a></div><div class="ttdeci">float w</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_abd949edd4cdb17565bc1469b7ace0ff8"><div class="ttname"><a href="class_player.html#abd949edd4cdb17565bc1469b7ace0ff8">Player::dFrontZ</a></div><div class="ttdeci">float dFrontZ</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="amain_8cpp_html_afb7c4aa8c0b809f0f76628dbb5b6d62b"><div class="ttname"><a href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a></div><div class="ttdeci">float lx</div><div class="ttdef"><b>Definition:</b> main.cpp:22</div></div>
+<div class="ttc" id="amain_8cpp_html_abd5a82629ef90c38be28bb9141ee6cc3"><div class="ttname"><a href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a></div><div class="ttdeci">float move_side</div><div class="ttdef"><b>Definition:</b> main.cpp:26</div></div>
+<div class="ttc" id="aclass_player_html_ac79d9e37b2354ea226f4a6aa647c66bd"><div class="ttname"><a href="class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd">Player::collision</a></div><div class="ttdeci">void collision(float Dx, float Dz)</div><div class="ttdef"><b>Definition:</b> Player.hpp:38</div></div>
+<div class="ttc" id="aclass_player_html_add896a3d2256da8ce632fe54edc39cbe"><div class="ttname"><a href="class_player.html#add896a3d2256da8ce632fe54edc39cbe">Player::check</a></div><div class="ttdeci">bool check(int x, int z)</div><div class="ttdef"><b>Definition:</b> Player.hpp:13</div></div>
+<div class="ttc" id="aclass_player_html_aad71855c90f6051bd443a4ca7ee34421"><div class="ttname"><a href="class_player.html#aad71855c90f6051bd443a4ca7ee34421">Player::dSideX</a></div><div class="ttdeci">float dSideX</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="amain_8cpp_html_abe8f533bc23beee8f709630d1343a5da"><div class="ttname"><a href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a></div><div class="ttdeci">const int quantity_cubes_x</div><div class="ttdef"><b>Definition:</b> main.cpp:20</div></div>
+<div class="ttc" id="aclass_player_html_aa129f82fe2034539cb7444902af35912"><div class="ttname"><a href="class_player.html#aa129f82fe2034539cb7444902af35912">Player::dFrontX</a></div><div class="ttdeci">float dFrontX</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a3fe624c14e2d04c851229e7c52a47b9d"><div class="ttname"><a href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">Player::PlayerZ</a></div><div class="ttdeci">float PlayerZ</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_aa236df11fc00f7c338b03b061b480d67"><div class="ttname"><a href="class_player.html#aa236df11fc00f7c338b03b061b480d67">Player::PlayerX</a></div><div class="ttdeci">float PlayerX</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a52250846ba4e8545f3083cf338ea96ff"><div class="ttname"><a href="class_player.html#a52250846ba4e8545f3083cf338ea96ff">Player::dx</a></div><div class="ttdeci">float dx</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a194b7082791d882887071d8d2893c5e4"><div class="ttname"><a href="class_player.html#a194b7082791d882887071d8d2893c5e4">Player::update</a></div><div class="ttdeci">void update(float time)</div><div class="ttdef"><b>Definition:</b> Player.hpp:20</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.hpp:1</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_a24269e6f0e922bd1d395bd881c8e149.html">Huhehuindi</a></li><li class="navelem"><a class="el" href="dir_a9f0eb7c943d914fba4b2edd6b40a8d8.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_be53d5238649f78109e269e9b8dddeea.html">Учеба</a></li><li class="navelem"><a class="el" href="dir_bdf0b5d5c1e6a65bdb9e38a1eef11537.html">horror</a></li><li class="navelem"><a class="el" href="dir_f279d0c3ace50e2397a09449c19eb856.html">src</a></li><li class="navelem"><a class="el" href="_player_8hpp.html">Player.hpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

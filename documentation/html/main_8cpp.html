@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Horror: Файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Horror
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;glut.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;SOIL.h&gt;</code><br />
+<code>#include &quot;alut.h&quot;</code><br />
+<code>#include &quot;al.h&quot;</code><br />
+<code>#include &quot;alc.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="textures_8hpp_source.html">textures.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_labyrinth_8hpp_source.html">Labyrinth.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_player_8hpp_source.html">Player.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_mouse__and__keyboard_8hpp_source.html">Mouse_and_keyboard.hpp</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:afd1d12953941d1dc2f35cd182a31448d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afd1d12953941d1dc2f35cd182a31448d">Reshape</a> (int w, int h)</td></tr>
+<tr class="separator:afd1d12953941d1dc2f35cd182a31448d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8f2221b04a8e9a76475409172ec1fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aed8f2221b04a8e9a76475409172ec1fd">flashlight</a> ()</td></tr>
+<tr class="separator:aed8f2221b04a8e9a76475409172ec1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9b9adadac0e0b57161c18552918f44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adb9b9adadac0e0b57161c18552918f44">boo</a> ()</td></tr>
+<tr class="separator:adb9b9adadac0e0b57161c18552918f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5cf0d8d37b6b17224867eb397c9a16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16">Draw</a> ()</td></tr>
+<tr class="memdesc:a3d5cf0d8d37b6b17224867eb397c9a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">главная функция программы циклично вызывается. 1 вызов- 1 кадр. обновляет все, что находится в мире- положение игрока, его угол поворота. так же обновляет каждым разом мир - рисует его  <a href="main_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3d5cf0d8d37b6b17224867eb397c9a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">точка входа в программу устанавливает все настройки библиотеки GLUT, а так же заполняет массив , по которому будет в дальнейшем строиться мир  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a2474a5474cbff19523a51eb1de01cda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a> = 1600</td></tr>
+<tr class="separator:a2474a5474cbff19523a51eb1de01cda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12fc34ce789bce6c8a05d8a17138534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a> = 800</td></tr>
+<tr class="separator:ad12fc34ce789bce6c8a05d8a17138534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa487e8e3cc48473cfc05c0ce0165e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#affa487e8e3cc48473cfc05c0ce0165e9">H</a> = <a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a></td></tr>
+<tr class="separator:affa487e8e3cc48473cfc05c0ce0165e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd51e03005d5cb52315290d27f61870"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2dd51e03005d5cb52315290d27f61870">W</a> = <a class="el" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a></td></tr>
+<tr class="separator:a2dd51e03005d5cb52315290d27f61870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ef1bf8a70cc07c6d55823c390a7e76"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab8ef1bf8a70cc07c6d55823c390a7e76">angle</a> = 0</td></tr>
+<tr class="separator:ab8ef1bf8a70cc07c6d55823c390a7e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefac3b54073269a9394f9a31a097d005"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a> = 20</td></tr>
+<tr class="separator:aefac3b54073269a9394f9a31a097d005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8f533bc23beee8f709630d1343a5da"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a> = 20</td></tr>
+<tr class="separator:abe8f533bc23beee8f709630d1343a5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeebf705e4120efa9a773e0f52b11be0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a> = 1.0f</td></tr>
+<tr class="separator:adeebf705e4120efa9a773e0f52b11be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7c4aa8c0b809f0f76628dbb5b6d62b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a> = 0.0f</td></tr>
+<tr class="separator:afb7c4aa8c0b809f0f76628dbb5b6d62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf431a94974e843174300e4c0fa47fbd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd">ly</a> = 0.0f</td></tr>
+<tr class="separator:aaf431a94974e843174300e4c0fa47fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb82b6f9a59b4ebab80b0ea796dbe066"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adb82b6f9a59b4ebab80b0ea796dbe066">angleY</a> = 0</td></tr>
+<tr class="separator:adb82b6f9a59b4ebab80b0ea796dbe066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30065f8008fe7130e92c75deae24a26"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a> = 0</td></tr>
+<tr class="separator:af30065f8008fe7130e92c75deae24a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5a82629ef90c38be28bb9141ee6cc3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> = 0</td></tr>
+<tr class="separator:abd5a82629ef90c38be28bb9141ee6cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc957abaece2bc482fd35e2a6d9b2075"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acc957abaece2bc482fd35e2a6d9b2075">oldtime</a> = 1</td></tr>
+<tr class="separator:acc957abaece2bc482fd35e2a6d9b2075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ff544f5a550769ff838373f7fb274f"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae4ff544f5a550769ff838373f7fb274f">newtime</a> = 1</td></tr>
+<tr class="separator:ae4ff544f5a550769ff838373f7fb274f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="adb9b9adadac0e0b57161c18552918f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9b9adadac0e0b57161c18552918f44">&#9670;&nbsp;</a></span>boo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d5cf0d8d37b6b17224867eb397c9a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5cf0d8d37b6b17224867eb397c9a16">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>главная функция программы циклично вызывается. 1 вызов- 1 кадр. обновляет все, что находится в мире- положение игрока, его угол поворота. так же обновляет каждым разом мир - рисует его </p>
+
+</div>
+</div>
+<a id="aed8f2221b04a8e9a76475409172ec1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8f2221b04a8e9a76475409172ec1fd">&#9670;&nbsp;</a></span>flashlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void flashlight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>точка входа в программу устанавливает все настройки библиотеки GLUT, а так же заполняет массив , по которому будет в дальнейшем строиться мир </p>
+
+</div>
+</div>
+<a id="afd1d12953941d1dc2f35cd182a31448d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1d12953941d1dc2f35cd182a31448d">&#9670;&nbsp;</a></span>Reshape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reshape </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="ab8ef1bf8a70cc07c6d55823c390a7e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ef1bf8a70cc07c6d55823c390a7e76">&#9670;&nbsp;</a></span>angle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float angle = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb82b6f9a59b4ebab80b0ea796dbe066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb82b6f9a59b4ebab80b0ea796dbe066">&#9670;&nbsp;</a></span>angleY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float angleY = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affa487e8e3cc48473cfc05c0ce0165e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa487e8e3cc48473cfc05c0ce0165e9">&#9670;&nbsp;</a></span>H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int H = <a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad12fc34ce789bce6c8a05d8a17138534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12fc34ce789bce6c8a05d8a17138534">&#9670;&nbsp;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int height = 800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb7c4aa8c0b809f0f76628dbb5b6d62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7c4aa8c0b809f0f76628dbb5b6d62b">&#9670;&nbsp;</a></span>lx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lx = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf431a94974e843174300e4c0fa47fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf431a94974e843174300e4c0fa47fbd">&#9670;&nbsp;</a></span>ly</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ly = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adeebf705e4120efa9a773e0f52b11be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeebf705e4120efa9a773e0f52b11be0">&#9670;&nbsp;</a></span>lz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lz = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af30065f8008fe7130e92c75deae24a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30065f8008fe7130e92c75deae24a26">&#9670;&nbsp;</a></span>move_front</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float move_front = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd5a82629ef90c38be28bb9141ee6cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5a82629ef90c38be28bb9141ee6cc3">&#9670;&nbsp;</a></span>move_side</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float move_side = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4ff544f5a550769ff838373f7fb274f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ff544f5a550769ff838373f7fb274f">&#9670;&nbsp;</a></span>newtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t newtime = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc957abaece2bc482fd35e2a6d9b2075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc957abaece2bc482fd35e2a6d9b2075">&#9670;&nbsp;</a></span>oldtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t oldtime = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe8f533bc23beee8f709630d1343a5da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe8f533bc23beee8f709630d1343a5da">&#9670;&nbsp;</a></span>quantity_cubes_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int quantity_cubes_x = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefac3b54073269a9394f9a31a097d005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefac3b54073269a9394f9a31a097d005">&#9670;&nbsp;</a></span>quantity_cubes_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int quantity_cubes_z = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dd51e03005d5cb52315290d27f61870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd51e03005d5cb52315290d27f61870">&#9670;&nbsp;</a></span>W</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int W = <a class="el" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2474a5474cbff19523a51eb1de01cda4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2474a5474cbff19523a51eb1de01cda4">&#9670;&nbsp;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int width = 1600</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_a24269e6f0e922bd1d395bd881c8e149.html">Huhehuindi</a></li><li class="navelem"><a class="el" href="dir_a9f0eb7c943d914fba4b2edd6b40a8d8.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_be53d5238649f78109e269e9b8dddeea.html">Учеба</a></li><li class="navelem"><a class="el" href="dir_bdf0b5d5c1e6a65bdb9e38a1eef11537.html">horror</a></li><li class="navelem"><a class="el" href="dir_f279d0c3ace50e2397a09449c19eb856.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

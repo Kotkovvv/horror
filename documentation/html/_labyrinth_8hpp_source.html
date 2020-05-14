@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Horror: Исходный файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/Labyrinth.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Horror
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_labyrinth_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Labyrinth.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_labyrinth_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">    1</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[<a class="code" href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a>][<a class="code" href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a>] = { {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},<span class="comment">//сюда z</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                                  {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                  {1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1},</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="comment">/*      |   */</span>                                {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1},</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="comment">/*перед |   */</span>                                {1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">/*      V   */</span>                                {1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1},</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                  {1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                  {1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1},</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                  {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                  {1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1},</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                  {1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                  {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1},</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                  {1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                  {1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1},</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                  {1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                  {1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1},</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                  {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                  {1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/*сюда x*/</span>                                    {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, }; <span class="comment">//дает невидимые стены</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">draw_wall_new</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z) {<span class="comment">//определяет, адо ли рисовать стены(если несколько накладываются, то не рисуется ни одна)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    glBegin(GL_QUADS);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z] != <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x - 1][z] &amp;&amp; x != 0) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// задняя стена</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        glColor3f(0.5, 0.5, 0.5);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        glTexCoord2f(0.0f, 1.0f); glVertex3f(0, 1, 0);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        glTexCoord2f(0.0f, 0.0f); glVertex3f(0, 1, 1);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        glTexCoord2f(1.0f, 0.0f); glVertex3f(0, -1, 1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// правая</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z] != <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z + 1] &amp;&amp; z != 20) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        glColor3f(0.5, 0.5, 0.5);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 1);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 1);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 1);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// передняя</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z] != <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x + 1][z] &amp;&amp; x != 20) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        glColor3f(0.6, 0.6, 0.6);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        glTexCoord2f(0.0f, 1.0f); glVertex3f(1, 1, 0);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 1);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// задняя</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z] != <a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z - 1] &amp;&amp; z != 0) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        glColor3f(0.5, 0.5, 0.5);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        glTexCoord2f(1.0f, 1.0f);  glVertex3f(0, -1, 0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        glTexCoord2f(0.0f, 1.0f); glVertex3f(1, -1, 0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        glTexCoord2f(0.0f, 0.0f); glVertex3f(1, 1, 0);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        glTexCoord2f(1.0f, 0.0f); glVertex3f(0, 1, 0);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    glEnd();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">floor</a>() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    glBindTexture(GL_TEXTURE_2D, <a class="code" href="textures_8hpp.html#a8c0f7a493e263f2c6d367177f33f82e1">floor1</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    glBegin(GL_QUADS);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    glEnd();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);      <span class="comment">// Будем очищать экран, заполняя его цветом тумана. ( Изменено )</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">fogg</a>() {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//GLuint filter;                          // Используемый фильтр для текстур</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; <span class="comment">// Хранит три типа тумана</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    GLuint fogfilter = 0;                    <span class="comment">// Тип используемого тумана</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; <span class="comment">// Цвет тумана</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    glEnable(GL_FOG);                       <span class="comment">// Включает туман (GL_FOG)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    glFogi(GL_FOG_MODE, fogMode[fogfilter]);<span class="comment">// Выбираем тип тумана</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    glFogfv(GL_FOG_COLOR, fogColor);        <span class="comment">// Устанавливаем цвет тумана</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    glFogf(GL_FOG_DENSITY, 0.7f);          <span class="comment">// Насколько густым будет туман</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    glHint(GL_FOG_HINT, GL_DONT_CARE);      <span class="comment">// Вспомогательная установка тумана</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    glFogf(GL_FOG_START, 1.0f);             <span class="comment">// Глубина, с которой начинается туман</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    glFogf(GL_FOG_END, 5.0f);               <span class="comment">// Глубина, где туман заканчивается.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_labyrinth_8hpp_html_a2d28da62b345f880fdde5af764d2bc7d"><div class="ttname"><a href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">draw_wall_new</a></div><div class="ttdeci">void draw_wall_new(int x, int z)</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:22</div></div>
+<div class="ttc" id="amain_8cpp_html_aefac3b54073269a9394f9a31a097d005"><div class="ttname"><a href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a></div><div class="ttdeci">const int quantity_cubes_z</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_a02babedaeff0ff9b077ec10773bd6e1e"><div class="ttname"><a href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">floor</a></div><div class="ttdeci">void floor()</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:59</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_adf2bc4dc794f8caf3a479450df7f1f35"><div class="ttname"><a href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a></div><div class="ttdeci">int cubes[quantity_cubes_x][quantity_cubes_z]</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:1</div></div>
+<div class="ttc" id="amain_8cpp_html_abe8f533bc23beee8f709630d1343a5da"><div class="ttname"><a href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a></div><div class="ttdeci">const int quantity_cubes_x</div><div class="ttdef"><b>Definition:</b> main.cpp:20</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_a08fd82fd9324da777710c70605fed1da"><div class="ttname"><a href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">fogg</a></div><div class="ttdeci">void fogg()</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:72</div></div>
+<div class="ttc" id="atextures_8hpp_html_a8c0f7a493e263f2c6d367177f33f82e1"><div class="ttname"><a href="textures_8hpp.html#a8c0f7a493e263f2c6d367177f33f82e1">floor1</a></div><div class="ttdeci">GLuint floor1</div><div class="ttdef"><b>Definition:</b> textures.hpp:3</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_a24269e6f0e922bd1d395bd881c8e149.html">Huhehuindi</a></li><li class="navelem"><a class="el" href="dir_a9f0eb7c943d914fba4b2edd6b40a8d8.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_be53d5238649f78109e269e9b8dddeea.html">Учеба</a></li><li class="navelem"><a class="el" href="dir_bdf0b5d5c1e6a65bdb9e38a1eef11537.html">horror</a></li><li class="navelem"><a class="el" href="dir_f279d0c3ace50e2397a09449c19eb856.html">src</a></li><li class="navelem"><a class="el" href="_labyrinth_8hpp.html">Labyrinth.hpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>
