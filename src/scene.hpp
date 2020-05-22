@@ -1,3 +1,6 @@
+/**
+/brief Функция, в которой описывается поведение вне меню
+*/
 void game() {
 	double times;
 	
@@ -25,6 +28,10 @@ void game() {
 		}
 	man.update(times);
 }
+
+/**
+/brief Функция, в которой описывается поведение в меню
+*/
 
 void game_menu() {
 	butt.update();

@@ -16,7 +16,7 @@ public:
     float x1, float y1 - координаты правого верхнего угла прямоугольника, который будет рисоваться
     float x2, float y2 - координаты левого нижнего угла прямоугольника, который будет рисоваться
     */
-    GUI_touch1(GLuint* tex, int pix, int X, int Y, float x1, float y1, float x2, float y2) {
+    GUI_touch1(GLuint* tex, int pix, float X, float Y, float x1, float y1, float x2, float y2) {
         X2 = X / pix;
         Y2 = Y / pix;
 
@@ -130,6 +130,6 @@ public:
     }
 };
 //по оси x 1,04
-GUI_background1 back(&backg, 100, 100, 100, 1.03, 1, -1.03, -1);
-GUI_background1 flashl(&flash, 100, -100, 100, 1.05, -0.1, 0.51, -1);
-GUI_touch1 butt(&but, 100, 100, 50, 0.1, 0.1, -0.1, -0.1);
+GUI_background1 back(&backg, 100, 100, 100, 1.03, 1, -1.03, -1);///<Класс заднего фона меню
+GUI_background1 flashl(&flash, 100, -100, 100, 1.05, -0.1, 0.51, -1);///<Класс рисования фонарика
+GUI_touch1 butt(&but, 100, 100, 50, 0.1, 0.1, -0.1, -0.1);///<Класс кнопки

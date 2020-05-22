@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['d_88',['d',['../class_player.html#a3f62d17991f2da3417ac49ccf9e13021',1,'Player']]],
-  ['dfrontx_89',['dFrontX',['../class_player.html#aa129f82fe2034539cb7444902af35912',1,'Player']]],
-  ['dfrontz_90',['dFrontZ',['../class_player.html#abd949edd4cdb17565bc1469b7ace0ff8',1,'Player']]],
-  ['dsidex_91',['dSideX',['../class_player.html#aad71855c90f6051bd443a4ca7ee34421',1,'Player']]],
-  ['dsidez_92',['dSideZ',['../class_player.html#a3f85e737e8042fe2a1c5b419448e8b22',1,'Player']]],
-  ['dx_93',['dx',['../class_player.html#a52250846ba4e8545f3083cf338ea96ff',1,'Player']]],
-  ['dz_94',['dz',['../class_player.html#adc0798fa136ca3e5212260771a98c975',1,'Player']]]
+  ['choice_5fof_5flabirynth_113',['choice_of_labirynth',['../main_8cpp.html#a53e93bf621c5c22a98badd4dd5bb1fac',1,'main.cpp']]],
+  ['cube_5fsize_114',['cube_size',['../_labyrinth_8hpp.html#a01283f3e86444d8622f780d8493c2677',1,'Labyrinth.hpp']]],
+  ['cubes_115',['cubes',['../_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35',1,'Labyrinth.hpp']]],
+  ['cubes1_116',['cubes1',['../_labyrinth_8hpp.html#a06bf7dc56d67ddb3fa7033476578a8e6',1,'Labyrinth.hpp']]]
 ];

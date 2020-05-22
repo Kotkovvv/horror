@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['screamer_114',['screamer',['../textures_8hpp.html#a8bb35e9db0c3c326e3944db248e10e5d',1,'textures.hpp']]],
-  ['speed_115',['speed',['../class_player.html#a770942101eff683b030edde9f730d537',1,'Player']]]
+  ['quantity_5fcubes_5fx_141',['quantity_cubes_x',['../main_8cpp.html#abe8f533bc23beee8f709630d1343a5da',1,'main.cpp']]],
+  ['quantity_5fcubes_5fz_142',['quantity_cubes_z',['../main_8cpp.html#aefac3b54073269a9394f9a31a097d005',1,'main.cpp']]]
 ];

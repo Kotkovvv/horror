@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
+<a href="#enum-members">Перечисления</a> &#124;
 <a href="#func-members">Функции</a> &#124;
 <a href="#var-members">Переменные</a>  </div>
   <div class="headertitle">
@@ -107,8 +108,18 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <code>#include &quot;<a class="el" href="textures_8hpp_source.html">textures.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_labyrinth_8hpp_source.html">Labyrinth.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_player_8hpp_source.html">Player.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scene_8hpp_source.html">scene.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_mouse__and__keyboard_8hpp_source.html">Mouse_and_keyboard.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a65e079ce2e3340cf35d78c00ba8bbfae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a65e079ce2e3340cf35d78c00ba8bbfae">game_status</a> { <a class="el" href="main_8cpp.html#a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84">GAME</a>, 
+<a class="el" href="main_8cpp.html#a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d">GAME_MENU</a>, 
+<a class="el" href="main_8cpp.html#a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b">MAIN_MENU</a>
+ }</td></tr>
+<tr class="separator:a65e079ce2e3340cf35d78c00ba8bbfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
 <tr class="memitem:afd1d12953941d1dc2f35cd182a31448d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afd1d12953941d1dc2f35cd182a31448d">Reshape</a> (int w, int h)</td></tr>
@@ -122,10 +133,10 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Переменные</h2></td></tr>
-<tr class="memitem:a2474a5474cbff19523a51eb1de01cda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a> = 1600</td></tr>
+<tr class="memitem:a2474a5474cbff19523a51eb1de01cda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a> = 1280</td></tr>
 <tr class="memdesc:a2474a5474cbff19523a51eb1de01cda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота окна  <a href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">Подробнее...</a><br /></td></tr>
 <tr class="separator:a2474a5474cbff19523a51eb1de01cda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad12fc34ce789bce6c8a05d8a17138534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a> = 800</td></tr>
+<tr class="memitem:ad12fc34ce789bce6c8a05d8a17138534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a> = 720</td></tr>
 <tr class="memdesc:ad12fc34ce789bce6c8a05d8a17138534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина окна  <a href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">Подробнее...</a><br /></td></tr>
 <tr class="separator:ad12fc34ce789bce6c8a05d8a17138534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa487e8e3cc48473cfc05c0ce0165e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#affa487e8e3cc48473cfc05c0ce0165e9">H</a> = <a class="el" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a></td></tr>
@@ -162,7 +173,31 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <tr class="separator:acc957abaece2bc482fd35e2a6d9b2075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ff544f5a550769ff838373f7fb274f"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae4ff544f5a550769ff838373f7fb274f">newtime</a> = 1</td></tr>
 <tr class="separator:ae4ff544f5a550769ff838373f7fb274f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e93bf621c5c22a98badd4dd5bb1fac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a53e93bf621c5c22a98badd4dd5bb1fac">choice_of_labirynth</a> = 0</td></tr>
+<tr class="separator:a53e93bf621c5c22a98badd4dd5bb1fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35c82b989d9221e19b3beb65c08d7b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad35c82b989d9221e19b3beb65c08d7b0">state_of_game</a> = 0</td></tr>
+<tr class="separator:ad35c82b989d9221e19b3beb65c08d7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a65e079ce2e3340cf35d78c00ba8bbfae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e079ce2e3340cf35d78c00ba8bbfae">&#9670;&nbsp;</a></span>game_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8cpp.html#a65e079ce2e3340cf35d78c00ba8bbfae">game_status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84"></a>GAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d"></a>GAME_MENU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b"></a>MAIN_MENU&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Функции</h2>
 <a id="a3d5cf0d8d37b6b17224867eb397c9a16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d5cf0d8d37b6b17224867eb397c9a16">&#9670;&nbsp;</a></span>Draw()</h2>
@@ -265,6 +300,20 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 </div>
 </div>
+<a id="a53e93bf621c5c22a98badd4dd5bb1fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53e93bf621c5c22a98badd4dd5bb1fac">&#9670;&nbsp;</a></span>choice_of_labirynth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool choice_of_labirynth = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="affa487e8e3cc48473cfc05c0ce0165e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affa487e8e3cc48473cfc05c0ce0165e9">&#9670;&nbsp;</a></span>H</h2>
 
@@ -288,7 +337,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int height = 800</td>
+          <td class="memname">int height = 720</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -433,6 +482,20 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 </div>
 </div>
+<a id="ad35c82b989d9221e19b3beb65c08d7b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35c82b989d9221e19b3beb65c08d7b0">&#9670;&nbsp;</a></span>state_of_game</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int state_of_game = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2dd51e03005d5cb52315290d27f61870"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dd51e03005d5cb52315290d27f61870">&#9670;&nbsp;</a></span>W</h2>
 
@@ -456,7 +519,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int width = 1600</td>
+          <td class="memname">int width = 1280</td>
         </tr>
       </table>
 </div><div class="memdoc">

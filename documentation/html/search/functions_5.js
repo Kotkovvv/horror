@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['load_5ftextures_76',['load_textures',['../textures_8hpp.html#aa06c224f8a43cb996cfe471a8a28b3b8',1,'textures.hpp']]],
-  ['load_5ftextures_5fsmooth_77',['load_textures_smooth',['../textures_8hpp.html#acba297ce42bb5e1215cb34a6b80ca809',1,'textures.hpp']]]
+  ['keyboard_98',['keyboard',['../_mouse__and__keyboard_8hpp.html#aef7ba2f69afb2d954545f64c7fe24b14',1,'Mouse_and_keyboard.hpp']]],
+  ['keyboard_5fup_99',['keyboard_up',['../_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865',1,'Mouse_and_keyboard.hpp']]]
 ];

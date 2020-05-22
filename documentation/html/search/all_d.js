@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reshape_49',['Reshape',['../main_8cpp.html#afd1d12953941d1dc2f35cd182a31448d',1,'main.cpp']]]
+  ['quantity_5fcubes_5fx_60',['quantity_cubes_x',['../main_8cpp.html#abe8f533bc23beee8f709630d1343a5da',1,'main.cpp']]],
+  ['quantity_5fcubes_5fz_61',['quantity_cubes_z',['../main_8cpp.html#aefac3b54073269a9394f9a31a097d005',1,'main.cpp']]]
 ];

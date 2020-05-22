@@ -40,6 +40,7 @@ var menudata={children:[
 {text:"c",url:"globals.html#index_c"},
 {text:"d",url:"globals.html#index_d"},
 {text:"f",url:"globals.html#index_f"},
+{text:"g",url:"globals.html#index_g"},
 {text:"h",url:"globals.html#index_h"},
 {text:"k",url:"globals.html#index_k"},
 {text:"l",url:"globals.html#index_l"},
@@ -52,4 +53,19 @@ var menudata={children:[
 {text:"t",url:"globals.html#index_t"},
 {text:"w",url:"globals.html#index_w"}]},
 {text:"Функции",url:"globals_func.html"},
-{text:"Переменные",url:"globals_vars.html"}]}]}]}
+{text:"Переменные",url:"globals_vars.html",children:[
+{text:"a",url:"globals_vars.html#index_a"},
+{text:"b",url:"globals_vars.html#index_b"},
+{text:"c",url:"globals_vars.html#index_c"},
+{text:"f",url:"globals_vars.html#index_f"},
+{text:"h",url:"globals_vars.html#index_h"},
+{text:"l",url:"globals_vars.html#index_l"},
+{text:"m",url:"globals_vars.html#index_m"},
+{text:"n",url:"globals_vars.html#index_n"},
+{text:"o",url:"globals_vars.html#index_o"},
+{text:"q",url:"globals_vars.html#index_q"},
+{text:"s",url:"globals_vars.html#index_s"},
+{text:"t",url:"globals_vars.html#index_t"},
+{text:"w",url:"globals_vars.html#index_w"}]},
+{text:"Перечисления",url:"globals_enum.html"},
+{text:"Элементы перечислений",url:"globals_eval.html"}]}]}]}

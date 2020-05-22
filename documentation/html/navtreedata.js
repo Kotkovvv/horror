@@ -39,7 +39,9 @@ var NAVTREE =
       [ "Список членов всех файлов", "globals.html", [
         [ "Указатель", "globals.html", null ],
         [ "Функции", "globals_func.html", null ],
-        [ "Переменные", "globals_vars.html", null ]
+        [ "Переменные", "globals_vars.html", null ],
+        [ "Перечисления", "globals_enum.html", null ],
+        [ "Элементы перечислений", "globals_eval.html", null ]
       ] ]
     ] ]
   ] ]
@@ -47,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_labyrinth_8hpp.html"
+"_g_u_i_8hpp.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

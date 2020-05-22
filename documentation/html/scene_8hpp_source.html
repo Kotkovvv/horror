@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Horror: Исходный файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/scene.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Horror
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('scene_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">scene.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="scene_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="scene_8hpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="scene_8hpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e">game</a>() {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">double</span> times;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">//back.update();</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    flashl.update();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">//boo();//возможно скример(картинка перед нами, нужно привязать время?)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    gluLookAt(<a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a>, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a> + <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a> / 2, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> + <a class="code" href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a>, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a> + <a class="code" href="main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd">ly</a> + <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a> / 2, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> + <a class="code" href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        0.0f, 1.0f, 0.0f);<span class="comment">//управление камерой</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//=================================начало основного цикла===================================================================================</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="main_8cpp.html#ae4ff544f5a550769ff838373f7fb274f">newtime</a> = clock();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    times = <a class="code" href="main_8cpp.html#ae4ff544f5a550769ff838373f7fb274f">newtime</a> - <a class="code" href="main_8cpp.html#acc957abaece2bc482fd35e2a6d9b2075">oldtime</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="main_8cpp.html#acc957abaece2bc482fd35e2a6d9b2075">oldtime</a> = clock();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//std::cout &lt;&lt; 1000 / times &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">floor</a>();<span class="comment">//рисование пола</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">fogg</a>();<span class="comment">//рисование тумана</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    glBindTexture(GL_TEXTURE_2D, <a class="code" href="textures_8hpp.html#a43d26095302b397de39d2191a7ff1c20">wall</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a>; x++)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; <a class="code" href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a>; z++) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z]) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            glTranslatef(x, 0, z);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">draw_wall_new</a>(x, z);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            glTranslatef(-x, 0, -z);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a194b7082791d882887071d8d2893c5e4">update</a>(times);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="scene_8hpp.html#a116f5db451cfe52a4f8ae0bdf32e3bbc">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="scene_8hpp.html#a116f5db451cfe52a4f8ae0bdf32e3bbc">game_menu</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    butt.update();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    back.update();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//flashl.update();</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//boo();//возможно скример(картинка перед нами, нужно привязать время?)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    gluLookAt(<a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a>, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a> + <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a> / 2, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#aa236df11fc00f7c338b03b061b480d67">PlayerX</a> + <a class="code" href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a>, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa5e305b377d914da490da1aa0d6503b">PlayerY</a> + <a class="code" href="main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd">ly</a> + <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#afa3667f91d696d17733dbf1cce688037">h</a> / 2, <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">PlayerZ</a> + <a class="code" href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        0.0f, 1.0f, 0.0f);<span class="comment">//управление камерой</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//=================================начало основного цикла===================================================================================</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">floor</a>();<span class="comment">//рисование пола</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">fogg</a>();<span class="comment">//рисование тумана</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    glBindTexture(GL_TEXTURE_2D, <a class="code" href="textures_8hpp.html#a43d26095302b397de39d2191a7ff1c20">wall</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a>; x++)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; <a class="code" href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a>; z++) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a>[x][z]) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            glTranslatef(x, 0, z);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">draw_wall_new</a>(x, z);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            glTranslatef(-x, 0, -z);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a>.<a class="code" href="class_player.html#a194b7082791d882887071d8d2893c5e4">update</a>(0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="ascene_8hpp_html_a116f5db451cfe52a4f8ae0bdf32e3bbc"><div class="ttname"><a href="scene_8hpp.html#a116f5db451cfe52a4f8ae0bdf32e3bbc">game_menu</a></div><div class="ttdeci">void game_menu()</div><div class="ttdef"><b>Definition:</b> scene.hpp:36</div></div>
+<div class="ttc" id="atextures_8hpp_html_a43d26095302b397de39d2191a7ff1c20"><div class="ttname"><a href="textures_8hpp.html#a43d26095302b397de39d2191a7ff1c20">wall</a></div><div class="ttdeci">GLuint wall</div><div class="ttdoc">Переменная для текстуры стены</div><div class="ttdef"><b>Definition:</b> textures.hpp:1</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_a2d28da62b345f880fdde5af764d2bc7d"><div class="ttname"><a href="_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d">draw_wall_new</a></div><div class="ttdeci">void draw_wall_new(int x, int z)</div><div class="ttdoc">Определяет поведение при рисовании стен</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:51</div></div>
+<div class="ttc" id="aclass_player_html_afa3667f91d696d17733dbf1cce688037"><div class="ttname"><a href="class_player.html#afa3667f91d696d17733dbf1cce688037">Player::h</a></div><div class="ttdeci">float h</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="amain_8cpp_html_aefac3b54073269a9394f9a31a097d005"><div class="ttname"><a href="main_8cpp.html#aefac3b54073269a9394f9a31a097d005">quantity_cubes_z</a></div><div class="ttdeci">const int quantity_cubes_z</div><div class="ttdoc">Количество невидимых кубов по z.</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
+<div class="ttc" id="a_player_8hpp_html_a14d47f976bd7c3bf3b94258cf549852b"><div class="ttname"><a href="_player_8hpp.html#a14d47f976bd7c3bf3b94258cf549852b">man</a></div><div class="ttdeci">Player man(1.5, -0.8, 1.5)</div><div class="ttdoc">Создаем объект</div></div>
+<div class="ttc" id="amain_8cpp_html_adeebf705e4120efa9a773e0f52b11be0"><div class="ttname"><a href="main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0">lz</a></div><div class="ttdeci">float lz</div><div class="ttdoc">Координаты вектора, определяющее, куда смотрит камера</div><div class="ttdef"><b>Definition:</b> main.cpp:21</div></div>
+<div class="ttc" id="aclass_player_html_afa5e305b377d914da490da1aa0d6503b"><div class="ttname"><a href="class_player.html#afa5e305b377d914da490da1aa0d6503b">Player::PlayerY</a></div><div class="ttdeci">float PlayerY</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_a02babedaeff0ff9b077ec10773bd6e1e"><div class="ttname"><a href="_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e">floor</a></div><div class="ttdeci">void floor()</div><div class="ttdoc">Рисование пола</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:131</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_adf2bc4dc794f8caf3a479450df7f1f35"><div class="ttname"><a href="_labyrinth_8hpp.html#adf2bc4dc794f8caf3a479450df7f1f35">cubes</a></div><div class="ttdeci">int cubes[quantity_cubes_x][quantity_cubes_z]</div><div class="ttdoc">Массив невидимых стен первой локации</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:1</div></div>
+<div class="ttc" id="ascene_8hpp_html_a9f1c87c7296779c4c895ca2b13ad2e3e"><div class="ttname"><a href="scene_8hpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e">game</a></div><div class="ttdeci">void game()</div><div class="ttdef"><b>Definition:</b> scene.hpp:4</div></div>
+<div class="ttc" id="amain_8cpp_html_afb7c4aa8c0b809f0f76628dbb5b6d62b"><div class="ttname"><a href="main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b">lx</a></div><div class="ttdeci">float lx</div><div class="ttdoc">Координаты вектора, определяющее, куда смотрит камера</div><div class="ttdef"><b>Definition:</b> main.cpp:22</div></div>
+<div class="ttc" id="amain_8cpp_html_acc957abaece2bc482fd35e2a6d9b2075"><div class="ttname"><a href="main_8cpp.html#acc957abaece2bc482fd35e2a6d9b2075">oldtime</a></div><div class="ttdeci">time_t oldtime</div><div class="ttdef"><b>Definition:</b> main.cpp:27</div></div>
+<div class="ttc" id="amain_8cpp_html_ae4ff544f5a550769ff838373f7fb274f"><div class="ttname"><a href="main_8cpp.html#ae4ff544f5a550769ff838373f7fb274f">newtime</a></div><div class="ttdeci">time_t newtime</div><div class="ttdef"><b>Definition:</b> main.cpp:28</div></div>
+<div class="ttc" id="amain_8cpp_html_abe8f533bc23beee8f709630d1343a5da"><div class="ttname"><a href="main_8cpp.html#abe8f533bc23beee8f709630d1343a5da">quantity_cubes_x</a></div><div class="ttdeci">const int quantity_cubes_x</div><div class="ttdoc">Количество невидимых кубов по x.</div><div class="ttdef"><b>Definition:</b> main.cpp:20</div></div>
+<div class="ttc" id="a_labyrinth_8hpp_html_a08fd82fd9324da777710c70605fed1da"><div class="ttname"><a href="_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da">fogg</a></div><div class="ttdeci">void fogg()</div><div class="ttdoc">Рисование тумана</div><div class="ttdef"><b>Definition:</b> Labyrinth.hpp:149</div></div>
+<div class="ttc" id="aclass_player_html_a3fe624c14e2d04c851229e7c52a47b9d"><div class="ttname"><a href="class_player.html#a3fe624c14e2d04c851229e7c52a47b9d">Player::PlayerZ</a></div><div class="ttdeci">float PlayerZ</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_aa236df11fc00f7c338b03b061b480d67"><div class="ttname"><a href="class_player.html#aa236df11fc00f7c338b03b061b480d67">Player::PlayerX</a></div><div class="ttdeci">float PlayerX</div><div class="ttdef"><b>Definition:</b> Player.hpp:3</div></div>
+<div class="ttc" id="aclass_player_html_a194b7082791d882887071d8d2893c5e4"><div class="ttname"><a href="class_player.html#a194b7082791d882887071d8d2893c5e4">Player::update</a></div><div class="ttdeci">void update(float time)</div><div class="ttdoc">Оснновная функцию обновления игрока</div><div class="ttdef"><b>Definition:</b> Player.hpp:26</div></div>
+<div class="ttc" id="amain_8cpp_html_aaf431a94974e843174300e4c0fa47fbd"><div class="ttname"><a href="main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd">ly</a></div><div class="ttdeci">float ly</div><div class="ttdoc">Координаты вектора, определяющее, куда смотрит камера</div><div class="ttdef"><b>Definition:</b> main.cpp:23</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_a24269e6f0e922bd1d395bd881c8e149.html">Huhehuindi</a></li><li class="navelem"><a class="el" href="dir_a9f0eb7c943d914fba4b2edd6b40a8d8.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_be53d5238649f78109e269e9b8dddeea.html">Учеба</a></li><li class="navelem"><a class="el" href="dir_bdf0b5d5c1e6a65bdb9e38a1eef11537.html">horror</a></li><li class="navelem"><a class="el" href="dir_f279d0c3ace50e2397a09449c19eb856.html">src</a></li><li class="navelem"><a class="el" href="scene_8hpp.html">scene.hpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

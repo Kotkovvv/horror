@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['labyrinth_2ehpp_25',['Labyrinth.hpp',['../_labyrinth_8hpp.html',1,'']]],
-  ['load_5ftextures_26',['load_textures',['../textures_8hpp.html#aa06c224f8a43cb996cfe471a8a28b3b8',1,'textures.hpp']]],
-  ['load_5ftextures_5fsmooth_27',['load_textures_smooth',['../textures_8hpp.html#acba297ce42bb5e1215cb34a6b80ca809',1,'textures.hpp']]],
-  ['lx_28',['lx',['../main_8cpp.html#afb7c4aa8c0b809f0f76628dbb5b6d62b',1,'main.cpp']]],
-  ['ly_29',['ly',['../main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd',1,'main.cpp']]],
-  ['lz_30',['lz',['../main_8cpp.html#adeebf705e4120efa9a773e0f52b11be0',1,'main.cpp']]]
+  ['keyboard_34',['keyboard',['../_mouse__and__keyboard_8hpp.html#aef7ba2f69afb2d954545f64c7fe24b14',1,'Mouse_and_keyboard.hpp']]],
+  ['keyboard_5fup_35',['keyboard_up',['../_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865',1,'Mouse_and_keyboard.hpp']]]
 ];

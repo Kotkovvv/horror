@@ -832,7 +832,7 @@ INPUT                  = C:\Users\Huhehuindi\Desktop\Учеба\horror\src
 # possible encodings.
 # The default value is: UTF-8.
 
-INPUT_ENCODING         = CP-1251
+INPUT_ENCODING         = CP1251
 
 # If the value of the INPUT tag contains directories, you can use the
 # FILE_PATTERNS tag to specify one or more wildcard patterns (like *.cpp and

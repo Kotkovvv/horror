@@ -144,27 +144,33 @@ $(document).ready(function(){initNavTree('_mouse__and__keyboard_8hpp_source.html
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> = 1;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">keyboard_up</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">switch</span> (key)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;w&#39;</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a> = 0;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#ad35c82b989d9221e19b3beb65c08d7b0">state_of_game</a> == 0)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="main_8cpp.html#ad35c82b989d9221e19b3beb65c08d7b0">state_of_game</a> = 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="main_8cpp.html#ad35c82b989d9221e19b3beb65c08d7b0">state_of_game</a> = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">keyboard_up</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">switch</span> (key)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;w&#39;</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="main_8cpp.html#af30065f8008fe7130e92c75deae24a26">move_front</a> = 0;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a> = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="amain_8cpp_html_adb82b6f9a59b4ebab80b0ea796dbe066"><div class="ttname"><a href="main_8cpp.html#adb82b6f9a59b4ebab80b0ea796dbe066">angleY</a></div><div class="ttdeci">float angleY</div><div class="ttdef"><b>Definition:</b> main.cpp:24</div></div>
@@ -178,8 +184,9 @@ $(document).ready(function(){initNavTree('_mouse__and__keyboard_8hpp_source.html
 <div class="ttc" id="amain_8cpp_html_abd5a82629ef90c38be28bb9141ee6cc3"><div class="ttname"><a href="main_8cpp.html#abd5a82629ef90c38be28bb9141ee6cc3">move_side</a></div><div class="ttdeci">float move_side</div><div class="ttdef"><b>Definition:</b> main.cpp:26</div></div>
 <div class="ttc" id="a_mouse__and__keyboard_8hpp_html_a2465ed987405cb91c8e198899e36e39b"><div class="ttname"><a href="_mouse__and__keyboard_8hpp.html#a2465ed987405cb91c8e198899e36e39b">mouseXOld</a></div><div class="ttdeci">float mouseXOld</div><div class="ttdoc">вспомогательные функции, которые позволяют двигать камеру, фиксирует старое положение камеры</div><div class="ttdef"><b>Definition:</b> Mouse_and_keyboard.hpp:1</div></div>
 <div class="ttc" id="amain_8cpp_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Высота окна</div><div class="ttdef"><b>Definition:</b> main.cpp:14</div></div>
+<div class="ttc" id="amain_8cpp_html_ad35c82b989d9221e19b3beb65c08d7b0"><div class="ttname"><a href="main_8cpp.html#ad35c82b989d9221e19b3beb65c08d7b0">state_of_game</a></div><div class="ttdeci">int state_of_game</div><div class="ttdef"><b>Definition:</b> main.cpp:30</div></div>
 <div class="ttc" id="a_mouse__and__keyboard_8hpp_html_aef7ba2f69afb2d954545f64c7fe24b14"><div class="ttname"><a href="_mouse__and__keyboard_8hpp.html#aef7ba2f69afb2d954545f64c7fe24b14">keyboard</a></div><div class="ttdeci">void keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> Mouse_and_keyboard.hpp:43</div></div>
-<div class="ttc" id="a_mouse__and__keyboard_8hpp_html_a571f46e1d0e29afeb743a6342448b865"><div class="ttname"><a href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">keyboard_up</a></div><div class="ttdeci">void keyboard_up(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> Mouse_and_keyboard.hpp:76</div></div>
+<div class="ttc" id="a_mouse__and__keyboard_8hpp_html_a571f46e1d0e29afeb743a6342448b865"><div class="ttname"><a href="_mouse__and__keyboard_8hpp.html#a571f46e1d0e29afeb743a6342448b865">keyboard_up</a></div><div class="ttdeci">void keyboard_up(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> Mouse_and_keyboard.hpp:82</div></div>
 <div class="ttc" id="amain_8cpp_html_aaf431a94974e843174300e4c0fa47fbd"><div class="ttname"><a href="main_8cpp.html#aaf431a94974e843174300e4c0fa47fbd">ly</a></div><div class="ttdeci">float ly</div><div class="ttdoc">Координаты вектора, определяющее, куда смотрит камера</div><div class="ttdef"><b>Definition:</b> main.cpp:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

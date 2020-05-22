@@ -12,7 +12,17 @@
 {\ttfamily \#include \char`\"{}textures.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Labyrinth.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Player.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+U\+I.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Mouse\+\_\+and\+\_\+keyboard.\+hpp\char`\"{}}\newline
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfae}{game\+\_\+status}} \{ \mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84}{G\+A\+ME}}, 
+\mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d}{G\+A\+M\+E\+\_\+\+M\+E\+NU}}, 
+\mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}{M\+A\+I\+N\+\_\+\+M\+E\+NU}}
+ \}
+\end{DoxyCompactItemize}
 \doxysubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,9 +35,9 @@ int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \doxysubsection*{Переменные}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}} = 1600
+int \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}} = 1280
 \begin{DoxyCompactList}\small\item\em Высота окна \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}} = 800
+int \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}} = 720
 \begin{DoxyCompactList}\small\item\em Ширина окна \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}{H}} = \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}}
 \begin{DoxyCompactList}\small\item\em Высота \end{DoxyCompactList}\item 
@@ -54,7 +64,34 @@ float \mbox{\hyperlink{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}{move\+\_\+si
 time\+\_\+t \mbox{\hyperlink{main_8cpp_acc957abaece2bc482fd35e2a6d9b2075}{oldtime}} = 1
 \item 
 time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtime}} = 1
+\item 
+bool \mbox{\hyperlink{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}{choice\+\_\+of\+\_\+labirynth}} = 0
+\item 
+int \mbox{\hyperlink{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}{state\+\_\+of\+\_\+game}} = 0
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfae}\label{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfae}} 
+\index{main.cpp@{main.cpp}!game\_status@{game\_status}}
+\index{game\_status@{game\_status}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{game\_status}{game\_status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfae}{game\+\_\+status}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAME@{GAME}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!GAME@{GAME}}}\mbox{\Hypertarget{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84}\label{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84}} 
+G\+A\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAME\_MENU@{GAME\_MENU}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!GAME\_MENU@{GAME\_MENU}}}\mbox{\Hypertarget{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d}\label{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d}} 
+G\+A\+M\+E\+\_\+\+M\+E\+NU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAIN\_MENU@{MAIN\_MENU}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!MAIN\_MENU@{MAIN\_MENU}}}\mbox{\Hypertarget{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}\label{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}} 
+M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Функции}
@@ -105,6 +142,12 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 \doxysubsubsection{\texorpdfstring{angleY}{angleY}}
 {\footnotesize\ttfamily float angleY = 0}
 
+\mbox{\Hypertarget{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}\label{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}} 
+\index{main.cpp@{main.cpp}!choice\_of\_labirynth@{choice\_of\_labirynth}}
+\index{choice\_of\_labirynth@{choice\_of\_labirynth}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{choice\_of\_labirynth}{choice\_of\_labirynth}}
+{\footnotesize\ttfamily bool choice\+\_\+of\+\_\+labirynth = 0}
+
 \mbox{\Hypertarget{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}\label{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}} 
 \index{main.cpp@{main.cpp}!H@{H}}
 \index{H@{H}!main.cpp@{main.cpp}}
@@ -119,7 +162,7 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 \index{main.cpp@{main.cpp}!height@{height}}
 \index{height@{height}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{height}{height}}
-{\footnotesize\ttfamily int height = 800}
+{\footnotesize\ttfamily int height = 720}
 
 
 
@@ -199,6 +242,12 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 
 Количество невидимых кубов по z. 
 
+\mbox{\Hypertarget{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}\label{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}} 
+\index{main.cpp@{main.cpp}!state\_of\_game@{state\_of\_game}}
+\index{state\_of\_game@{state\_of\_game}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{state\_of\_game}{state\_of\_game}}
+{\footnotesize\ttfamily int state\+\_\+of\+\_\+game = 0}
+
 \mbox{\Hypertarget{main_8cpp_a2dd51e03005d5cb52315290d27f61870}\label{main_8cpp_a2dd51e03005d5cb52315290d27f61870}} 
 \index{main.cpp@{main.cpp}!W@{W}}
 \index{W@{W}!main.cpp@{main.cpp}}
@@ -213,7 +262,7 @@ time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtim
 \index{main.cpp@{main.cpp}!width@{width}}
 \index{width@{width}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{width}{width}}
-{\footnotesize\ttfamily int width = 1600}
+{\footnotesize\ttfamily int width = 1280}
 
 
 
