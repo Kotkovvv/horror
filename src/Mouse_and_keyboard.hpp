@@ -63,6 +63,12 @@ void keyboard(unsigned char key, int x, int y)
 	case 'D':
 		move_side = 1;
 		break;
+	case 'm':
+	case 'M':
+		if (state_of_game == 0)
+			state_of_game = 1;
+		else
+			state_of_game = 0;
 	}
 }
 

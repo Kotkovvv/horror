@@ -11,8 +11,8 @@
 #pragma comment (lib,"alut.lib")
 #pragma comment (lib,"glut.lib")
 
-int width = 1600; ///< Высота окна
-int height = 800; ///< Ширина окна
+int width = 1280; ///< Высота окна
+int height = 720; ///< Ширина окна
 int H = height;///<Высота
 int W = width;///<Ширина
 float angle = 0; ///< Угол поворота
@@ -26,10 +26,20 @@ float move_front = 0;
 float move_side = 0;
 time_t oldtime = 1;
 time_t newtime = 1;
+bool choice_of_labirynth = 0;
+int state_of_game = 0;
 
 #include "textures.hpp"
 #include "Labyrinth.hpp"
 #include "Player.hpp"
+#include "GUI.hpp"
+#include "scene.hpp"
+
+enum game_status {
+	GAME,
+	GAME_MENU,
+	MAIN_MENU
+};
 
 /**
 /brief Функция, отвечающая за изменения параметров при изменении размера окна
@@ -58,36 +68,18 @@ void Reshape(int w, int h)
 */
 
 void Draw() {
-	double times;
-	float PlayerX = 0;
-	float PlayerZ = 0;
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // чистим цвет и глубину
 	glClearColor(0, 0, 0, 0); // задаем цвет фона в режиме RGB
 	glPushMatrix(); // сохраняем систему координат
-	if (angle > 360)//если обзор больше 360, то обнуляется
-		angle = 0;
-	flashlight();
-	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
-	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2, man.PlayerZ,
-		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,
-		0.0f, 1.0f, 0.0f);//управление камерой
-//=================================начало основного цикла===================================================================================
-	newtime = clock();
-	times = newtime - oldtime;
-	oldtime = clock();
-	//std::cout << 1000 / times << std::endl;
-	floor();//рисование пола
-	fogg();//рисование тумана
-	glBindTexture(GL_TEXTURE_2D, wall);
-	for (int x = 0; x < quantity_cubes_x; x++)
-		for (int z = 0; z < quantity_cubes_z; z++) {
-			if (!cubes[x][z]) continue;
-			glTranslatef(x, 0, z);
-			draw_wall_new(x, z);
-			glTranslatef(-x, 0, -z);
-
-		}
-	man.update(times);
+	switch (state_of_game) {
+	case GAME:
+	game();
+	break;
+	case GAME_MENU:
+		game_menu();
+		break;
+	}
 	//=================================конец основного цикла===================================================================================
 	glPopMatrix(); // загружаем систему кординат
 	glutPostRedisplay(); // Обновляем картинку в окне
