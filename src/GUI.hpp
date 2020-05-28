@@ -1,5 +1,5 @@
 class GUI_touch1 {
-    int pix = 500;
+    int pix = 100;
     float X1 = 0, Y1 = 0;/* .: */ // для текстуры 
     float x1 = 0, y1 = 0;/* :. */ // для прямоугольника
     float X2 = 0, Y2 = 0;/* :' */ // для текстуры
@@ -41,9 +41,11 @@ public:
     bool mouse(float x, float y, int click_status) {
         // изменяем координаты мыши. изначально ее координаты определяются как высота и ширина в пикселях,
         // но координаты кнопки в других значениях - к ним и приводим
-        x /= W / 2; y /= H / 2;
-        x -= 1; y -= 1;
-        x *= 0.36; y *= -0.2;
+        x = x / (width/2); 
+        y = y / (height/2);
+        x = x - 1;
+        y = -(y - 1);
+        std::cout << x << " " << y << std::endl;
         // смотрим, попадает ли мышка в кнопку
         if (x > x2 && x < x1 && y > y2 && y < y1) {
             light = 1; // включаем подсветку
@@ -69,10 +71,10 @@ public:
             glTexCoord2d(X1, Y1); glVertex3f(x2, y1, -0.2);
         }
         else {
-            glTexCoord2d(X2, Y1+ Y2/2); glVertex3f(x1, y1, -0.2);
-            glTexCoord2d(X2, Y2 + Y2 / 2); glVertex3f(x1, y2, -0.2);
-            glTexCoord2d(X1, Y2 + Y2 / 2); glVertex3f(x2, y2, -0.2);
-            glTexCoord2d(X1, Y1 + Y2 / 2); glVertex3f(x2, y1, -0.2);
+            glTexCoord2d(X2, Y1 + Y2); glVertex3f(x1, y1, -0.2);
+            glTexCoord2d(X2, Y2 + Y2); glVertex3f(x1, y2, -0.2);
+            glTexCoord2d(X1, Y2 + Y2); glVertex3f(x2, y2, -0.2);
+            glTexCoord2d(X1, Y1 + Y2); glVertex3f(x2, y1, -0.2);
         }
         glEnd();
     }

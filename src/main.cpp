@@ -110,7 +110,6 @@ int main()
 	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
 	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
 	textures_in_main();//сокращение для текстур, вся суть в textures.hpp
-	glutSetCursor(GLUT_CURSOR_NONE);//убирает курсор с экрана
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 
 }

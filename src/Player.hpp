@@ -7,7 +7,7 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.2f; h = 1.9f; d = 0.2f; speed = 0.1;
+		w = 0.3f; h = 1.9f; d = 0.3f; speed = 0.05;
 		View = 90; // угол обзора
 	}
 	/**

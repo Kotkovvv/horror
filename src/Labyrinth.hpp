@@ -136,9 +136,6 @@ void floor() {
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
 	glEnd();
-
-
-	
 }
 /**
 	\brief Рисование тумана

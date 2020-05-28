@@ -10,27 +10,32 @@ using namespace std;
 */
 void mouseMove(int x, int y)
 {
-	if (mouseXOld != 0 || mouseYOld != 0) {
-		angle -= mouseXOld * 0.001f;
-		angleY -= mouseYOld * 0.001f;
+	if (state_of_game == GAME) {
+		if (mouseXOld != 0 || mouseYOld != 0) {
+			angle -= mouseXOld * 0.001f;
+			angleY -= mouseYOld * 0.001f;
 
-		if (angleY > 3.14 / 2) angleY = 3.14 / 2;
-		if (angleY < -3.14 / 2) angleY = -3.14 / 2;
+			if (angleY > 3.14 / 2) angleY = 3.14 / 2;
+			if (angleY < -3.14 / 2) angleY = -3.14 / 2;
 
-		mouseXOld = 0; mouseYOld = 0;
+			mouseXOld = 0; mouseYOld = 0;
 
-		// update camera's direction
-		lx = float(-sin(angle));
-		lz = float(cos(angle));
-		ly = float(-tan(angleY));
+			// update camera's direction
+			lx = float(-sin(angle));
+			lz = float(cos(angle));
+			ly = float(-tan(angleY));
 
+		}
+		else
+		{
+
+			mouseXOld = (width / 2) - x;
+			mouseYOld = (height / 2) - y;
+			glutWarpPointer((width / 2), (height / 2));
+		}
 	}
-	else
-	{
-
-		mouseXOld = (width / 2) - x;
-		mouseYOld = (height / 2) - y;
-		glutWarpPointer((width / 2), (height / 2));
+	else if (state_of_game == GAME_MENU) {
+		butt.mouse(x, y, 0);
 	}
 }
 /**
@@ -65,10 +70,16 @@ void keyboard(unsigned char key, int x, int y)
 		break;
 	case 'm':
 	case 'M':
-		if (state_of_game == 0)
-			state_of_game = 1;
+		if (state_of_game == GAME)
+		{
+			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);//
+			state_of_game = GAME_MENU;
+		}
 		else
-			state_of_game = 0;
+		{
+			glutSetCursor(GLUT_CURSOR_NONE);//убирает курсор с экрана
+			state_of_game = GAME;
+		}
 	}
 }
 

@@ -3,7 +3,6 @@
 */
 void game() {
 	double times;
-	
 	//back.update();
 	flashl.update();
 	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
