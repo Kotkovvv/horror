@@ -17,8 +17,9 @@ public:
     float x2, float y2 - координаты левого нижнего угла прямоугольника, который будет рисоваться
     */
     GUI_touch1(GLuint* tex, int pix, float X, float Y, float x1, float y1, float x2, float y2) {
-        X2 = X / pix;
-        Y2 = Y / pix;
+        X2 = X / (width / 2);
+        Y2 = Y / (height / 2);
+
 
         this->x1 = x1; this->x2 = x2;
         this->y1 = y1; this->y2 = y2;
@@ -45,6 +46,8 @@ public:
         y = y / (height/2);
         x = x - 1;
         y = -(y - 1);
+        x =x/4.9;
+        y = y/8.8;
         std::cout << x << " " << y << std::endl;
         // смотрим, попадает ли мышка в кнопку
         if (x > x2 && x < x1 && y > y2 && y < y1) {
