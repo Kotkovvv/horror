@@ -88,3 +88,4 @@ public:
 };
 
 area change(18, 18, 19, 19);
+area scream(2, 2, 3, 3);

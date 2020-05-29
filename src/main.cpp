@@ -30,6 +30,7 @@ time_t newtime = 1;
 int choice_of_labirynth = 0;///<в дальнейшем поможет с переходом из одной локации в другую
 int state_of_game = 0;///<состояние игры в данный момент(игра/меню)
 bool mLeft = 0; ///< состояние левой кнопки мыши
+float fog_change = 0.7f;///<дальность прорисовки тумана
 
 enum labyrinth {
 	NUM1,
@@ -61,7 +62,7 @@ void Reshape(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
-	gluPerspective(60, ratio, 0.1f, 10.0f); //задаем перспективную проекцию
+	gluPerspective(60, ratio, 0.1f, 20.0f); //задаем перспективную проекцию
 	//(60 -угол обзора) (ratio- соотношение сторон) (0.1f- минимальное видимое расстояние в float) ( 360.0f- максимальная дальность видимости)
 	glMatrixMode(GL_MODELVIEW);
 }

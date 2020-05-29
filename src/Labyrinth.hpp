@@ -122,21 +122,8 @@ void draw_wall_new1(int x, int z) {//определяет, надо ли рис�
 	glEnd();
 }
 
-/**
-	\brief Рисование пола
 
-	Эта функция рисует пол
-*/
 
-void floor() {
-	glBindTexture(GL_TEXTURE_2D, floor1);
-	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(19, -1, 19);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(19, -1, 1);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(1, -1, 1);
-	glEnd();
-}
 /**
 	\brief Рисование тумана
 
@@ -146,12 +133,12 @@ void floor() {
 void fogg() {
 	//GLuint filter;                          // Используемый фильтр для текстур
 	GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR }; // Хранит три типа тумана
-	GLuint fogfilter = 0;                    // Тип используемого тумана
+	GLuint fogfilter = 0;                    // Тип используемого тумана 
 	GLfloat fogColor[4] = { 0.5f, 0.5f, 0.5f, 1.0f }; // Цвет тумана
 	glEnable(GL_FOG);                       // Включает туман (GL_FOG)
 	glFogi(GL_FOG_MODE, fogMode[fogfilter]);// Выбираем тип тумана
 	glFogfv(GL_FOG_COLOR, fogColor);        // Устанавливаем цвет тумана
-	glFogf(GL_FOG_DENSITY, 0.7f);          // Насколько густым будет туман
+	glFogf(GL_FOG_DENSITY,fog_change);          // Насколько густым будет туман
 	glHint(GL_FOG_HINT, GL_DONT_CARE);      // Вспомогательная установка тумана
 	glFogf(GL_FOG_START, 1.0f);             // Глубина, с которой начинается туман
 	glFogf(GL_FOG_END, 5.0f);               // Глубина, где туман заканчивается.

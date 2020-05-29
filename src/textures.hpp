@@ -1,6 +1,8 @@
-﻿GLuint wall;///<Переменная для текстуры стены
+﻿GLuint wall;///<Переменная для текстуры стены психушки
+GLuint wall2;///<Переменная для текстуры стены замка
 GLuint screamer;///<Переменная для текстуры скримера
-GLuint floor1;///<Переменная для текстуры пола
+GLuint floor1;///<Переменная для текстуры пола психушки
+GLuint floor2;///<Переменная для текстуры пола
 GLuint flash;///<Переменная для текстуры фонарика
 GLuint texture[3];
 GLuint backg;
@@ -58,13 +60,15 @@ void load_textures_smooth(const char* image, GLuint* texturesy, bool type) {
     Эта функция сделана для удобства восприятия функции main
 */
 void textures_in_main() {
-    load_textures_smooth("textures_game/floor1.jpg", &floor1, 0);//текстура пола
+    load_textures_smooth("textures_game/floor1.jpg", &floor1, 0);//текстура пола психушки
+    load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//текстура стен психушки
+    load_textures_smooth("textures_game/floor.png", &floor2, 0);//текстура пола замка
+    load_textures_smooth("textures_game/wall.png", &wall2, 0);//текстура стен замка
     load_textures_smooth("textures_game/screamer.png", &screamer, 0);//текстура скримера
-    load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//текстура стен
     load_textures_smooth("textures_game/flashlight.png", &flash, 1);//текстура фонарика
     load_textures_smooth("textures_game/backg.png", &backg, 0);//текстура заднего фона меню
     load_textures_smooth("textures_game/exit.jpg", &exi, 0);//текстура кнопки
     load_textures_smooth("textures_game/continue.jpg", &cont, 0);//текстура кнопки
-    load_textures_smooth("textures_game/MFog.jpg", &lesss, 0);//текстура кнопки
-    load_textures_smooth("textures_game/LFog.jpg", &more, 0);//текстура кнопки
+    load_textures_smooth("textures_game/MFog.jpg", &more, 0);//текстура кнопки
+    load_textures_smooth("textures_game/LFog.jpg", &lesss, 0);//текстура кнопки
 }

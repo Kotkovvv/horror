@@ -36,6 +36,9 @@ void mouseMove(int x, int y)
 	}
 	else if (state_of_game == GAME_MENU) {
 		ex.mouse(x, y, 0);
+		con.mouse(x, y, 0);
+		les.mouse(x, y, 0);
+		mor.mouse(x, y, 0);
 	}
 }
 /**
@@ -105,14 +108,28 @@ void keyboard_up(unsigned char key, int x, int y)
 	}
 }
 
+/**
+/brief Функция, отвечающая нажатие ЛКМ
+
+Данная функция отвечает за считывания нажатия на кнопки в меню
+*/
+
 void mouseButton(int button, int state, int x, int y) {
 	if (button == GLUT_LEFT_BUTTON) {
 		if (state_of_game == GAME_MENU) {
 				if (ex.mouse(x, y, 1)) {
 					exit(0);
-			
-			
 			}
+				if (con.mouse(x, y, 1)) {
+					glutSetCursor(GLUT_CURSOR_NONE);//убирает курсор с экрана
+					state_of_game = GAME;
+				}
+				if (mor.mouse(x, y, 1)) {
+					fog_change = fog_change +0.05f;
+				}
+				if (les.mouse(x, y, 1)) {
+					fog_change = fog_change -0.05f;
+				}
 		}
 	}
 }
