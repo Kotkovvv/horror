@@ -13,7 +13,7 @@ void Labyrinth1()
 				glTranslatef(-x, 0, -z);
 
 			}
-		if (qw.update())
+		if (change.update())
 			choice_of_labirynth = NUM2;
 }
 /**
@@ -66,7 +66,7 @@ void game() {
 */
 
 void game_menu() {
-	butt.update();
+	ex.update();
 	back.update();
 	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2, man.PlayerZ,
 		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,

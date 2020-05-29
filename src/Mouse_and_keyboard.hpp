@@ -35,7 +35,7 @@ void mouseMove(int x, int y)
 		}
 	}
 	else if (state_of_game == GAME_MENU) {
-		butt.mouse(x, y, 0);
+		ex.mouse(x, y, 0);
 	}
 }
 /**
@@ -49,9 +49,6 @@ void keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-	case 27: // если key = 27(escape), то выходим из программы
-		exit(0);
-		break;
 	case 'w':
 	case 'W':
 		move_front = 1;
@@ -68,8 +65,7 @@ void keyboard(unsigned char key, int x, int y)
 	case 'D':
 		move_side = 1;
 		break;
-	case 'm':
-	case 'M':
+	case 27:
 		if (state_of_game == GAME)
 		{
 			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);//
@@ -112,7 +108,7 @@ void keyboard_up(unsigned char key, int x, int y)
 void mouseButton(int button, int state, int x, int y) {
 	if (button == GLUT_LEFT_BUTTON) {
 		if (state_of_game == GAME_MENU) {
-				if (butt.mouse(x, y, 1)) {
+				if (ex.mouse(x, y, 1)) {
 					exit(0);
 			
 			

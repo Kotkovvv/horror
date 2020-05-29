@@ -87,4 +87,4 @@ public:
 	}
 };
 
-area qw(18, 18, 19, 19);
+area change(18, 18, 19, 19);

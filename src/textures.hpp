@@ -4,7 +4,11 @@ GLuint floor1;///<Переменная для текстуры пола
 GLuint flash;///<Переменная для текстуры фонарика
 GLuint texture[3];
 GLuint backg;
-GLuint but;
+GLuint exi;
+GLuint cont;
+GLuint more;
+GLuint lesss;
+GLuint end;
 /**
     \brief Загрузка текстур
 
@@ -59,5 +63,8 @@ void textures_in_main() {
     load_textures_smooth("textures_game/wall1.jpg", &wall, 0);//текстура стен
     load_textures_smooth("textures_game/flashlight.png", &flash, 1);//текстура фонарика
     load_textures_smooth("textures_game/backg.png", &backg, 0);//текстура заднего фона меню
-    load_textures_smooth("textures_game/button.png", &but, 0);//текстура кнопки
+    load_textures_smooth("textures_game/exit.jpg", &exi, 0);//текстура кнопки
+    load_textures_smooth("textures_game/continue.jpg", &cont, 0);//текстура кнопки
+    load_textures_smooth("textures_game/MFog.jpg", &lesss, 0);//текстура кнопки
+    load_textures_smooth("textures_game/LFog.jpg", &more, 0);//текстура кнопки
 }
