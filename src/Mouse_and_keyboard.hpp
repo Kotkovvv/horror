@@ -20,7 +20,7 @@ void mouseMove(int x, int y)
 
 			mouseXOld = 0; mouseYOld = 0;
 
-			// update camera's direction
+			// обновляют направление камеры
 			lx = float(-sin(angle));
 			lz = float(cos(angle));
 			ly = float(-tan(angleY));
@@ -106,5 +106,17 @@ void keyboard_up(unsigned char key, int x, int y)
 	case 'D':
 		move_side = 0;
 		break;
+	}
+}
+
+void mouseButton(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON) {
+		if (state_of_game == GAME_MENU) {
+				if (butt.mouse(x, y, 1)) {
+					exit(0);
+			
+			
+			}
+		}
 	}
 }

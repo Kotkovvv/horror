@@ -17,8 +17,8 @@ public:
     float x2, float y2 - координаты левого нижнего угла прямоугольника, который будет рисоваться
     */
     GUI_touch1(GLuint* tex, int pix, float X, float Y, float x1, float y1, float x2, float y2) {
-        X2 = X / (width / 2);
-        Y2 = Y / (height / 2);
+        X2 = X /pix;
+        Y2 = Y/pix ;
 
 
         this->x1 = x1; this->x2 = x2;
@@ -82,6 +82,7 @@ public:
         glEnd();
     }
 };
+
 class GUI_background1 {
     float pix = 500.0f; // колличество пикселей по высоте и ширине в текстуре
     float X1 = 0.0f, Y1 = 0.0f;  /* .: */ // для текстуры 
@@ -137,4 +138,4 @@ public:
 //по оси x 1,04
 GUI_background1 back(&backg, 100, 100, 100, 1.03, 1, -1.03, -1);///<Класс заднего фона меню
 GUI_background1 flashl(&flash, 100, -100, 100, 1.05, -0.1, 0.51, -1);///<Класс рисования фонарика
-GUI_touch1 butt(&but, 100, 100, 50, 0.1, 0.1, -0.1, -0.1);///<Класс кнопки
+GUI_touch1 butt(&but, 100, 100, 50, 0.05, 0.05, -0.05, -0.05);///<Класс кнопки

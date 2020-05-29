@@ -7,6 +7,7 @@
 #include "alut.h"
 #include "al.h"
 #include "alc.h"
+
 #pragma comment (lib,"SOIL.lib")
 #pragma comment (lib,"alut.lib")
 #pragma comment (lib,"glut.lib")
@@ -15,19 +16,25 @@ int width = 1280; ///< Высота окна
 int height = 720; ///< Ширина окна
 int H = height;///<Высота
 int W = width;///<Ширина
-float angle = 0; ///< Угол поворота
+float angle = 0; ///< угол поворота камеры в плоскости XZ
 const int quantity_cubes_z = 20;///< Количество невидимых кубов по z
 const int quantity_cubes_x = 20;///<Количество невидимых кубов по x
 float lz = 1.0f;///<Координаты вектора, определяющее, куда смотрит камера
 float lx = 0.0f;///<Координаты вектора, определяющее, куда смотрит камера
 float ly = 0.0f;///<Координаты вектора, определяющее, куда смотрит камера
-float angleY = 0;
-float move_front = 0;
-float move_side = 0;
+float angleY = 0;///< угол поворота камеры по оси Y
+float move_front = 0;///< ключ к изменению скорости вперед/назад
+float move_side = 0;///< ключ к изменению скорости вбок
 time_t oldtime = 1;
 time_t newtime = 1;
-bool choice_of_labirynth = 0;
-int state_of_game = 0;
+int choice_of_labirynth = 0;///<в дальнейшем поможет с переходом из одной локации в другую
+int state_of_game = 0;///<состояние игры в данный момент(игра/меню)
+bool mLeft = 0; ///< состояние левой кнопки мыши
+
+enum labyrinth {
+	NUM1,
+	NUM2,
+};
 
 #include "textures.hpp"
 #include "Labyrinth.hpp"
@@ -38,8 +45,9 @@ int state_of_game = 0;
 enum game_status {
 	GAME,
 	GAME_MENU,
-	MAIN_MENU
 };
+
+
 
 /**
 /brief Функция, отвечающая за изменения параметров при изменении размера окна
@@ -49,7 +57,7 @@ enum game_status {
 
 void Reshape(int w, int h)
 {
-	float ratio = w * 1.0 / h;
+	float ratio = w * 1.0 / h;///< соотношение сторон
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
@@ -80,6 +88,7 @@ void Draw() {
 		game_menu();
 		break;
 	}
+	//std::cout<< man.PlayerX<<" "<<
 	//=================================конец основного цикла===================================================================================
 	glPopMatrix(); // загружаем систему кординат
 	glutPostRedisplay(); // Обновляем картинку в окне
@@ -107,8 +116,9 @@ int main()
 	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
 	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
 	glutKeyboardUpFunc(keyboard_up);//функция для отжатия клавиш
-	glutPassiveMotionFunc(mouseMove);//когда мышка дыигается
-	glutMotionFunc(mouseMove); //когда двигаешь при нажатии
+	glutPassiveMotionFunc(mouseMove);//функция, которая отслеживает мышку в НЕ нажатом состоянии
+	glutMotionFunc(mouseMove); // функция, которая отслеживает мышку в нажатом состоянии
+	glutMouseFunc(mouseButton); // Обрабатываем нажатие мыши
 	textures_in_main();//сокращение для текстур, вся суть в textures.hpp
 	glutMainLoop(); // говорим, что запускаем непрерывный цикл рисования. с этого момента циклично будет проигрываться функция draw
 

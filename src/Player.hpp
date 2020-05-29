@@ -7,16 +7,20 @@ public:
 		dx = 0;  dz = 0;
 		dSideX = 0; dSideZ = 0;
 		dFrontX = 0; dFrontZ = 0;
-		w = 0.3f; h = 1.9f; d = 0.3f; speed = 0.05;
+		w = 0.3f; h = 1.9f; d = 0.3f; speed = 0.1;
 		View = 90; // угол обзора
 	}
 	/**
 	\brief проверяет на столкновение
 */
 	bool check(int x, int z) {
+
 		if ((x < 0) || (x > quantity_cubes_x) ||
 			(z < 0) || (z > quantity_cubes_z)) return false;
+		if (choice_of_labirynth==NUM1)
 		return cubes[x][z];
+		else 
+			return cubes1[x][z];
 
 	}
 	/**
@@ -63,3 +67,24 @@ public:
 
 */
 Player man(1.5, -0.8, 1.5);//начальная позиция игрока
+
+class area {
+	float x1, x2;
+	float y1, y2;
+public:
+	area(float x1, float y1, float x2, float y2) {
+		this->x1 = x1; this->x2 = x2;
+		this->y1 = y1; this->y2 = y2;
+	}
+	//
+	// *   ----1 точка
+	//   * --------2 точка
+	//
+	bool update() {
+		if (x1 < man.PlayerX && x2 > man.PlayerX && y1 < man.PlayerZ && y2 > man.PlayerZ)
+			return true;
+		else return false;
+	}
+};
+
+area qw(18, 18, 19, 19);
