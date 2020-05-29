@@ -114,7 +114,7 @@ int main()
 	glutInitDisplayMode(GLUT_RGB); // говорим, что режим цвета в окне будет RGB
 	glutCreateWindow("horror game"); // созадем окно с названием horror game
 	glEnable(GL_DEPTH_TEST); // включаем режим глубины. это нужно для того, чтобы объекты правильно отображались друг за другом
-	glEnable(GL_TEXTURE_2D);// тестуры
+	glEnable(GL_TEXTURE_2D);// текстуры
 	glutDisplayFunc(Draw); // пишем название функции, в которой будем рисовать
 	glutReshapeFunc(Reshape); // пишем название функции, которая будет обрабатывать изменение размера окна
 	glutKeyboardFunc(keyboard); // пишем название функции, где мы будем смотреть, какие клавиши нажаты на клаве
