@@ -7,8 +7,6 @@ void \mbox{\hyperlink{_labyrinth_8hpp_a2d28da62b345f880fdde5af764d2bc7d}{draw\+\
 \begin{DoxyCompactList}\small\item\em Определяет поведение при рисовании стен \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_labyrinth_8hpp_aec84e768f8bacd16f9b8ffa6351b9fc3}{draw\+\_\+wall\+\_\+new1}} (int x, int z)
 \item 
-void \mbox{\hyperlink{_labyrinth_8hpp_a02babedaeff0ff9b077ec10773bd6e1e}{floor}} ()
-\begin{DoxyCompactList}\small\item\em Рисование пола \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_labyrinth_8hpp_a08fd82fd9324da777710c70605fed1da}{fogg}} ()
 \begin{DoxyCompactList}\small\item\em Рисование тумана \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_labyrinth_8hpp_aed8f2221b04a8e9a76475409172ec1fd}{flashlight}} ()
@@ -19,9 +17,9 @@ void \mbox{\hyperlink{_labyrinth_8hpp_adb9b9adadac0e0b57161c18552918f44}{boo}} (
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{_labyrinth_8hpp_adf2bc4dc794f8caf3a479450df7f1f35}{cubes}} \mbox{[}\mbox{\hyperlink{main_8cpp_abe8f533bc23beee8f709630d1343a5da}{quantity\+\_\+cubes\+\_\+x}}\mbox{]}\mbox{[}\mbox{\hyperlink{main_8cpp_aefac3b54073269a9394f9a31a097d005}{quantity\+\_\+cubes\+\_\+z}}\mbox{]}
-\begin{DoxyCompactList}\small\item\em Массив невидимых стен первой локации \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em массив мира, по которому строится сам лабиринт1. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_labyrinth_8hpp_a06bf7dc56d67ddb3fa7033476578a8e6}{cubes1}} \mbox{[}\mbox{\hyperlink{main_8cpp_abe8f533bc23beee8f709630d1343a5da}{quantity\+\_\+cubes\+\_\+x}}\mbox{]}\mbox{[}\mbox{\hyperlink{main_8cpp_aefac3b54073269a9394f9a31a097d005}{quantity\+\_\+cubes\+\_\+z}}\mbox{]}
-\begin{DoxyCompactList}\small\item\em Массив невидимых стен второй локации \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em массив мира, по которому строится сам лабиринт2. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_labyrinth_8hpp_a01283f3e86444d8622f780d8493c2677}{cube\+\_\+size}} = 1
 \begin{DoxyCompactList}\small\item\em Размер куба \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -63,17 +61,7 @@ int \mbox{\hyperlink{_labyrinth_8hpp_a01283f3e86444d8622f780d8493c2677}{cube\+\_
 
 Рисование фонарика 
 
-Эта функция рисует фонарик с учетом прозрачного фона \mbox{\Hypertarget{_labyrinth_8hpp_a02babedaeff0ff9b077ec10773bd6e1e}\label{_labyrinth_8hpp_a02babedaeff0ff9b077ec10773bd6e1e}} 
-\index{Labyrinth.hpp@{Labyrinth.hpp}!floor@{floor}}
-\index{floor@{floor}!Labyrinth.hpp@{Labyrinth.hpp}}
-\doxysubsubsection{\texorpdfstring{floor()}{floor()}}
-{\footnotesize\ttfamily void floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Рисование пола 
-
-Эта функция рисует пол \mbox{\Hypertarget{_labyrinth_8hpp_a08fd82fd9324da777710c70605fed1da}\label{_labyrinth_8hpp_a08fd82fd9324da777710c70605fed1da}} 
+Эта функция рисует фонарик с учетом прозрачного фона \mbox{\Hypertarget{_labyrinth_8hpp_a08fd82fd9324da777710c70605fed1da}\label{_labyrinth_8hpp_a08fd82fd9324da777710c70605fed1da}} 
 \index{Labyrinth.hpp@{Labyrinth.hpp}!fogg@{fogg}}
 \index{fogg@{fogg}!Labyrinth.hpp@{Labyrinth.hpp}}
 \doxysubsubsection{\texorpdfstring{fogg()}{fogg()}}
@@ -123,12 +111,12 @@ int \mbox{\hyperlink{_labyrinth_8hpp_a01283f3e86444d8622f780d8493c2677}{cube\+\_
 \DoxyCodeLine{                                                  \{1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1\},}
 \DoxyCodeLine{                                                  \{1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1\},}
 \DoxyCodeLine{                                                  \{1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1\},}
-\DoxyCodeLine{                                          \{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 \}, \}}
+\DoxyCodeLine{                                          \{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 \}, \}}
 
 \end{DoxyCode}
 
 
-Массив невидимых стен первой локации 
+массив мира, по которому строится сам лабиринт1. 
 
 \mbox{\Hypertarget{_labyrinth_8hpp_a06bf7dc56d67ddb3fa7033476578a8e6}\label{_labyrinth_8hpp_a06bf7dc56d67ddb3fa7033476578a8e6}} 
 \index{Labyrinth.hpp@{Labyrinth.hpp}!cubes1@{cubes1}}
@@ -157,10 +145,10 @@ int \mbox{\hyperlink{_labyrinth_8hpp_a01283f3e86444d8622f780d8493c2677}{cube\+\_
 \DoxyCodeLine{                                                  \{1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1\},}
 \DoxyCodeLine{                                                  \{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1\},}
 \DoxyCodeLine{                                                  \{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1\},}
-\DoxyCodeLine{                                          \{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 \}, \}}
+\DoxyCodeLine{                                          \{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 \}, \}}
 
 \end{DoxyCode}
 
 
-Массив невидимых стен второй локации 
+массив мира, по которому строится сам лабиринт2. 
 

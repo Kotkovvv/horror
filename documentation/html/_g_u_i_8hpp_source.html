@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Horror: Исходный файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/GUI.hpp</title>
+<title>horror: Исходный файл C:/Users/Huhehuindi/Desktop/Учеба/horror/src/GUI.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,13 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Horror
+   <div id="projectname">horror
    </div>
   </td>
  </tr>
@@ -93,7 +86,7 @@ $(document).ready(function(){initNavTree('_g_u_i_8hpp_source.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a href="_g_u_i_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html">    1</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> {</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="keywordtype">int</span> pix = 500;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="keywordtype">int</span> pix = 100;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">float</span> X1 = 0, Y1 = 0;<span class="comment">/* .: */</span> <span class="comment">// для текстуры </span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordtype">float</span> x1 = 0, y1 = 0;<span class="comment">/* :. */</span> <span class="comment">// для прямоугольника</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">float</span> X2 = 0, Y2 = 0;<span class="comment">/* :&#39; */</span> <span class="comment">// для текстуры</span></div>
@@ -111,106 +104,118 @@ $(document).ready(function(){initNavTree('_g_u_i_8hpp_source.html',''); initResi
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    float x2, float y2 - координаты левого нижнего угла прямоугольника, который будет рисоваться</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html#ad0d1c361df8d555d9f9feb95cfcec2ff">   19</a></span>&#160;    <a class="code" href="class_g_u_i__touch1.html#ad0d1c361df8d555d9f9feb95cfcec2ff">GUI_touch1</a>(GLuint* tex, <span class="keywordtype">int</span> pix, <span class="keywordtype">float</span> X, <span class="keywordtype">float</span> Y, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        X2 = X / pix;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        Y2 = Y / pix;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        X2 = X /pix;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        Y2 = Y/pix ;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        this-&gt;x1 = x1; this-&gt;x2 = x2;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;y1 = y1; this-&gt;y2 = y2;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        this-&gt;tex = tex;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        this-&gt;pix = pix;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">   41</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">mouse</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">int</span> click_status) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// изменяем координаты мыши. изначально ее координаты определяются как высота и ширина в пикселях,</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// но координаты кнопки в других значениях - к ним и приводим</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        x /= <a class="code" href="main_8cpp.html#a2dd51e03005d5cb52315290d27f61870">W</a> / 2; y /= <a class="code" href="main_8cpp.html#affa487e8e3cc48473cfc05c0ce0165e9">H</a> / 2;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        x -= 1; y -= 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        x *= 0.36; y *= -0.2;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// смотрим, попадает ли мышка в кнопку</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (x &gt; x2 &amp;&amp; x &lt; x1 &amp;&amp; y &gt; y2 &amp;&amp; y &lt; y1) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            light = 1; <span class="comment">// включаем подсветку</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            click = click_status; <span class="comment">// передаем, нажата ли мышка</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> click_status; <span class="comment">// возвращаем клик. если мы нажали, то можно сравнить эту функцию там, где мы ее вызываем</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// и дальше уже задавать поведение. эта функция равна 1 - что-то печатаем или делаем</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            light = 0; <span class="comment">// не подсвечиваем</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">update</a>() {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        glBindTexture(GL_TEXTURE_2D, *tex);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        glBegin(GL_QUADS);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (!light) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            glTexCoord2d(X2, Y1); glVertex3f(x1, y1, -0.2);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            glTexCoord2d(X2, Y2); glVertex3f(x1, y2, -0.2);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            glTexCoord2d(X1, Y2); glVertex3f(x2, y2, -0.2);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            glTexCoord2d(X1, Y1); glVertex3f(x2, y1, -0.2);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            glTexCoord2d(X2, Y1+ Y2/2); glVertex3f(x1, y1, -0.2);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            glTexCoord2d(X2, Y2 + Y2 / 2); glVertex3f(x1, y2, -0.2);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            glTexCoord2d(X1, Y2 + Y2 / 2); glVertex3f(x2, y2, -0.2);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            glTexCoord2d(X1, Y1 + Y2 / 2); glVertex3f(x2, y1, -0.2);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        glEnd();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html">   80</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_u_i__background1.html">GUI_background1</a> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">float</span> pix = 500.0f; <span class="comment">// колличество пикселей по высоте и ширине в текстуре</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">float</span> X1 = 0.0f, Y1 = 0.0f;  <span class="comment">/* .: */</span> <span class="comment">// для текстуры </span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">float</span> x1 = 0.0f, y1 = 0.0f;  <span class="comment">/* :. */</span> <span class="comment">// для прямоугольника</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">float</span> X2 = 0.0f, Y2 = 0.0f;  <span class="comment">/* :&#39; */</span> <span class="comment">// для текстуры</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">float</span> x2 = 0.0f, y2 = 0.0f;  <span class="comment">/* &#39;: */</span> <span class="comment">// для прямоугольника</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    GLuint* tex;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> key = 1; <span class="comment">// состояние текстуры- она есть или нет</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">   99</a></span>&#160;    <a class="code" href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">GUI_background1</a>(GLuint* tex, <span class="keywordtype">int</span> pix, <span class="keywordtype">float</span> X2, <span class="keywordtype">float</span> Y2, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        this-&gt;X2 = X2 / pix;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        this-&gt;Y2 = Y2 / pix;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;x1 = (x1 * 0.2); this-&gt;x2 = (x2 * 0.2);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        this-&gt;y1 = (y1 * 0.2); this-&gt;y2 = (y2 * 0.2);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        this-&gt;tex = tex;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        this-&gt;pix = pix;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">  114</a></span>&#160;    <a class="code" href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">GUI_background1</a>(<span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        this-&gt;x1 = (x1 * 0.2); this-&gt;x2 = (x2 * 0.2);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        this-&gt;y1 = (y1 * 0.2); this-&gt;y2 = (y2 * 0.2);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        key = 0; <span class="comment">// если вызываем этот конструктор, то говорим, что не используем текстуру для данного объекта</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">  119</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">update</a>() {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (key)glBindTexture(GL_TEXTURE_2D, *tex);  <span class="comment">//  если нет текстуры- не биндим ее</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">else</span> glBindTexture(GL_TEXTURE_2D, GLU_NONE); <span class="comment">// а биндим ничего.пустоту. дыру</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        glBegin(GL_QUADS);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        glTexCoord2d(X2, Y1); glVertex3f(x1, y1, -0.2);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        glTexCoord2d(X2, Y2); glVertex3f(x1, y2, -0.2);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        glTexCoord2d(X1, Y2); glVertex3f(x2, y2, -0.2);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        glTexCoord2d(X1, Y1); glVertex3f(x2, y1, -0.2);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        glEnd();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">//по оси x 1,04</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">  133</a></span>&#160;<a class="code" href="class_g_u_i__background1.html">GUI_background1</a> back(&amp;<a class="code" href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">backg</a>, 100, 100, 100, 1.03, 1, -1.03, -1);</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">  134</a></span>&#160;<a class="code" href="class_g_u_i__background1.html">GUI_background1</a> flashl(&amp;<a class="code" href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">flash</a>, 100, -100, 100, 1.05, -0.1, 0.51, -1);</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a5c01e2a271e0321b46c3eaef98151cdc">  135</a></span>&#160;<a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> butt(&amp;<a class="code" href="_g_u_i_8hpp.html#a5c01e2a271e0321b46c3eaef98151cdc">but</a>, 100, 100, 50, 0.1, 0.1, -0.1, -0.1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;x1 = x1; this-&gt;x2 = x2;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        this-&gt;y1 = y1; this-&gt;y2 = y2;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        this-&gt;tex = tex;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        this-&gt;pix = pix;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">   42</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">mouse</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">int</span> click_status) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// изменяем координаты мыши. изначально ее координаты определяются как высота и ширина в пикселях,</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// но координаты кнопки в других значениях - к ним и приводим</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        x = x / (<a class="code" href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a>/2); </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        y = y / (<a class="code" href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>/2);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        x = x - 1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        y = -(y - 1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        x =x/4.9;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        y = y/8.8;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; y &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// смотрим, попадает ли мышка в кнопку</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (x &gt; x2 &amp;&amp; x &lt; x1 &amp;&amp; y &gt; y2 &amp;&amp; y &lt; y1) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            light = 1; <span class="comment">// включаем подсветку</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            click = click_status; <span class="comment">// передаем, нажата ли мышка</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> click_status; <span class="comment">// возвращаем клик. если мы нажали, то можно сравнить эту функцию там, где мы ее вызываем</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// и дальше уже задавать поведение. эта функция равна 1 - что-то печатаем или делаем</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            light = 0; <span class="comment">// не подсвечиваем</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">update</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        glBindTexture(GL_TEXTURE_2D, *tex);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        glBegin(GL_QUADS);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (!light) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            glTexCoord2d(X2, Y1); glVertex3f(x1, y1, -0.2);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            glTexCoord2d(X2, Y2); glVertex3f(x1, y2, -0.2);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            glTexCoord2d(X1, Y2); glVertex3f(x2, y2, -0.2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            glTexCoord2d(X1, Y1); glVertex3f(x2, y1, -0.2);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            glTexCoord2d(X2, Y1 + Y2); glVertex3f(x1, y1, -0.2);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            glTexCoord2d(X2, Y2 + Y2); glVertex3f(x1, y2, -0.2);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            glTexCoord2d(X1, Y2 + Y2); glVertex3f(x2, y2, -0.2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            glTexCoord2d(X1, Y1 + Y2); glVertex3f(x2, y1, -0.2);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        glEnd();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html">   86</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_u_i__background1.html">GUI_background1</a> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">float</span> pix = 500.0f; <span class="comment">// колличество пикселей по высоте и ширине в текстуре</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">float</span> X1 = 0.0f, Y1 = 0.0f;  <span class="comment">/* .: */</span> <span class="comment">// для текстуры </span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">float</span> x1 = 0.0f, y1 = 0.0f;  <span class="comment">/* :. */</span> <span class="comment">// для прямоугольника</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">float</span> X2 = 0.0f, Y2 = 0.0f;  <span class="comment">/* :&#39; */</span> <span class="comment">// для текстуры</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">float</span> x2 = 0.0f, y2 = 0.0f;  <span class="comment">/* &#39;: */</span> <span class="comment">// для прямоугольника</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    GLuint* tex;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> key = 1; <span class="comment">// состояние текстуры- она есть или нет</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">  105</a></span>&#160;    <a class="code" href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">GUI_background1</a>(GLuint* tex, <span class="keywordtype">int</span> pix, <span class="keywordtype">float</span> X2, <span class="keywordtype">float</span> Y2, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        this-&gt;X2 = X2 / pix;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        this-&gt;Y2 = Y2 / pix;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        this-&gt;x1 = (x1 * 0.2); this-&gt;x2 = (x2 * 0.2);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        this-&gt;y1 = (y1 * 0.2); this-&gt;y2 = (y2 * 0.2);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;tex = tex;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        this-&gt;pix = pix;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">  120</a></span>&#160;    <a class="code" href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">GUI_background1</a>(<span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        this-&gt;x1 = (x1 * 0.2); this-&gt;x2 = (x2 * 0.2);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        this-&gt;y1 = (y1 * 0.2); this-&gt;y2 = (y2 * 0.2);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        key = 0; <span class="comment">// если вызываем этот конструктор, то говорим, что не используем текстуру для данного объекта</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">  125</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">update</a>() {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (key)glBindTexture(GL_TEXTURE_2D, *tex);  <span class="comment">//  если нет текстуры- не биндим ее</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">else</span> glBindTexture(GL_TEXTURE_2D, GLU_NONE); <span class="comment">// а биндим ничего.пустоту. дыру</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        glBegin(GL_QUADS);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        glTexCoord2d(X2, Y1); glVertex3f(x1, y1, -0.2);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        glTexCoord2d(X2, Y2); glVertex3f(x1, y2, -0.2);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        glTexCoord2d(X1, Y2); glVertex3f(x2, y2, -0.2);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        glTexCoord2d(X1, Y1); glVertex3f(x2, y1, -0.2);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        glEnd();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//по оси x 1,04</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">  139</a></span>&#160;<a class="code" href="class_g_u_i__background1.html">GUI_background1</a> back(&amp;<a class="code" href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">backg</a>, 100, 100, 100, 1.03, 1, -1.03, -1);</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">  140</a></span>&#160;<a class="code" href="class_g_u_i__background1.html">GUI_background1</a> flashl(&amp;<a class="code" href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">flash</a>, 100, -100, 100, 1.05, -0.1, 0.51, -1);</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a9baed6916c10c19ece99add0783cb34b">  141</a></span>&#160;<a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> ex(&amp;<a class="code" href="_g_u_i_8hpp.html#a9baed6916c10c19ece99add0783cb34b">exi</a>, 100, 100, 50, 0.05, 0, -0.05, -0.1);</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a2443cce20c71dc415edfe9b6997775b9">  142</a></span>&#160;<a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> con(&amp;<a class="code" href="_g_u_i_8hpp.html#a2443cce20c71dc415edfe9b6997775b9">cont</a>, 100, 100, 50, 0.05, 0.1, -0.05, 0);</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#ac53117758f05b4e45fffd03828db6f0c">  143</a></span>&#160;<a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> les(&amp;<a class="code" href="_g_u_i_8hpp.html#ac53117758f05b4e45fffd03828db6f0c">lesss</a>, 100, 100, 50, -0.05, 0.05, -0.15, -0.05);</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="_g_u_i_8hpp.html#a397c6a5c63c3be79f7c59df18b26d93c">  144</a></span>&#160;<a class="code" href="class_g_u_i__touch1.html">GUI_touch1</a> mor(&amp;<a class="code" href="_g_u_i_8hpp.html#a397c6a5c63c3be79f7c59df18b26d93c">more</a>, 100, 100, 50, 0.15, 0.05, 0.05, -0.05);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="amain_8cpp_html_a2dd51e03005d5cb52315290d27f61870"><div class="ttname"><a href="main_8cpp.html#a2dd51e03005d5cb52315290d27f61870">W</a></div><div class="ttdeci">int W</div><div class="ttdoc">Ширина</div><div class="ttdef"><b>Definition:</b> main.cpp:17</div></div>
-<div class="ttc" id="a_g_u_i_8hpp_html_a1b44b96343d14b35847a6564f3099aee"><div class="ttname"><a href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">flash</a></div><div class="ttdeci">GUI_background1 flashl &amp; flash</div><div class="ttdoc">Класс рисования фонарика</div><div class="ttdef"><b>Definition:</b> GUI.hpp:134</div></div>
-<div class="ttc" id="aclass_g_u_i__touch1_html_a71807e01b7008fff7320590edfa20ece"><div class="ttname"><a href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">GUI_touch1::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> GUI.hpp:62</div></div>
-<div class="ttc" id="aclass_g_u_i__background1_html"><div class="ttname"><a href="class_g_u_i__background1.html">GUI_background1</a></div><div class="ttdef"><b>Definition:</b> GUI.hpp:80</div></div>
-<div class="ttc" id="aclass_g_u_i__background1_html_ae6948d0937eb2eb8ec148319af36943b"><div class="ttname"><a href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">GUI_background1::GUI_background1</a></div><div class="ttdeci">GUI_background1(float x2, float y2, float x1, float y1)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:114</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_a397c6a5c63c3be79f7c59df18b26d93c"><div class="ttname"><a href="_g_u_i_8hpp.html#a397c6a5c63c3be79f7c59df18b26d93c">more</a></div><div class="ttdeci">GUI_touch1 mor &amp; more</div><div class="ttdoc">объект кнопки больше тумана</div><div class="ttdef"><b>Definition:</b> GUI.hpp:144</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_a1b44b96343d14b35847a6564f3099aee"><div class="ttname"><a href="_g_u_i_8hpp.html#a1b44b96343d14b35847a6564f3099aee">flash</a></div><div class="ttdeci">GUI_background1 flashl &amp; flash</div><div class="ttdoc">Класс рисования фонарика</div><div class="ttdef"><b>Definition:</b> GUI.hpp:140</div></div>
+<div class="ttc" id="amain_8cpp_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="main_8cpp.html#ad12fc34ce789bce6c8a05d8a17138534">height</a></div><div class="ttdeci">int height</div><div class="ttdoc">Ширина окна</div><div class="ttdef"><b>Definition:</b> main.cpp:17</div></div>
+<div class="ttc" id="aclass_g_u_i__touch1_html_a71807e01b7008fff7320590edfa20ece"><div class="ttname"><a href="class_g_u_i__touch1.html#a71807e01b7008fff7320590edfa20ece">GUI_touch1::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> GUI.hpp:67</div></div>
+<div class="ttc" id="aclass_g_u_i__background1_html"><div class="ttname"><a href="class_g_u_i__background1.html">GUI_background1</a></div><div class="ttdef"><b>Definition:</b> GUI.hpp:86</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_a9baed6916c10c19ece99add0783cb34b"><div class="ttname"><a href="_g_u_i_8hpp.html#a9baed6916c10c19ece99add0783cb34b">exi</a></div><div class="ttdeci">GUI_touch1 ex &amp; exi</div><div class="ttdoc">объект кнопки выхода в меню</div><div class="ttdef"><b>Definition:</b> GUI.hpp:141</div></div>
+<div class="ttc" id="aclass_g_u_i__background1_html_ae6948d0937eb2eb8ec148319af36943b"><div class="ttname"><a href="class_g_u_i__background1.html#ae6948d0937eb2eb8ec148319af36943b">GUI_background1::GUI_background1</a></div><div class="ttdeci">GUI_background1(float x2, float y2, float x1, float y1)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:120</div></div>
+<div class="ttc" id="amain_8cpp_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="main_8cpp.html#a2474a5474cbff19523a51eb1de01cda4">width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Высота окна</div><div class="ttdef"><b>Definition:</b> main.cpp:16</div></div>
 <div class="ttc" id="aclass_g_u_i__touch1_html_ad0d1c361df8d555d9f9feb95cfcec2ff"><div class="ttname"><a href="class_g_u_i__touch1.html#ad0d1c361df8d555d9f9feb95cfcec2ff">GUI_touch1::GUI_touch1</a></div><div class="ttdeci">GUI_touch1(GLuint *tex, int pix, float X, float Y, float x1, float y1, float x2, float y2)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:19</div></div>
-<div class="ttc" id="a_g_u_i_8hpp_html_a5c01e2a271e0321b46c3eaef98151cdc"><div class="ttname"><a href="_g_u_i_8hpp.html#a5c01e2a271e0321b46c3eaef98151cdc">but</a></div><div class="ttdeci">GUI_touch1 butt &amp; but</div><div class="ttdoc">Класс кнопки</div><div class="ttdef"><b>Definition:</b> GUI.hpp:135</div></div>
-<div class="ttc" id="a_g_u_i_8hpp_html_a438bd2a1e1b1cde66da618f93b9bd177"><div class="ttname"><a href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">backg</a></div><div class="ttdeci">GUI_background1 back &amp; backg</div><div class="ttdoc">Класс заднего фона меню</div><div class="ttdef"><b>Definition:</b> GUI.hpp:133</div></div>
-<div class="ttc" id="amain_8cpp_html_affa487e8e3cc48473cfc05c0ce0165e9"><div class="ttname"><a href="main_8cpp.html#affa487e8e3cc48473cfc05c0ce0165e9">H</a></div><div class="ttdeci">int H</div><div class="ttdoc">Высота</div><div class="ttdef"><b>Definition:</b> main.cpp:16</div></div>
-<div class="ttc" id="aclass_g_u_i__touch1_html_acd7737754d9aff2ad590cd0b58a0cdc6"><div class="ttname"><a href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">GUI_touch1::mouse</a></div><div class="ttdeci">bool mouse(float x, float y, int click_status)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:41</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_ac53117758f05b4e45fffd03828db6f0c"><div class="ttname"><a href="_g_u_i_8hpp.html#ac53117758f05b4e45fffd03828db6f0c">lesss</a></div><div class="ttdeci">GUI_touch1 les &amp; lesss</div><div class="ttdoc">объект кнопки меньше тумана</div><div class="ttdef"><b>Definition:</b> GUI.hpp:143</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_a438bd2a1e1b1cde66da618f93b9bd177"><div class="ttname"><a href="_g_u_i_8hpp.html#a438bd2a1e1b1cde66da618f93b9bd177">backg</a></div><div class="ttdeci">GUI_background1 back &amp; backg</div><div class="ttdoc">Класс заднего фона меню</div><div class="ttdef"><b>Definition:</b> GUI.hpp:139</div></div>
+<div class="ttc" id="aclass_g_u_i__touch1_html_acd7737754d9aff2ad590cd0b58a0cdc6"><div class="ttname"><a href="class_g_u_i__touch1.html#acd7737754d9aff2ad590cd0b58a0cdc6">GUI_touch1::mouse</a></div><div class="ttdeci">bool mouse(float x, float y, int click_status)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:42</div></div>
+<div class="ttc" id="a_g_u_i_8hpp_html_a2443cce20c71dc415edfe9b6997775b9"><div class="ttname"><a href="_g_u_i_8hpp.html#a2443cce20c71dc415edfe9b6997775b9">cont</a></div><div class="ttdeci">GUI_touch1 con &amp; cont</div><div class="ttdoc">объект кнопки продолжения игры</div><div class="ttdef"><b>Definition:</b> GUI.hpp:142</div></div>
 <div class="ttc" id="aclass_g_u_i__touch1_html"><div class="ttname"><a href="class_g_u_i__touch1.html">GUI_touch1</a></div><div class="ttdef"><b>Definition:</b> GUI.hpp:1</div></div>
-<div class="ttc" id="aclass_g_u_i__background1_html_ab3287990886f10a4929612bde88f09d0"><div class="ttname"><a href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">GUI_background1::GUI_background1</a></div><div class="ttdeci">GUI_background1(GLuint *tex, int pix, float X2, float Y2, float x1, float y1, float x2, float y2)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:99</div></div>
-<div class="ttc" id="aclass_g_u_i__background1_html_afc2fba0f2f1ae0c8c51eda57d5c9ac20"><div class="ttname"><a href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">GUI_background1::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> GUI.hpp:119</div></div>
+<div class="ttc" id="aclass_g_u_i__background1_html_ab3287990886f10a4929612bde88f09d0"><div class="ttname"><a href="class_g_u_i__background1.html#ab3287990886f10a4929612bde88f09d0">GUI_background1::GUI_background1</a></div><div class="ttdeci">GUI_background1(GLuint *tex, int pix, float X2, float Y2, float x1, float y1, float x2, float y2)</div><div class="ttdef"><b>Definition:</b> GUI.hpp:105</div></div>
+<div class="ttc" id="aclass_g_u_i__background1_html_afc2fba0f2f1ae0c8c51eda57d5c9ac20"><div class="ttname"><a href="class_g_u_i__background1.html#afc2fba0f2f1ae0c8c51eda57d5c9ac20">GUI_background1::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> GUI.hpp:125</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

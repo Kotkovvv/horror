@@ -8,6 +8,8 @@ void \mbox{\hyperlink{_mouse__and__keyboard_8hpp_ad98e38d016ad1258ee8592beffa21c
 void \mbox{\hyperlink{_mouse__and__keyboard_8hpp_aef7ba2f69afb2d954545f64c7fe24b14}{keyboard}} (unsigned char key, int x, int y)
 \item 
 void \mbox{\hyperlink{_mouse__and__keyboard_8hpp_a571f46e1d0e29afeb743a6342448b865}{keyboard\+\_\+up}} (unsigned char key, int x, int y)
+\item 
+void \mbox{\hyperlink{_mouse__and__keyboard_8hpp_afeff51853eef24fe859ab6ce174f5992}{mouse\+Button}} (int button, int state, int x, int y)
 \end{DoxyCompactItemize}
 \doxysubsection*{Переменные}
 \begin{DoxyCompactItemize}
@@ -35,7 +37,15 @@ float \mbox{\hyperlink{_mouse__and__keyboard_8hpp_a04bfc77d6b5b2d0328268898421b2
 
 /brief Функция, отвечающая отжатие кнопок
 
-Данная функция отвечает за фиксирование отжатия клавиш клавиатуры. Управление осуществляется с помощью нажатия нопок W\+A\+SD \mbox{\Hypertarget{_mouse__and__keyboard_8hpp_ad98e38d016ad1258ee8592beffa21c93}\label{_mouse__and__keyboard_8hpp_ad98e38d016ad1258ee8592beffa21c93}} 
+Данная функция отвечает за фиксирование отжатия клавиш клавиатуры. Управление осуществляется с помощью нажатия нопок W\+A\+SD \mbox{\Hypertarget{_mouse__and__keyboard_8hpp_afeff51853eef24fe859ab6ce174f5992}\label{_mouse__and__keyboard_8hpp_afeff51853eef24fe859ab6ce174f5992}} 
+\index{Mouse\_and\_keyboard.hpp@{Mouse\_and\_keyboard.hpp}!mouseButton@{mouseButton}}
+\index{mouseButton@{mouseButton}!Mouse\_and\_keyboard.hpp@{Mouse\_and\_keyboard.hpp}}
+\doxysubsubsection{\texorpdfstring{mouseButton()}{mouseButton()}}
+{\footnotesize\ttfamily void mouse\+Button (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{state,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+/brief Функция, отвечающая нажатие ЛКМ
+
+Данная функция отвечает за считывания нажатия на кнопки в меню \mbox{\Hypertarget{_mouse__and__keyboard_8hpp_ad98e38d016ad1258ee8592beffa21c93}\label{_mouse__and__keyboard_8hpp_ad98e38d016ad1258ee8592beffa21c93}} 
 \index{Mouse\_and\_keyboard.hpp@{Mouse\_and\_keyboard.hpp}!mouseMove@{mouseMove}}
 \index{mouseMove@{mouseMove}!Mouse\_and\_keyboard.hpp@{Mouse\_and\_keyboard.hpp}}
 \doxysubsubsection{\texorpdfstring{mouseMove()}{mouseMove()}}

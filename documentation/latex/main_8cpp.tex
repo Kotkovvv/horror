@@ -18,9 +18,12 @@
 \doxysubsection*{Перечисления}
 \begin{DoxyCompactItemize}
 \item 
+enum \mbox{\hyperlink{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2}{labyrinth}} \{ \mbox{\hyperlink{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a875822d01c4125875c9e89c69ac3f4d2}{N\+U\+M1}}, 
+\mbox{\hyperlink{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a691d3482328e44da1667ffb025ca4fb1}{N\+U\+M2}}
+ \}
+\item 
 enum \mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfae}{game\+\_\+status}} \{ \mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaead50cf309d7568040619ed26ee6835a84}{G\+A\+ME}}, 
-\mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d}{G\+A\+M\+E\+\_\+\+M\+E\+NU}}, 
-\mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}{M\+A\+I\+N\+\_\+\+M\+E\+NU}}
+\mbox{\hyperlink{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeaa65481e2492a0d2954f4e8de6dabf01d}{G\+A\+M\+E\+\_\+\+M\+E\+NU}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Функции}
@@ -44,7 +47,7 @@ int \mbox{\hyperlink{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}{H}} = \mbox{\h
 int \mbox{\hyperlink{main_8cpp_a2dd51e03005d5cb52315290d27f61870}{W}} = \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}}
 \begin{DoxyCompactList}\small\item\em Ширина \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}{angle}} = 0
-\begin{DoxyCompactList}\small\item\em Угол поворота \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em угол поворота камеры в плоскости XZ. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{main_8cpp_aefac3b54073269a9394f9a31a097d005}{quantity\+\_\+cubes\+\_\+z}} = 20
 \begin{DoxyCompactList}\small\item\em Количество невидимых кубов по z. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{main_8cpp_abe8f533bc23beee8f709630d1343a5da}{quantity\+\_\+cubes\+\_\+x}} = 20
@@ -56,18 +59,24 @@ float \mbox{\hyperlink{main_8cpp_afb7c4aa8c0b809f0f76628dbb5b6d62b}{lx}} = 0.\+0
 float \mbox{\hyperlink{main_8cpp_aaf431a94974e843174300e4c0fa47fbd}{ly}} = 0.\+0f
 \begin{DoxyCompactList}\small\item\em Координаты вектора, определяющее, куда смотрит камера \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}{angleY}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em угол поворота камеры по оси Y. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{main_8cpp_af30065f8008fe7130e92c75deae24a26}{move\+\_\+front}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em ключ к изменению скорости вперед/назад \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}{move\+\_\+side}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em ключ к изменению скорости вбок \end{DoxyCompactList}\item 
 time\+\_\+t \mbox{\hyperlink{main_8cpp_acc957abaece2bc482fd35e2a6d9b2075}{oldtime}} = 1
 \item 
 time\+\_\+t \mbox{\hyperlink{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}{newtime}} = 1
 \item 
-bool \mbox{\hyperlink{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}{choice\+\_\+of\+\_\+labirynth}} = 0
-\item 
+int \mbox{\hyperlink{main_8cpp_a8ff3175eaa564db5e153e0e0fc6d12b4}{choice\+\_\+of\+\_\+labirynth}} = 0
+\begin{DoxyCompactList}\small\item\em в дальнейшем поможет с переходом из одной локации в другую \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}{state\+\_\+of\+\_\+game}} = 0
+\begin{DoxyCompactList}\small\item\em состояние игры в данный момент(игра/меню) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_ab30ebe607767185e11c0be9654050da4}{m\+Left}} = 0
+\begin{DoxyCompactList}\small\item\em состояние левой кнопки мыши \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{main_8cpp_ac3c8cf48cb594adeb44bead769f3a2ad}{fog\+\_\+change}} = 0.\+7f
+\begin{DoxyCompactList}\small\item\em дальность прорисовки тумана \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{main_8cpp_a0ade11a5485baad4eef478e5abff8bee}{sc\+\_\+s}}
 \end{DoxyCompactItemize}
 
 
@@ -87,8 +96,20 @@ G\+A\+ME&\\
 G\+A\+M\+E\+\_\+\+M\+E\+NU&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MAIN\_MENU@{MAIN\_MENU}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!MAIN\_MENU@{MAIN\_MENU}}}\mbox{\Hypertarget{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}\label{main_8cpp_a65e079ce2e3340cf35d78c00ba8bbfaeac22743f1fc74de09544ecc9bab74a17b}} 
-M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2}\label{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2}} 
+\index{main.cpp@{main.cpp}!labyrinth@{labyrinth}}
+\index{labyrinth@{labyrinth}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{labyrinth}{labyrinth}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2}{labyrinth}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM1@{NUM1}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!NUM1@{NUM1}}}\mbox{\Hypertarget{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a875822d01c4125875c9e89c69ac3f4d2}\label{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a875822d01c4125875c9e89c69ac3f4d2}} 
+N\+U\+M1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM2@{NUM2}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!NUM2@{NUM2}}}\mbox{\Hypertarget{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a691d3482328e44da1667ffb025ca4fb1}\label{main_8cpp_a1b455e6430b1bc3ccd1355d38a09a0b2a691d3482328e44da1667ffb025ca4fb1}} 
+N\+U\+M2&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -123,7 +144,7 @@ M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
 
 /brief Функция, отвечающая за изменения параметров при изменении размера окна
 
-Данная функция задает перспектику, вызывается при первом запуске проги и при изменении окна проги 
+Данная функция задает перспектику, вызывается при первом запуске проги и при изменении окна проги $<$ соотношение сторон
 
 \doxysubsection{Переменные}
 \mbox{\Hypertarget{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}\label{main_8cpp_ab8ef1bf8a70cc07c6d55823c390a7e76}} 
@@ -134,7 +155,7 @@ M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
 
 
 
-Угол поворота 
+угол поворота камеры в плоскости XZ. 
 
 \mbox{\Hypertarget{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}\label{main_8cpp_adb82b6f9a59b4ebab80b0ea796dbe066}} 
 \index{main.cpp@{main.cpp}!angleY@{angleY}}
@@ -142,11 +163,29 @@ M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
 \doxysubsubsection{\texorpdfstring{angleY}{angleY}}
 {\footnotesize\ttfamily float angleY = 0}
 
-\mbox{\Hypertarget{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}\label{main_8cpp_a53e93bf621c5c22a98badd4dd5bb1fac}} 
+
+
+угол поворота камеры по оси Y. 
+
+\mbox{\Hypertarget{main_8cpp_a8ff3175eaa564db5e153e0e0fc6d12b4}\label{main_8cpp_a8ff3175eaa564db5e153e0e0fc6d12b4}} 
 \index{main.cpp@{main.cpp}!choice\_of\_labirynth@{choice\_of\_labirynth}}
 \index{choice\_of\_labirynth@{choice\_of\_labirynth}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{choice\_of\_labirynth}{choice\_of\_labirynth}}
-{\footnotesize\ttfamily bool choice\+\_\+of\+\_\+labirynth = 0}
+{\footnotesize\ttfamily int choice\+\_\+of\+\_\+labirynth = 0}
+
+
+
+в дальнейшем поможет с переходом из одной локации в другую 
+
+\mbox{\Hypertarget{main_8cpp_ac3c8cf48cb594adeb44bead769f3a2ad}\label{main_8cpp_ac3c8cf48cb594adeb44bead769f3a2ad}} 
+\index{main.cpp@{main.cpp}!fog\_change@{fog\_change}}
+\index{fog\_change@{fog\_change}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fog\_change}{fog\_change}}
+{\footnotesize\ttfamily float fog\+\_\+change = 0.\+7f}
+
+
+
+дальность прорисовки тумана 
 
 \mbox{\Hypertarget{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}\label{main_8cpp_affa487e8e3cc48473cfc05c0ce0165e9}} 
 \index{main.cpp@{main.cpp}!H@{H}}
@@ -198,17 +237,35 @@ M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
 
 Координаты вектора, определяющее, куда смотрит камера 
 
+\mbox{\Hypertarget{main_8cpp_ab30ebe607767185e11c0be9654050da4}\label{main_8cpp_ab30ebe607767185e11c0be9654050da4}} 
+\index{main.cpp@{main.cpp}!mLeft@{mLeft}}
+\index{mLeft@{mLeft}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mLeft}{mLeft}}
+{\footnotesize\ttfamily bool m\+Left = 0}
+
+
+
+состояние левой кнопки мыши 
+
 \mbox{\Hypertarget{main_8cpp_af30065f8008fe7130e92c75deae24a26}\label{main_8cpp_af30065f8008fe7130e92c75deae24a26}} 
 \index{main.cpp@{main.cpp}!move\_front@{move\_front}}
 \index{move\_front@{move\_front}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{move\_front}{move\_front}}
 {\footnotesize\ttfamily float move\+\_\+front = 0}
 
+
+
+ключ к изменению скорости вперед/назад 
+
 \mbox{\Hypertarget{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}\label{main_8cpp_abd5a82629ef90c38be28bb9141ee6cc3}} 
 \index{main.cpp@{main.cpp}!move\_side@{move\_side}}
 \index{move\_side@{move\_side}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{move\_side}{move\_side}}
 {\footnotesize\ttfamily float move\+\_\+side = 0}
+
+
+
+ключ к изменению скорости вбок 
 
 \mbox{\Hypertarget{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}\label{main_8cpp_ae4ff544f5a550769ff838373f7fb274f}} 
 \index{main.cpp@{main.cpp}!newtime@{newtime}}
@@ -242,11 +299,21 @@ M\+A\+I\+N\+\_\+\+M\+E\+NU&\\
 
 Количество невидимых кубов по z. 
 
+\mbox{\Hypertarget{main_8cpp_a0ade11a5485baad4eef478e5abff8bee}\label{main_8cpp_a0ade11a5485baad4eef478e5abff8bee}} 
+\index{main.cpp@{main.cpp}!sc\_s@{sc\_s}}
+\index{sc\_s@{sc\_s}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sc\_s}{sc\_s}}
+{\footnotesize\ttfamily float sc\+\_\+s}
+
 \mbox{\Hypertarget{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}\label{main_8cpp_ad35c82b989d9221e19b3beb65c08d7b0}} 
 \index{main.cpp@{main.cpp}!state\_of\_game@{state\_of\_game}}
 \index{state\_of\_game@{state\_of\_game}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{state\_of\_game}{state\_of\_game}}
 {\footnotesize\ttfamily int state\+\_\+of\+\_\+game = 0}
+
+
+
+состояние игры в данный момент(игра/меню) 
 
 \mbox{\Hypertarget{main_8cpp_a2dd51e03005d5cb52315290d27f61870}\label{main_8cpp_a2dd51e03005d5cb52315290d27f61870}} 
 \index{main.cpp@{main.cpp}!W@{W}}

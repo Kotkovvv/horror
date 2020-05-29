@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Horror", "index.html", [
+  [ "horror", "index.html", [
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],

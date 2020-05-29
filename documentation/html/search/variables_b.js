@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['quantity_5fcubes_5fx_141',['quantity_cubes_x',['../main_8cpp.html#abe8f533bc23beee8f709630d1343a5da',1,'main.cpp']]],
-  ['quantity_5fcubes_5fz_142',['quantity_cubes_z',['../main_8cpp.html#aefac3b54073269a9394f9a31a097d005',1,'main.cpp']]]
+  ['playerx_165',['PlayerX',['../class_player.html#aa236df11fc00f7c338b03b061b480d67',1,'Player']]],
+  ['playery_166',['PlayerY',['../class_player.html#afa5e305b377d914da490da1aa0d6503b',1,'Player']]],
+  ['playerz_167',['PlayerZ',['../class_player.html#a3fe624c14e2d04c851229e7c52a47b9d',1,'Player']]]
 ];

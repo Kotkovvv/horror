@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['flashlight_91',['flashlight',['../_labyrinth_8hpp.html#aed8f2221b04a8e9a76475409172ec1fd',1,'Labyrinth.hpp']]],
-  ['floor_92',['floor',['../_labyrinth_8hpp.html#a02babedaeff0ff9b077ec10773bd6e1e',1,'Labyrinth.hpp']]],
-  ['fogg_93',['fogg',['../_labyrinth_8hpp.html#a08fd82fd9324da777710c70605fed1da',1,'Labyrinth.hpp']]]
+  ['draw_106',['Draw',['../main_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16',1,'main.cpp']]],
+  ['draw_5fwall_5fnew_107',['draw_wall_new',['../_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d',1,'Labyrinth.hpp']]],
+  ['draw_5fwall_5fnew1_108',['draw_wall_new1',['../_labyrinth_8hpp.html#aec84e768f8bacd16f9b8ffa6351b9fc3',1,'Labyrinth.hpp']]]
 ];

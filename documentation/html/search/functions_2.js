@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['draw_88',['Draw',['../main_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16',1,'main.cpp']]],
-  ['draw_5fwall_5fnew_89',['draw_wall_new',['../_labyrinth_8hpp.html#a2d28da62b345f880fdde5af764d2bc7d',1,'Labyrinth.hpp']]],
-  ['draw_5fwall_5fnew1_90',['draw_wall_new1',['../_labyrinth_8hpp.html#aec84e768f8bacd16f9b8ffa6351b9fc3',1,'Labyrinth.hpp']]]
+  ['check_104',['check',['../class_player.html#add896a3d2256da8ce632fe54edc39cbe',1,'Player']]],
+  ['collision_105',['collision',['../class_player.html#ac79d9e37b2354ea226f4a6aa647c66bd',1,'Player']]]
 ];
