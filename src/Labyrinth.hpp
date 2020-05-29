@@ -174,7 +174,7 @@ void boo()
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.05, -0.05, -0.1);// его координаты
 	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.05, -0.05, -0.1);// его координаты
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.05, 0.05, -0.1);// его координаты
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05, -0.1);// его координаты
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.05, 0.05,  - 0.1);// его координаты
 	glEnd(); // говорим, что заканчиваем рисовать
 }
 

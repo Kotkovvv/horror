@@ -89,3 +89,4 @@ public:
 
 area change(18, 18, 19, 19);
 area scream(2, 2, 3, 3);
+area scream1(1, 4, 2, 5);

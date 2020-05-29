@@ -5,12 +5,12 @@ GLuint floor1;///<Переменная для текстуры пола псих
 GLuint floor2;///<Переменная для текстуры пола
 GLuint flash;///<Переменная для текстуры фонарика
 GLuint texture[3];
-GLuint backg;
-GLuint exi;
-GLuint cont;
-GLuint more;
-GLuint lesss;
-GLuint end;
+GLuint backg;///<Переменная для текстуры заднего фона меню
+GLuint exi;///<Переменная для текстуры кнопки выхода
+GLuint cont;///<Переменная для текстуры кнопки продолжить
+GLuint more; ///<Переменная для текстуры больше тумана
+GLuint lesss;///<Переменная для текстуры меньше тумана
+
 /**
     \brief Загрузка текстур
 

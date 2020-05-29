@@ -11,6 +11,7 @@
 #pragma comment (lib,"SOIL.lib")
 #pragma comment (lib,"alut.lib")
 #pragma comment (lib,"glut.lib")
+using namespace std;
 
 int width = 1280; ///< Высота окна
 int height = 720; ///< Ширина окна
@@ -31,6 +32,7 @@ int choice_of_labirynth = 0;///<в дальнейшем поможет с пер
 int state_of_game = 0;///<состояние игры в данный момент(игра/меню)
 bool mLeft = 0; ///< состояние левой кнопки мыши
 float fog_change = 0.7f;///<дальность прорисовки тумана
+float sc_s;
 
 enum labyrinth {
 	NUM1,

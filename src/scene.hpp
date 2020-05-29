@@ -11,12 +11,9 @@ void Labyrinth1()
 				glTranslatef(x, 0, z);
 				draw_wall_new(x, z);
 				glTranslatef(-x, 0, -z);
-
 			}
 		if (change.update())
 			choice_of_labirynth = NUM2;
-		if (scream.update())
-			boo();
 		glBindTexture(GL_TEXTURE_2D, floor1);
 		glBegin(GL_QUADS);
 		glTexCoord2f(1.0f, 1.0f);  glVertex3f(1, -1, 19);
@@ -53,13 +50,13 @@ void Labyrinth2()
 */
 void game() {
 	double times;
-	//back.update();
 	flashl.update();
-	//boo();//возможно скример(картинка перед нами, нужно привязать время?)
+	if (scream.update() || scream1.update())
+			boo();
+
 	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2, man.PlayerZ,
 		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,
 		0.0f, 1.0f, 0.0f);//управление камерой
-	
 //=================================начало основного цикла===================================================================================
 	newtime = clock();
 	times = newtime - oldtime;
