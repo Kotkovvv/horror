@@ -14,7 +14,6 @@ public:
 	\brief проверяет на столкновение
 */
 	bool check(int x, int z) {
-
 		if ((x < 0) || (x > quantity_cubes_x) ||
 			(z < 0) || (z > quantity_cubes_z)) return false;
 		if (choice_of_labirynth==NUM1)

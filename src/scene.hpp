@@ -53,7 +53,6 @@ void game() {
 	flashl.update();
 	if (scream.update() || scream1.update())
 			boo();
-
 	gluLookAt(man.PlayerX, man.PlayerY + man.h / 2, man.PlayerZ,
 		man.PlayerX + lx, man.PlayerY + ly + man.h / 2, man.PlayerZ + lz,
 		0.0f, 1.0f, 0.0f);//управление камерой
